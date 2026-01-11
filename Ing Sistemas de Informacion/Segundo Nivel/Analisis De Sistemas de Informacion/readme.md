@@ -10,6 +10,8 @@ Full teoria del segundo cuatrimestre (al igual que teoria tomados en finales)
 - TEORIA PREGUNTAS https://docs.google.com/document/d/1LIYHSeZl6cbACUuq7m-g4NKG7S_KQKjOb9-Yp_ovbqA/edit?usp=sharing
 - TEORIA SOLUCION https://docs.google.com/document/d/1RPXS4tjVW3uKfmig5ny1KDMNFcTPXNePTppcUtmyD7w/edit?usp=sharing
 
+- TABLA DE DECISION | CHOICE: https://docs.google.com/document/d/14UFWHzhYsctS7XHbSR0js_YBCp0PfdYrkzqtO4VTQvA/edit?usp=sharing
+
 # Practica Resolución 
 Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 
@@ -25,6 +27,7 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 
 - PRACTICA ENUNCIADO: https://docs.google.com/document/d/1y3veubIDA6x8rRXZIuiFwi18vbXtT_XqngzQ5EkqfMQ/edit?usp=sharing
 - PRACTICA SOLUCION: https://docs.google.com/document/d/1LN2CBf9o0Xt_9SfUvbmmtaJte_H4nQ486Lz9y_CQzes/edit?usp=sharing
+
 
 
 

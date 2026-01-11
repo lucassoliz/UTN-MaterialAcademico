@@ -16,11 +16,12 @@ Full teoria del segundo cuatrimestre (al igual que teoria tomados en finales)
 # Practica Resolución 
 Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 
-## Primer cuatrimestre HU - CU - Pr.Neg
+## Primer cuatrimestre HU - CU - Inf. Rec - Pr.Neg 
 
 - PRACTICA REQUERIMIENTO: https://docs.google.com/document/d/1rFIPVuSfHHq5Y0iHjPPKMhXOqHd88ip1KB5j-_oEms8/edit?usp=sharing
 - PRACTICA HISTORIA DE USUARIO: https://docs.google.com/document/d/1lqVuQ-lmSUqxy7EM4z9a8sNILnhkJ6Qd0s6lzLAYUa0/edit?usp=sharing
 - PRACTICA CASO DE USO: https://docs.google.com/document/d/1OAead4j7Mtskrzd15Z5UlQSV4RdTsW2JswgXYEjzZ0w/edit?usp=sharing
+- PRACTICA INFORME DE RECONOCIMIENTO: https://docs.google.com/document/d/1EsXAcoY2E8w050Zfv1FYnco5-txb3EAEolI9sYtFdqQ/edit?usp=sharing
 - PRACTICA PROCESO DE NEGOCIO: https://docs.google.com/document/d/1J9QomP2AOb1Z29NhNLTsu4Ee9aU2_72LGIEV8coBiCM/edit?usp=sharing
 
 
@@ -28,6 +29,7 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 
 - PRACTICA ENUNCIADO: https://docs.google.com/document/d/1y3veubIDA6x8rRXZIuiFwi18vbXtT_XqngzQ5EkqfMQ/edit?usp=sharing
 - PRACTICA SOLUCION: https://docs.google.com/document/d/1LN2CBf9o0Xt_9SfUvbmmtaJte_H4nQ486Lz9y_CQzes/edit?usp=sharing
+
 
 
 

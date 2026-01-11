@@ -29,6 +29,8 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 
 - PRACTICA ENUNCIADO: https://docs.google.com/document/d/1y3veubIDA6x8rRXZIuiFwi18vbXtT_XqngzQ5EkqfMQ/edit?usp=sharing
 - PRACTICA SOLUCION: https://docs.google.com/document/d/1LN2CBf9o0Xt_9SfUvbmmtaJte_H4nQ486Lz9y_CQzes/edit?usp=sharing
+- PRACTICA TABLA DE DECISION: https://docs.google.com/document/d/1P92_gRW58C18w6dOyePXeUK4f-a3f4lxNMiucqy1JDM/edit?usp=sharing
+
 
 
 

@@ -16,5 +16,8 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 ## Primer cuatrimestre
 
 
-## Segundo cuatrimestre
+## Segundo cuatrimestre DC - TE - DFD - DER - TD
+
+- TEORIA ENUNCIADO: https://docs.google.com/document/d/1y3veubIDA6x8rRXZIuiFwi18vbXtT_XqngzQ5EkqfMQ/edit?usp=sharing
+- TEORIA SOLUCION: https://docs.google.com/document/d/1LN2CBf9o0Xt_9SfUvbmmtaJte_H4nQ486Lz9y_CQzes/edit?usp=sharing
 

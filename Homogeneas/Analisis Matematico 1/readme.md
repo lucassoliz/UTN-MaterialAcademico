@@ -1,6 +1,12 @@
 # FINAL  
 
-ENUNCIADO FINAL: https://docs.google.com/document/d/11wxR1ZEij07O0NHZ5a5mbnkEHLe0S_HRA1-IExbb-qM/edit?usp=sharing
+**RECOPILACIÓN FINAL:**  https://docs.google.com/document/d/11wxR1ZEij07O0NHZ5a5mbnkEHLe0S_HRA1-IExbb-qM/edit?usp=sharing
+> [!note]
+> Este documento contiene una gran recopilacion de exmanes finales.
+> Esta diseñado para que puedas:
+>  - **Practicar:**  Ideal para imprimir y resolver a mano, simulando el entorno real del exmane
+>  - **Medir tu nivel:** Úsalo para realizar simulacros cronometrados y evaluar tu preparacion antes del Dia del fianal
+
 
 SOLUCION FINAL: [finalesam1PilarRodriguez.pdf](https://github.com/user-attachments/files/24724801/finalesam1PilarRodriguez.pdf)
 
@@ -52,6 +58,7 @@ SEGUNDO PARCIAL
 - [2do rec del 2do Parcial febrero 2024 TT (1).pdf](https://github.com/user-attachments/files/24724745/2do.rec.del.2do.Parcial.febrero.2024.TT.1.pdf)  
 - [Recuperatorio del Segundo Parcial dic 2020 (1).pdf](https://github.com/user-attachments/files/24724744/Recuperatorio.del.Segundo.Parcial.dic.2020.1.pdf)  
 - [SEGUNDO PARCIALc resuelto (1).pdf](https://github.com/user-attachments/files/24724743/SEGUNDO.PARCIALc.resuelto.1.pdf)  
+
 
 
 

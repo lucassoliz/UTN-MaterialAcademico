@@ -2,16 +2,19 @@
 
 ENUNCIADO FINAL: https://docs.google.com/document/d/11wxR1ZEij07O0NHZ5a5mbnkEHLe0S_HRA1-IExbb-qM/edit?usp=sharing
 
-SOLUCION FINAL: 
+SOLUCION FINAL: [finalesam1PilarRodriguez.pdf](https://github.com/user-attachments/files/24724801/finalesam1PilarRodriguez.pdf)
+
 
 CANAL YOUTUBE RESOLVIENDO FINALES:   
 - https://youtube.com/@leonelchavez2532?si=Kceg-0s7VLcZ3NWK  
 -  *Insertar canal*
 
-## Material de estudio 
+## Material de estudio  
+- 
 
 # CURSADA NORMAL 
 ## Material de estudio teorico
+- [Apuntes TEORIA AM1.pdf](https://github.com/user-attachments/files/24724777/Apuntes.TEORIA.AM1.pdf)
 
 
 ## Practica + parciales 
@@ -49,5 +52,6 @@ SEGUNDO PARCIAL
 - [2do rec del 2do Parcial febrero 2024 TT (1).pdf](https://github.com/user-attachments/files/24724745/2do.rec.del.2do.Parcial.febrero.2024.TT.1.pdf)  
 - [Recuperatorio del Segundo Parcial dic 2020 (1).pdf](https://github.com/user-attachments/files/24724744/Recuperatorio.del.Segundo.Parcial.dic.2020.1.pdf)  
 - [SEGUNDO PARCIALc resuelto (1).pdf](https://github.com/user-attachments/files/24724743/SEGUNDO.PARCIALc.resuelto.1.pdf)  
+
 
 

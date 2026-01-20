@@ -136,4 +136,22 @@ https://www.geogebra.org/m/qjWuUAgs#material/ugsN4ERy
 
 ## UNIDAD 5  
 
+[Clase9_TH_version final.pdf](https://github.com/user-attachments/files/24726668/Clase9_TH_version.final.pdf)  
+[PH_de que trata.pdf](https://github.com/user-attachments/files/24726667/PH_de.que.trata.pdf)  
+[Explicación del procedimiento.pdf](https://github.com/user-attachments/files/24726666/Explicacion.del.procedimiento.pdf)  
+[3_PH de una y dos colas - corregido.pdf](https://github.com/user-attachments/files/24726665/3_PH.de.una.y.dos.colas.-.corregido.pdf)  
+[Cálculo de beta.pdf](https://github.com/user-attachments/files/24726664/Calculo.de.beta.pdf)  
+[p-valor.pdf](https://github.com/user-attachments/files/24726663/p-valor.pdf)  
+[Clase9_TH_version final (1).pdf](https://github.com/user-attachments/files/24726662/Clase9_TH_version.final.1.pdf)  
+[2PH_media_normal_vardesc.pdf](https://github.com/user-attachments/files/24726661/2PH_media_normal_vardesc.pdf)  
+[3PH_media_muestragrande.pdf](https://github.com/user-attachments/files/24726660/3PH_media_muestragrande.pdf)  
+[4PH_varianza.pdf](https://github.com/user-attachments/files/24726659/4PH_varianza.pdf)  
+[5PH_proporción.pdf](https://github.com/user-attachments/files/24726658/5PH_proporcion.pdf)  
+[TEST DE SHAPIRO WILK.pdf](https://github.com/user-attachments/files/24726657/TEST.DE.SHAPIRO.WILK.pdf)  
+[6PH_difmedias_varconoc.pdf](https://github.com/user-attachments/files/24726656/6PH_difmedias_varconoc.pdf)  
+[7PH_difmedias_vardescig.pdf](https://github.com/user-attachments/files/24726655/7PH_difmedias_vardescig.pdf)  
+[13_8PH_dif_proporciones.pdf](https://github.com/user-attachments/files/24726654/13_8PH_dif_proporciones.pdf)  
+[Test de Hip. Resumen.pdf](https://github.com/user-attachments/files/24726653/Test.de.Hip.Resumen.pdf)  
+
+
 ## UNIDAD 6  

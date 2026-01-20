@@ -91,7 +91,48 @@ https://www.geogebra.org/m/qjWuUAgs#material/ugsN4ERy
 
 ## UNIDAD 3  
 
+[Distribución Poisson.pdf](https://github.com/user-attachments/files/24726508/Distribucion.Poisson.pdf)  
+[Ejemplo de poisson.pdf](https://github.com/user-attachments/files/24726506/Ejemplo.de.poisson.pdf)  
+[V.A_Cont_Esp_.pdf](https://github.com/user-attachments/files/24726504/V.A_Cont_Esp_.pdf)  
+[Distribución uniforme_Fanny.pdf](https://github.com/user-attachments/files/24726503/Distribucion.uniforme_Fanny.pdf)  
+[DISTRIBUCIÓN EXPONENCIAL_Fanny.pdf](https://github.com/user-attachments/files/24726500/DISTRIBUCION.EXPONENCIAL_Fanny.pdf)  
+[DISTRIBUCIÓN GAMMA_Fanny.pdf](https://github.com/user-attachments/files/24726499/DISTRIBUCION.GAMMA_Fanny.pdf)  
+[DISTRIBUCIÓN NORMAL.pdf](https://github.com/user-attachments/files/24726498/DISTRIBUCION.NORMAL.pdf)  
+[Distribucion normal_Esp-Var_Fanny.pdf](https://github.com/user-attachments/files/24726497/Distribucion.normal_Esp-Var_Fanny.pdf)  
+[Uso de la tabla_Normal-Fanny.pdf](https://github.com/user-attachments/files/24726495/Uso.de.la.tabla_Normal-Fanny.pdf)  
+[VA especiales.pdf](https://github.com/user-attachments/files/24726493/VA.especiales.pdf)  
+[V.A_Discretas_Especiales_.pdf](https://github.com/user-attachments/files/24726492/V.A_Discretas_Especiales_.pdf)  
+[Distribución hipergeométrica.pdf](https://github.com/user-attachments/files/24726491/Distribucion.hipergeometrica.pdf)  
+[Bernoulli y Binomial.pdf](https://github.com/user-attachments/files/24726490/Bernoulli.y.Binomial.pdf)  
+[Uso de la tabla_Binomial.pdf](https://github.com/user-attachments/files/24726489/Uso.de.la.tabla_Binomial.pdf)  
+[Uso de la app_Binomial.pdf](https://github.com/user-attachments/files/24726487/Uso.de.la.app_Binomial.pdf)  
+[Ejemplo de binomial.pdf](https://github.com/user-attachments/files/24726484/Ejemplo.de.binomial.pdf)  
+
+
 ## UNIDAD 4  
+
+[Est Descrip inf.pdf](https://github.com/user-attachments/files/24726625/Est.Descrip.inf.pdf)  
+[CÁLCULO DE LA MEDIANA PARA DATOS AGRUPADOS.pdf](https://github.com/user-attachments/files/24726623/CALCULO.DE.LA.MEDIANA.PARA.DATOS.AGRUPADOS.pdf)  
+[VARIANZA y DESVÍO MUESTRALES.pdf](https://github.com/user-attachments/files/24726622/VARIANZA.y.DESVIO.MUESTRALES.pdf)  
+[Clase7_descr_Estpuntual__.pdf](https://github.com/user-attachments/files/24726609/Clase7_descr_Estpuntual__.pdf)  
+[Ley de los grandes números.pdf](https://github.com/user-attachments/files/24726608/Ley.de.los.grandes.numeros.pdf)  
+[MA y Estadístico.pdf](https://github.com/user-attachments/files/24726606/MA.y.Estadistico.pdf)  
+[Dist de los estadísticos.pdf](https://github.com/user-attachments/files/24726601/Dist.de.los.estadisticos.pdf)  
+[ESTIMACIÓN PUNTUAL_ECM.pdf](https://github.com/user-attachments/files/24726599/ESTIMACION.PUNTUAL_ECM.pdf)  
+[Dist de los estadísticos_resumen.pdf](https://github.com/user-attachments/files/24726597/Dist.de.los.estadisticos_resumen.pdf)  
+[PROPIEDADES DE LOS ESTIMADORES.pdf](https://github.com/user-attachments/files/24726596/PROPIEDADES.DE.LOS.ESTIMADORES.pdf)  
+[ESTIMADORES IMPORTANTES.pdf](https://github.com/user-attachments/files/24726595/ESTIMADORES.IMPORTANTES.pdf)  
+[Métodos de los momentos.pdf](https://github.com/user-attachments/files/24726594/Metodos.de.los.momentos.pdf)  
+[MMV.pdf](https://github.com/user-attachments/files/24726593/MMV.pdf)  
+[Clase8_IC_v3.pdf](https://github.com/user-attachments/files/24726585/Clase8_IC_v3.pdf)  
+[Clase8_IC_v3 (1).pdf](https://github.com/user-attachments/files/24726582/Clase8_IC_v3.1.pdf)  
+[intervalo de confianza para la media_.pdf](https://github.com/user-attachments/files/24726581/intervalo.de.confianza.para.la.media_.pdf)  
+[intervalo de confianza para la varianza.pdf](https://github.com/user-attachments/files/24726580/intervalo.de.confianza.para.la.varianza.pdf)  
+[intervalo de confianza para la proporción_.pdf](https://github.com/user-attachments/files/24726579/intervalo.de.confianza.para.la.proporcion_.pdf)  
+[intervalo de confianza para dos poblaciones_.pdf](https://github.com/user-attachments/files/24726578/intervalo.de.confianza.para.dos.poblaciones_.pdf)  
+[Resumen Intervalos de Confianza.docx](https://github.com/user-attachments/files/24726576/Resumen.Intervalos.de.Confianza.docx)   
+[Resumen Intervalos de Confianza.pdf](https://github.com/user-attachments/files/24726575/Resumen.Intervalos.de.Confianza.pdf)  
+
 
 ## UNIDAD 5  
 

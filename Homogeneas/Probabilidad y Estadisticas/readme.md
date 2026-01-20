@@ -75,6 +75,20 @@ https://www.geogebra.org/m/qjWuUAgs#material/ugsN4ERy
 
 ## UNIDAD 2  
 
+[Resumen1)_Variables Aleatorias.pdf](https://github.com/user-attachments/files/24726330/Resumen1._Variables.Aleatorias.pdf)  
+[clase3_va_discreta_.pdf](https://github.com/user-attachments/files/24726329/clase3_va_discreta_.pdf)  
+[Función de una variable aleatoria.pdf](https://github.com/user-attachments/files/24726328/Funcion.de.una.variable.aleatoria.pdf)  
+[Propiedades_Esperanza_discreta.pdf](https://github.com/user-attachments/files/24726327/Propiedades_Esperanza_discreta.pdf)  
+[Varianza.pdf](https://github.com/user-attachments/files/24726326/Varianza.pdf)  
+[Resumen Variables aleatorias discretas.pdf](https://github.com/user-attachments/files/24726325/Resumen.Variables.aleatorias.discretas.pdf)  
+[Covarianza.pdf](https://github.com/user-attachments/files/24726324/Covarianza.pdf)  
+[clase4_va_contnva.pdf](https://github.com/user-attachments/files/24726309/clase4_va_contnva.pdf)  
+[Propiedades de f y F VA continua.pdf](https://github.com/user-attachments/files/24726303/Propiedades.de.f.y.F.VA.continua.pdf)  
+[Esperanza de VA continua.pdf](https://github.com/user-attachments/files/24726290/Esperanza.de.VA.continua.pdf)  
+[Varianza de una VA continua.pdf](https://github.com/user-attachments/files/24726277/Varianza.de.una.VA.continua.pdf)  
+[Resumen Variables aleatorias continuas.pdf](https://github.com/user-attachments/files/24726254/Resumen.Variables.aleatorias.continuas.pdf)  <--- resumen
+
+
 ## UNIDAD 3  
 
 ## UNIDAD 4  

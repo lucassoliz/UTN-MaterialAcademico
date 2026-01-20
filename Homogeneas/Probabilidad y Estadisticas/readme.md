@@ -155,3 +155,12 @@ https://www.geogebra.org/m/qjWuUAgs#material/ugsN4ERy
 
 
 ## UNIDAD 6  
+
+[claseRL.pdf](https://github.com/user-attachments/files/24726722/claseRL.pdf)  
+[1_ introducción_REGRESIÓN LINEAL.pdf](https://github.com/user-attachments/files/24726721/1_.introduccion_REGRESION.LINEAL.pdf)  
+[Recta de regresión pob y muestral.pdf](https://github.com/user-attachments/files/24726720/Recta.de.regresion.pob.y.muestral.pdf)  
+[Prueba de Hipótesis para la pendiente.pdf](https://github.com/user-attachments/files/24726719/Prueba.de.Hipotesis.para.la.pendiente.pdf)  
+[IC_IP.pdf](https://github.com/user-attachments/files/24726718/IC_IP.pdf)   
+[COEFICIENTE DE DETEMINACIÓN.pdf](https://github.com/user-attachments/files/24726717/COEFICIENTE.DE.DETEMINACION.pdf)  
+[Coeficiente de correlación lineal.pdf](https://github.com/user-attachments/files/24726716/Coeficiente.de.correlacion.lineal.pdf)  
+

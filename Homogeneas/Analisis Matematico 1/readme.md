@@ -8,12 +8,15 @@
 >  - **Medir tu nivel:** Úsalo para realizar simulacros cronometrados y evaluar tu preparacion antes del Dia del fianal
 
 
-SOLUCION FINAL: [finalesam1PilarRodriguez.pdf](https://github.com/user-attachments/files/24724801/finalesam1PilarRodriguez.pdf)
+SOLUCION FINAL(*Puede contener errores leves*): [finalesam1PilarRodriguez.pdf](https://github.com/user-attachments/files/24724801/finalesam1PilarRodriguez.pdf)
 
 
 CANAL YOUTUBE RESOLVIENDO FINALES:   
-- https://youtube.com/@leonelchavez2532?si=Kceg-0s7VLcZ3NWK  
+- https://youtube.com/@leonelchavez2532?si=Kceg-0s7VLcZ3NWK  <-- ***Recomendado,  explicación paso por paso***
 -  *Insertar canal*
+
+>[!NOTE]
+>Si tenes más material para aportar (aunque sea de cualquier materia), me pueden contactar y lo agrego sin problema (o los agrego como colaborador del repositorio incluso)
 
 ## Material de estudio  
 - 
@@ -60,5 +63,7 @@ SEGUNDO PARCIAL
 - [SEGUNDO PARCIALc resuelto (1).pdf](https://github.com/user-attachments/files/24724743/SEGUNDO.PARCIALc.resuelto.1.pdf)  
 
 
+# Profes Particulares 
+*Próximamente por agregar*
 
 

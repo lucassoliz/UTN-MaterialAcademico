@@ -4,6 +4,8 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 ## Primer cuatrimestre
 Full teoria del primer cuatrimestre (al igual que teoria tomados en finales)  
 https://docs.google.com/document/d/1u7fDHeFd_RgU6sa68mMcmzqZwGSzntlEH1A43aXMhVw/edit?usp=sharing  
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+
 
 ## Segundo cuatrimestre
 Full teoria del segundo cuatrimestre (al igual que teoria tomados en finales)  
@@ -12,6 +14,8 @@ Full teoria del segundo cuatrimestre (al igual que teoria tomados en finales)
 
 - TABLA DE DECISION | CHOICE: https://docs.google.com/document/d/14UFWHzhYsctS7XHbSR0js_YBCp0PfdYrkzqtO4VTQvA/edit?usp=sharing
 - UML: https://docs.google.com/document/d/17_7lXhymQcXuTqU0A9Eya2xVsYw-Mh7ZrDPYVTtf0JY/edit?usp=sharing
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+
 
 # Practica Resolución 
 Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
@@ -24,12 +28,24 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 - PRACTICA INFORME DE RECONOCIMIENTO: https://docs.google.com/document/d/1EsXAcoY2E8w050Zfv1FYnco5-txb3EAEolI9sYtFdqQ/edit?usp=sharing
 - PRACTICA PROCESO DE NEGOCIO: https://docs.google.com/document/d/1J9QomP2AOb1Z29NhNLTsu4Ee9aU2_72LGIEV8coBiCM/edit?usp=sharing
 
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+
 
 ## Segundo cuatrimestre DC - TE - DFD - DER - TD
 
 - PRACTICA ENUNCIADO: https://docs.google.com/document/d/1y3veubIDA6x8rRXZIuiFwi18vbXtT_XqngzQ5EkqfMQ/edit?usp=sharing
 - PRACTICA SOLUCION: https://docs.google.com/document/d/1LN2CBf9o0Xt_9SfUvbmmtaJte_H4nQ486Lz9y_CQzes/edit?usp=sharing
 - PRACTICA TABLA DE DECISION: https://docs.google.com/document/d/1P92_gRW58C18w6dOyePXeUK4f-a3f4lxNMiucqy1JDM/edit?usp=sharing
+
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+
+## Power Point RESUMEN
+
+**Teoria Primer Cuatrimeste:**
+- [Análisis de Sistemas de Información.pdf](https://github.com/user-attachments/files/25083853/Analisis.de.Sistemas.de.Informacion.pdf)
+- [Análisis de Sistemas de Información (1).pdf](https://github.com/user-attachments/files/25083857/Analisis.de.Sistemas.de.Informacion.1.pdf)
+
+
 
 
 

@@ -60,6 +60,7 @@ border-radius:5px;
 display:none;
 }
 
+
 #repoBtn{
 margin-top:15px;
 padding:10px;
@@ -69,12 +70,13 @@ color:black;
 cursor:pointer;
 border-radius:8px;
 font-size:15px;
-display:none;  
+display:none;   /* arranca oculto */
 }
 
 #repoBtn:hover{
 background:#ddd;
 }
+
 
 .correct{background:#2ecc71;}
 .wrong{background:#e74c3c;}
@@ -96,8 +98,8 @@ background:#ddd;
 
 <div id="yellow"></div>
 
-  <button id="repoBtn" onclick="irRepo()">
-   Llevar al repositorio
+<button id="repoBtn" onclick="irRepo()">
+  Llevar al repositorio
 </button>
 
 
@@ -271,7 +273,6 @@ c:false,
 j:"FALSO. Es justamente al reves. El pilar de las metodologias agiles es que cada incremento o entrega parcial debe SER FUNCIONAL y APORTAR VALOR real al usuario final"
 },
 
-
 {
 type:"vf",
 q:"Con el GANTT puedo determinar . . . la duración del proyecto, ver que tareas se realizan de forma paralela y calendarizar el proyecto",
@@ -362,7 +363,6 @@ q:"La detección de requerimientos NO FUNCIONALES puede no realizarse en las eta
 c:true,
 j:"VERDAD, puede surgir a medida que se comprende mejor el contexto del sistema y las expectativas deln usuario. No siempre se realiza de manera exhaustiva en las etapas iniciales de la metodología de sistemas"
 },
-
 
 {
 type:"opciones",
@@ -497,6 +497,7 @@ c:false,
 j:"FALSO	el escenario describe el flujo de pasos (normal y alternativo) que sigue un CU"
 },
 
+
 {
 type:"opciones",
 q:"En CU un escenario es...",
@@ -569,7 +570,6 @@ c:false,
 j:"FALSO	Es CONFIRMATION, por la regla de las 3C: CARD, CONVERSATION, CONFIRMATION"
 },
 
-
 {
 type:"opciones",
 q:"Los procesos de negocio OPERATIVOS...",
@@ -612,6 +612,7 @@ c:false,
 j:"FALSO 	Ya que gestión por procesos (funcional) es horizontal a la estructura de la empresa, con lo que no depende de la misma"
 },
 
+
 {
 type:"opciones",
 q:"¿Qué efecto puede tener los requerimientos ambiguos de un proyecto?",
@@ -648,6 +649,7 @@ a:[
 c:0
 },
 
+
 {
 type:"vf",
 q:"Si una tarea no crítica se retrasa, siempre se vuelve crítica",
@@ -661,6 +663,8 @@ q:"La gestión de configuración garantiza que el producto no tenga fallas",
 c:false,
 j:"FALSO	La gestión de configuración es un conjunto de actividades que garantiza la validez de cada etapa del desarrollo de SW, su finalidad es que las personas no hagan dos veces el mismo trabajo y dejar un registro de loas versiones de SW"
 },
+
+// ===== PARCIAL 2025 SAAVEDRA =====
 
 {
 type:"opciones",
@@ -697,6 +701,7 @@ a:[
 ],
 c:0
 },
+
 
 {
 type:"opciones",
@@ -811,7 +816,6 @@ a:[
 ],
 c:0
 },
-
 
 {
 type:"vf",
@@ -940,7 +944,7 @@ a:[
 "Se documenta con un informe",
 "N.a"
 ],
-c:[1,2]   // ← DOBLE RESPUESTA CORRECTA
+c:[1,2]   
 },
 
 {
@@ -1828,7 +1832,6 @@ q:"La mejora continua combate la entropía",
 c:true
 },
 
-
 {
 type:"opciones",
 q:"En el enfoque de gestión ________ el foco está en las áreas de la organización.",
@@ -1898,11 +1901,10 @@ c:2
 let current;
 
 function load(){
+document.getElementById("repoBtn").style.display="none";
 
 document.getElementById("yellow").style.display="none";
 document.getElementById("result").style.display="none";
-  document.getElementById("repoBtn").style.display="none";
-
 
 current = questions[Math.floor(Math.random()*questions.length)];
 
@@ -1984,7 +1986,6 @@ result.innerHTML="❌ INCORRECTO<br>Respuesta correcta:<br>"+current.a[current.c
 }
 
 function showJust(){
-document.getElementById("repoBtn").style.display="block";
 
 document.getElementById("yellow").style.display="block";
 
@@ -1993,6 +1994,9 @@ document.getElementById("yellow").innerHTML=
 (current.type==="vf" ? (current.c?"VERDADERO":"FALSO") : current.a[current.c])+
 
 "<br><br>"+current.j;
+
+document.getElementById("repoBtn").style.display="block";
+
 
 }
 
@@ -2004,8 +2008,8 @@ window.open(
 "_blank"
 );
 }
-  
-  
+
+
 </script>
 
 </body>

@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Quiz Análisis de Sistemas</title>
+
+<style>
+body{
+font-family:Arial;
+background:#111;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+#card{
+background:#222;
+padding:30px;
+border-radius:10px;
+width:600px;
+text-align:center;
+box-shadow:0 0 15px black;
+}
+
+button{
+display:block;
+width:100%;
+margin:10px 0;
+padding:10px;
+background:#333;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:5px;
+}
+
+button:hover{
+background:#555;
+}
+
+#result{
+margin-top:15px;
+font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="card">
+<h2 id="question"></h2>
+<div id="answers"></div>
+<div id="result"></div>
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"La diferencia entre margen total y margen libre es:",
+a:[
+"El margen libre afecta al proyecto",
+"El margen total indica cuánto puede demorarse una actividad sin retrasar la fecha fin del proyecto, y el margen libre sin afectar la siguiente tarea",
+"Ambos significan lo mismo"
+],
+c:1
+},
+
+{
+q:"Un flujo de proceso ITERATIVO:",
+a:[
+"No repite actividades",
+"Repite una o más actividades antes de pasar a la siguiente",
+"Es solo del modelo cascada"
+],
+c:1
+},
+
+{
+q:"Una entrevista estructura Pirámide:",
+a:[
+"Empieza abierta y termina cerrada",
+"Empieza cerrada y termina abierta",
+"Solo usa cerradas"
+],
+c:1
+},
+
+{
+q:"En CU los escenarios están representados solo por flujo normal",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"La adaptabilidad es la capacidad del sistema de ajustarse al contexto",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Los procesos OPERATIVOS generan valor directo al cliente",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"En CU un escenario es:",
+a:[
+"Un actor",
+"Una instancia concreta del CU",
+"Un error del sistema"
+],
+c:1
+},
+
+{
+q:"SCRUM divide el trabajo en periodos breves llamados:",
+a:["Releases","Sprints","Fases"],
+c:1
+},
+
+{
+q:"La jerarquía sistémica depende del organigrama",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"Los requerimientos ambiguos generan:",
+a:[
+"Claridad",
+"Confusión, retrabajo y retrasos",
+"Optimización"
+],
+c:1
+},
+
+{
+q:"Las historias de usuario solo sirven durante el desarrollo",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"Las encuestas son técnicas cualitativas profundas",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"Un requerimiento NO funcional puede ser opcional",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"El modelo Espiral incorpora análisis de riesgo",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"GANTT permite:",
+a:[
+"Definir actores",
+"Determinar duración del proyecto y tareas paralelas",
+"Detectar requerimientos"
+],
+c:1
+},
+
+{
+q:"En factibilidad el analista elige la solución final sin el cliente",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"El camino crítico está formado por tareas con margen total = 0",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Una clínica: cantidad de servicios atendidos es información",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"El PERT es probabilístico y CPM determinístico",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"KANBAN sirve para visualizar:",
+a:[
+"Arquitectura",
+"Flujo de trabajo",
+"Base de datos"
+],
+c:1
+},
+
+{
+q:"Las tareas ficticias tienen duración cero",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"El margen total afecta duración del proyecto",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Un CU tiene un único escenario",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"El Sprint Planning sirve para:",
+a:[
+"Entregar producto",
+"Planificar el sprint",
+"Auditar"
+],
+c:1
+},
+
+{
+q:"La entropía aparece cuando el sistema queda obsoleto tecnológicamente",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Los procesos estratégicos proveen recursos",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"Las preguntas abiertas brindan información:",
+a:["Cuantitativa","Cualitativa"],
+c:1
+},
+
+{
+q:"Si una tarea no es crítica nunca podrá ser crítica",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"Los requerimientos NO funcionales pueden omitirse",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"La relación INCLUDE se establece entre actores",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"La sinergia implica que el resultado conjunto supera la suma individual",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"El macroproceso representa:",
+a:[
+"Detalle técnico",
+"Visión general del sistema",
+"Base de datos"
+],
+c:1
+},
+
+{
+q:"El reconocimiento tiene como objetivo proponer soluciones",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"El mandato define:",
+a:[
+"Cómo programar",
+"Alcance y límites del proyecto",
+"Lenguaje del sistema"
+],
+c:1
+},
+
+{
+q:"Product Backlog contiene:",
+a:[
+"Solo tareas actuales",
+"Todo el producto",
+"Errores"
+],
+c:1
+},
+
+{
+q:"Sprint Backlog contiene:",
+a:[
+"Historias del sprint",
+"Todo el sistema",
+"Requerimientos futuros"
+],
+c:0
+},
+
+{
+q:"Los stakeholders son:",
+a:[
+"Solo programadores",
+"Personas interesadas en el sistema",
+"Usuarios técnicos"
+],
+c:1
+},
+
+{
+q:"La calidad del software depende solo del código",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"El paradigma estructurado usa CU",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"El diagrama de contexto muestra:",
+a:[
+"Clases",
+"Relación del sistema con su entorno",
+"Algoritmos"
+],
+c:1
+},
+
+{
+q:"Las métricas sirven para:",
+a:[
+"Decorar informes",
+"Medir desempeño",
+"Eliminar errores"
+],
+c:1
+},
+
+{
+q:"Daily Scrum es una reunión:",
+a:[
+"Mensual",
+"Diaria corta",
+"De auditoría"
+],
+c:1
+},
+
+{
+q:"El Scrum Master es el jefe del equipo",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"El Product Owner prioriza el backlog",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"PERT permite calcular tiempos esperados",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"El margen libre puede afectar tareas posteriores",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Un requerimiento debe ser medible",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"La factibilidad técnica evalúa:",
+a:[
+"Costos",
+"Disponibilidad tecnológica",
+"Usuarios"
+],
+c:1
+},
+
+{
+q:"El relevamiento recopila información del negocio",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Un actor siempre es una persona",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"La relación EXTEND indica comportamiento opcional",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Un sistema abierto interactúa con el entorno",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"La retroalimentación permite correcciones",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"El modelo cascada permite volver etapas fácilmente",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"Las historias de usuario describen funcionalidad desde perspectiva del usuario",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"El camino crítico determina duración mínima del proyecto",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Las tareas paralelas reducen duración total",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"El backlog se congela al iniciar el proyecto",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"La entropía en un sistema se produce por:",
+a:[
+"Errores humanos solamente",
+"Desgaste, obsolescencia y falta de adaptación",
+"Renuncia de empleados"
+],
+c:1
+},
+
+{
+q:"Un sistema cerrado no intercambia información con el entorno",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Los inputs son:",
+a:[
+"Resultados",
+"Entradas al sistema",
+"Errores"
+],
+c:1
+},
+
+{
+q:"Los outputs representan:",
+a:[
+"Procesos",
+"Salidas del sistema",
+"Datos internos"
+],
+c:1
+},
+
+{
+q:"La retroalimentación permite ajustar el sistema",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Eficacia significa lograr objetivos",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Eficiencia significa usar menos recursos",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Los procesos primarios generan valor directo",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Los procesos secundarios apoyan a los primarios",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Un SI tiene como objetivo:",
+a:[
+"Guardar datos",
+"Apoyar toma de decisiones",
+"Eliminar personal"
+],
+c:1
+},
+
+{
+q:"La frontera del sistema define sus límites",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"El entorno influye en el comportamiento del sistema",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Un subsistema forma parte de un sistema mayor",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"La homeostasis mantiene equilibrio interno",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"La sinergia es negativa",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"Un SI solo sirve para registrar información",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"La información reduce incertidumbre",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"La entropía puede ser combatida mediante mantenimiento y actualización",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Los sistemas sociales incluyen personas",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"El feedback puede ser positivo o negativo",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Un proceso transforma inputs en outputs",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Un SI eficaz es necesariamente eficiente",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"Los indicadores permiten medir desempeño",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"La adaptabilidad permite supervivencia del sistema",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"Los objetivos del sistema deben ser claros",
+a:["Verdadero","Falso"],
+c:0
+},
+
+{
+q:"La entropía siempre es externa",
+a:["Verdadero","Falso"],
+c:1
+},
+
+{
+q:"La mejora continua combate la entropía",
+a:["Verdadero","Falso"],
+c:0
+},
+
+// --- PÁGINA 2 ---
+  {
+    q: "En el enfoque de gestión ________ el foco está en las áreas de la organización.",
+    a: ["FUNCIONAL", "POR PROCESOS", "SISTÉMICO"],
+    c: 0,
+    type: "completar"
+  },
+  {
+    q: "En el ciclo de vida ________ la prioridad es satisfacer al cliente mediante la entrega temprana continua de SW.",
+    a: ["CASCADA", "ITERATIVO INCREMENTAL ÁGIL", "ESPIRAL"],
+    c: 1,
+    type: "completar"
+  },
+  {
+    q: "En los CU, un actor es aquel que asume el rol de interactuar directamente con el sistema.",
+    a: ["Verdadero", "Falso"],
+    c: 0,
+    j: "Verdadero. El actor representa un rol que interactúa con las funcionalidades del sistema[cite: 11]."
+  },
+  {
+    q: "El margen libre es más estricto que el margen total porque impacta en todo el proyecto.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. El margen libre es MENOS estricto porque no impacta sobre todo el proyecto, solo indica cuánto puede retrasarse una tarea sin afectar a la siguiente[cite: 13, 14]."
+  },
+  {
+    q: "La entropía en un SI se detecta cuando el mismo se vuelve obsoleto tecnológicamente.",
+    a: ["Verdadero", "Falso"],
+    c: 0,
+    j: "Verdadero. La falta de adaptación al contexto y la obsolescencia reflejan un aumento de entropía y pérdida de eficiencia[cite: 16, 17]."
+  },
+  {
+    q: "Los requerimientos funcionales los define el usuario y los NO funcionales el analista.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Ambos deben ser definidos en conjunto entre el usuario y el analista[cite: 19, 21]."
+  },
+  {
+    q: "Los procesos estratégicos son responsables de proveer recursos como personas y maquinaria.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Los procesos estratégicos definen estrategias y objetivos. Proveer recursos corresponde a los procesos de Apoyo[cite: 22, 23, 24]."
+  },
+
+  // --- PÁGINA 3 ---
+  {
+    q: "El diagrama de PERT tiene la siguiente característica:",
+    a: [
+      "No puede tener más de un camino crítico",
+      "Muestra claramente la superposición de tareas",
+      "La estimación de tiempo es probabilística",
+      "Es determinista como el GANTT"
+    ],
+    c: 2,
+    type: "opciones" // 
+  },
+  {
+    q: "En la etapa de RECONOCIMIENTO, las entrevistas se realizan principalmente a:",
+    a: ["Nivel operativo", "Sponsor", "Niveles superiores / alta gerencia"],
+    c: 2,
+    type: "opciones" // 
+  },
+  {
+    q: "Los informes de avances carecen de utilidad cuando el proyecto se encuentra en tiempo.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Son útiles siempre para monitorear, anticipar desvíos y mantener informados a los stakeholders[cite: 55, 57]."
+  },
+  {
+    q: "Los Casos de Uso solo se aconsejan utilizar cuando el paradigma usado es estructurado.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Se pueden usar tanto en el paradigma estructurado como en POO[cite: 58, 59]."
+  },
+
+  // --- PÁGINA 4 ---
+  {
+    q: "En una fábrica, la cantidad de materia prima es un dato y la receta es información.",
+    a: ["Verdadero", "Falso"],
+    c: 0,
+    j: "Verdadero. El dato es el hecho crudo (500g harina) y la información surge de contextualizarlo (receta)[cite: 60, 62]."
+  },
+  {
+    q: "El ciclo de vida en Espiral no contempla el cumplimiento de requerimientos de forma iterativa.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. El modelo Espiral se basa justamente en la iteración continua y refinamiento en cada vuelta[cite: 63, 64]."
+  },
+  {
+    q: "La Gestión de Calidad se da únicamente al final, luego del desarrollo del producto.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Debe estar presente durante todo el ciclo de vida del sistema[cite: 66, 67]."
+  },
+  {
+    q: "El desgaste que el sistema presenta por el transcurso del tiempo se denomina:",
+    a: ["Sinergia", "Entropía", "Mantenibilidad"],
+    c: 1,
+    type: "opciones" // [cite: 75, 77]
+  },
+
+  // --- PÁGINA 5 ---
+  {
+    q: "En organizaciones pequeñas se puede pasar directamente al relevamiento sin hacer reconocimiento.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. El reconocimiento es vital para el primer contacto con el SI, el objetivo del mandato y definir el alcance[cite: 87, 88]."
+  },
+  {
+    q: "La relación INCLUDE se establece entre actores y su ejecución es obligatoria.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Si bien es obligatoria, se establece entre Casos de Uso, no entre actores[cite: 96, 97, 98]."
+  },
+  {
+    q: "En un diagrama de GANTT, si una tarea comienza tras otra, se asegura que depende de la primera.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. El GANTT muestra calendarización; las dependencias reales se ven en el CPM[cite: 104, 105]."
+  },
+
+  // --- PÁGINA 6 ---
+  {
+    q: "La acción cooperativa de subsistemas que genera un producto mayor a la suma individual es:",
+    a: ["Homeostasis", "Entropía", "Sinergia"],
+    c: 2,
+    type: "opciones" // [cite: 111, 114]
+  },
+  {
+    q: "En el relevamiento es mejor usar solo preguntas cerradas para que el usuario no se explaye.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Las preguntas abiertas son fundamentales para descubrir detalles y contextos que el analista no había considerado[cite: 132, 133, 134]."
+  },
+  {
+    q: "En un sistema de inscripción, el tiempo de generación del comprobante es un requerimiento funcional.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. El tiempo de respuesta y el tipo de letra son requerimientos NO funcionales[cite: 139, 141]."
+  },
+
+// --- PÁGINA 7 ---
+  {
+    q: "La inexactitud en la especificación de requerimientos causa problemas graves como retrabajo, costos extra y demoras.",
+    a: ["Verdadero", "Falso"],
+    c: 0,
+    j: "Verdadero. Una mala especificación puede provocar errores en diseño, codificación y pruebas, llevando incluso al fracaso del proyecto[cite: 153]."
+  },
+  {
+    q: "El periodo de demora posible para las tareas que llegan o salen de cada nodo se denomina:",
+    a: ["Camino crítico", "Fecha temprana y tardía", "Intervalo de flotamiento"],
+    c: 2,
+    type: "opciones",
+    j: "Es el intervalo de flotamiento ($IF = Fta - Fte$), que indica la demora admitida sin afectar la fecha de finalización[cite: 158, 159]."
+  },
+  {
+    q: "Según la norma ISO 9001, una característica de los procesos de APOYO es:",
+    a: ["Generar valor directo al cliente", "Ofrecer soporte a los procesos operativos", "Estar orientados exclusivamente a la alta gerencia"],
+    c: 1,
+    type: "opciones",
+    j: "Los procesos de apoyo, como RRHH o Contabilidad, no generan valor directo pero son indispensables para que los operativos funcionen[cite: 165]."
+  },
+
+  // --- PÁGINA 8 ---
+  {
+    q: "La adaptación al contexto en un sistema corresponde a la homeostasis, no a la entropía.",
+    a: ["Verdadero", "Falso"],
+    c: 0,
+    j: "Verdadero. La entropía se asocia al desorden o pérdida de energía; la homeostasis es la respuesta y ajuste al entorno[cite: 171, 172]."
+  },
+  {
+    q: "En un Caso de Uso, la relación ________ es obligatoria y forma parte del flujo principal, mientras que la relación ________ ocurre solo en condiciones opcionales.",
+    a: ["EXTEND / INCLUDE", "INCLUDE / EXTEND", "GENERALIZACIÓN / INCLUDE"],
+    c: 1,
+    type: "completar",
+    j: "Include es obligatorio; Extend ocurre solo bajo condiciones específicas del flujo alternativo[cite: 186]."
+  },
+  {
+    q: "En la conclusión del Informe de Reconocimiento se debe plantear la solución definitiva.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. En el Reconocimiento no se plantean soluciones; eso ocurre recién en la etapa de DIAGNÓSTICO[cite: 188, 190]."
+  },
+
+  // --- PÁGINA 9 ---
+  {
+    q: "La diferencia entre PERT y CPM radica en que el PERT es ________ porque no conoce la duración exacta de las tareas.",
+    a: ["DETERMINÍSTICO", "PROBABILÍSTICO", "SECUENCIAL"],
+    c: 1,
+    type: "completar",
+    j: "PERT es probabilístico (tiempos estimados) y CPM es determinístico (tiempos conocidos)[cite: 215]."
+  },
+  {
+    q: "Un actor en un Caso de Uso solo puede ser una persona.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Un actor puede ser una persona, un sistema externo o un dispositivo[cite: 221]."
+  },
+  {
+    q: "La etapa de ________ establece el 'para qué' la organización solicita el sistema.",
+    a: ["OBJETIVO DEL MANDATO", "OBJETIVO DE LA ORGANIZACIÓN", "RELEVAMIENTO"],
+    c: 0,
+    type: "completar",
+    j: "El objetivo del mandato define la razón específica de la solicitud del cliente[cite: 319]."
+  },
+
+  // --- PÁGINA 10 ---
+  {
+    q: "Una entrevista de tipo ________ empieza con preguntas cerradas y termina con abiertas.",
+    a: ["EMBUDO", "PIRÁMIDE", "DIAMANTE"],
+    c: 1,
+    type: "completar",
+    j: "La estructura de Pirámide va de lo específico (cerrado) a lo general (abierto)[cite: 231]."
+  },
+  {
+    q: "En un Caso de Uso, los escenarios están representados tanto por el flujo normal como por el alternativo.",
+    a: ["Verdadero", "Falso"],
+    c: 0,
+    j: "Verdadero. Un escenario es un camino concreto que puede incluir pasos principales y excepciones[cite: 234, 243]."
+  },
+  {
+    q: "La jerarquía sistémica se define por el organigrama de la empresa.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. La jerarquía sistémica se refiere a la relación entre sistemas y subsistemas, no a niveles jerárquicos de personas[cite: 247]."
+  },
+
+  // --- PÁGINA 11 ---
+  {
+    q: "En Historias de Usuario (HU), la lista de condiciones para dar por terminada la historia se denomina:",
+    a: ["Card", "Conversation", "Confirmation"],
+    c: 2,
+    type: "opciones",
+    j: "Sigue la regla de las 3C: Card, Conversation y Confirmation[cite: 302]."
+  },
+  {
+    q: "SCRUM es el marco de trabajo que divide el trabajo en periodos breves llamados Sprints, que suelen durar:",
+    a: ["6 meses", "2 a 3 semanas", "1 día"],
+    c: 1,
+    type: "opciones",
+    j: "Los Sprints son bloques temporales cortos para facilitar la entrega continua[cite: 269]."
+  },
+  {
+    q: "El evento donde se prioriza y planifica el trabajo del Sprint se llama:",
+    a: ["Review", "Retrospective", "Sprint Planning"],
+    c: 2,
+    type: "opciones",
+    j: "En el Sprint Planning se define qué se hará y cómo se logrará el objetivo del sprint[cite: 275]."
+  },
+  {
+    q: "El margen total afecta directamente a la duración del proyecto.",
+    a: ["Verdadero", "Falso"],
+    c: 0,
+    j: "Verdadero. Si una tarea agota su margen total, cualquier retraso adicional posterga la fecha fin del proyecto[cite: 280]."
+  },
+
+// --- PÁGINA 12 ---
+  {
+    q: "En agilidad, el artefacto que permite visualizar el flujo de trabajo en curso (Work in Progress) es:",
+    a: ["Product Backlog", "KANBAN", "Sprint Backlog"],
+    c: 1,
+    type: "opciones",
+    j: "Kanban es la herramienta visual para gestionar el flujo de trabajo y limitar el trabajo en curso[cite: 286]."
+  },
+  {
+    q: "Un ________ abarca un conjunto de procesos relacionados, mientras que un ________ es una secuencia específica de actividades.",
+    a: ["PROCESO / MACROPROCESO", "MACROPROCESO / PROCESO", "SISTEMA / SUBSISTEMA"],
+    c: 1,
+    type: "completar",
+    j: "El macroproceso tiene un objetivo global y el proceso actividades concretas para un resultado específico[cite: 289]."
+  },
+  {
+    q: "En un Banco, la cantidad de clientes con caja de ahorro es un dato.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Es información, ya que es un dato procesado y organizado con significado para el negocio[cite: 292, 293]."
+  },
+
+  // --- PÁGINA 13 ---
+  {
+    q: "Que un sistema opere con 100,000 usuarios concurrentes es un requerimiento no funcional de seguridad.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Es un requerimiento de rendimiento o capacidad; la seguridad se refiere a protección y acceso[cite: 298, 299]."
+  },
+  {
+    q: "El ________ contiene todas las funcionalidades y necesidades del producto, mientras que el ________ contiene solo lo que se hará en el sprint actual.",
+    a: ["SPRINT BACKLOG / PRODUCT BACKLOG", "PRODUCT BACKLOG / SPRINT BACKLOG", "RELEVAMIENTO / DISEÑO"],
+    c: 1,
+    type: "completar",
+    j: "El Product Backlog es el listado general; el Sprint Backlog es el subconjunto para las 2-3 semanas de trabajo[cite: 315, 316, 317]."
+  },
+
+  // --- PÁGINA 14 ---
+  {
+    q: "Las encuestas son la técnica ideal para obtener una comprensión profunda y cualitativa de un proceso.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Las encuestas son una técnica pasiva para recolectar información general y generar estadísticas (cuantitativa)[cite: 331, 332]."
+  },
+  {
+    q: "El modelo de ciclo de vida ________ incorpora un análisis de riesgo en cada una de sus iteraciones.",
+    a: ["CASCADA", "ESPIRAL", "PROTOTIPO"],
+    c: 1,
+    type: "completar",
+    j: "El enfoque principal del modelo Espiral es la evaluación y gestión de riesgos en cada ciclo[cite: 335, 336]."
+  },
+
+  // --- PÁGINA 15 ---
+  {
+    q: "Para que un requerimiento esté bien definido debe ser completo, no ambiguo, verificable y ________.",
+    a: ["CORTO", "CONSISTENTE", "BARATO"],
+    c: 1,
+    type: "completar",
+    j: "Un requerimiento debe cumplir con la consistencia además de ser completo, claro y medible[cite: 344]."
+  },
+  {
+    q: "Las tareas ficticias en un PERT sirven para reflejar dependencias y tienen una duración de:",
+    a: ["1 día", "Cero", "Igual a la tarea anterior"],
+    c: 1,
+    type: "opciones",
+    j: "Tienen duración cero y no consumen recursos; solo mantienen la lógica del diagrama[cite: 344]."
+  },
+  {
+    q: "Si una tarea no es crítica al inicio del proyecto, nunca podrá serlo a lo largo del mismo.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Si sufre un atraso mayor a su margen total, se convierte en una tarea crítica[cite: 344]."
+  },
+
+  // --- PÁGINA 16 ---
+  {
+    q: "Las ________ son el estado en que debe estar el sistema antes de iniciar un Caso de Uso.",
+    a: ["POSTCONDICIONES", "PRECONDICIONES", "DISPARADORES"],
+    c: 1,
+    type: "completar",
+    j: "Las precondiciones definen el escenario previo necesario, no lo que inicia el flujo[cite: 363, 364]."
+  },
+  {
+    q: "En una clínica, la edad del paciente es información y su dirección es un dato.",
+    a: ["Verdadero", "Falso"],
+    c: 0,
+    j: "Verdadero. La dirección es un hecho crudo; la edad es información porque suele calcularse a partir de la fecha de nacimiento[cite: 372, 373]."
+  },
+
+  // --- PÁGINA 17 ---
+  {
+    q: "La entropía de un sistema se produce cuando un empleado deja de rendir y baja su productividad.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. La entropía es un desgaste sistémico u obsolescencia tecnológica; el rendimiento humano es un tema operativo o de RRHH[cite: 390, 391, 392]."
+  },
+  {
+    q: "Un Caso de Uso puede ser atómico y no tener obligatoriamente relaciones de Include o Extend.",
+    a: ["Verdadero", "Falso"],
+    c: 0,
+    j: "Verdadero. Estas relaciones son herramientas opcionales de modelado; un CU simple puede no necesitarlas[cite: 384, 385, 386]."
+  },
+  {
+    q: "El margen libre de una tarea puede afectar la fecha de finalización del proyecto.",
+    a: ["Verdadero", "Falso"],
+    c: 1,
+    j: "Falso. Por definición, el margen libre no afecta ni a la tarea siguiente ni al proyecto; solo el Margen Total (MT) afecta la fecha fin[cite: 399, 400, 401, 402]."
+  }
+
+
+
+];
+
+
+let current;
+
+function load(){
+document.getElementById("result").innerHTML="";
+current = questions[Math.floor(Math.random()*questions.length)];
+
+document.getElementById("question").innerText=current.q;
+
+let html="";
+current.a.forEach((x,i)=>{
+html+=`<button onclick="check(${i})">${x}</button>`;
+});
+
+document.getElementById("answers").innerHTML=html;
+}
+
+function check(i){
+if(i===current.c){
+document.getElementById("result").innerHTML="✅ CORRECTO";
+setTimeout(load,800);
+}else{
+document.getElementById("result").innerHTML="❌ FAIL<br>Respuesta correcta: "+current.a[current.c];
+}
+}
+
+load();
+
+</script>
+
+</body>
+</html>

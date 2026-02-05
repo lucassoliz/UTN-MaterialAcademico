@@ -45,6 +45,11 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 - [Análisis de Sistemas de Información.pdf](https://github.com/user-attachments/files/25083853/Analisis.de.Sistemas.de.Informacion.pdf)
 - [Análisis de Sistemas de Información (1).pdf](https://github.com/user-attachments/files/25083857/Analisis.de.Sistemas.de.Informacion.1.pdf)
 
+**Requerimientos Funcional y No funcional**:
+- [Manual Maestro de Requerimientos.pdf](https://github.com/user-attachments/files/25085058/Manual.Maestro.de.Requerimientos.pdf)
+- [Guía_ Requerimientos Funcionales y No Funcionales.pptx](https://github.com/user-attachments/files/25085147/Guia_.Requerimientos.Funcionales.y.No.Funcionales.pptx)
+
+
 
 
 

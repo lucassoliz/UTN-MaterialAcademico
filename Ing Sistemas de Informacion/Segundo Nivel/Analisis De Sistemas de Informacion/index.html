@@ -1987,18 +1987,18 @@ result.innerHTML="❌ INCORRECTO<br>Respuesta correcta:<br>"+current.a[current.c
 
 function showJust(){
 
+document.getElementById("repoBtn").style.display="block";
 document.getElementById("yellow").style.display="block";
 
-document.getElementById("yellow").innerHTML=
+let just = current.j ? current.j : "";
+
+document.getElementById("yellow").innerHTML =
 "<b>Respuesta correcta:</b> "+
 (current.type==="vf" ? (current.c?"VERDADERO":"FALSO") : current.a[current.c])+
-
-"<br><br>"+current.j;
-
-document.getElementById("repoBtn").style.display="block";
-
+"<br><br>"+ just;
 
 }
+
 
 load();
 

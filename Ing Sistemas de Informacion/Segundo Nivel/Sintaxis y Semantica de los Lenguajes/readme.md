@@ -2,6 +2,9 @@
 
 - CURSADA COMPLETA PROF SOLA: https://docs.google.com/document/d/1H_IKHY39KRdvjPAhHRDSyj0VnZ-2j84LsqcZ_hpX4wo/edit?usp=sharing
 
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+
+
 ## TEORIA SSL PDF  
 
 Material teorico durante la cursada anual con Ing. Sola
@@ -55,4 +58,5 @@ Material teorico durante la cursada anual con Ing. Sola
 [SSL_25_002-003_25.pdf](https://github.com/user-attachments/files/24684108/SSL_25_002-003_25.pdf) 
 
 [SSL_25_002-003_26.pdf](https://github.com/user-attachments/files/24684107/SSL_25_002-003_26.pdf)
+
 

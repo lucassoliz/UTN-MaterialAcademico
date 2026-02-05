@@ -18,12 +18,20 @@ CANAL YOUTUBE RESOLVIENDO FINALES:
 >[!NOTE]
 >Si tenes más material para aportar (aunque sea de cualquier materia), me pueden contactar y lo agrego sin problema (o los agrego como colaborador del repositorio incluso)
 
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+
+
 ## Material de estudio  
 - 
+
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+
 
 # CURSADA NORMAL 
 ## Material de estudio teorico
 - [Apuntes TEORIA AM1.pdf](https://github.com/user-attachments/files/24724777/Apuntes.TEORIA.AM1.pdf)
+
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
 
 
 ## Practica + parciales 
@@ -62,8 +70,11 @@ SEGUNDO PARCIAL
 - [Recuperatorio del Segundo Parcial dic 2020 (1).pdf](https://github.com/user-attachments/files/24724744/Recuperatorio.del.Segundo.Parcial.dic.2020.1.pdf)  
 - [SEGUNDO PARCIALc resuelto (1).pdf](https://github.com/user-attachments/files/24724743/SEGUNDO.PARCIALc.resuelto.1.pdf)  
 
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+
 
 # Profes Particulares 
 *Próximamente por agregar*
+
 
 

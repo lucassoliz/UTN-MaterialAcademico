@@ -1951,14 +1951,14 @@ if(current.type==="vf"){
 if(val===current.c){
 
 result.className="correct";
-result.innerHTML="✅ CORRECTO";
+result.innerHTML="CORRECTO";
 
 setTimeout(load,1000);
 
 }else{
 
 result.className="wrong";
-result.innerHTML="❌ INCORRECTO<br>Respuesta correcta: "+(current.c?"VERDADERO":"FALSO");
+result.innerHTML="INCORRECTO<br>Respuesta correcta: "+(current.c?"VERDADERO":"FALSO");
 
 }
 
@@ -1970,14 +1970,14 @@ if(current.type==="opciones"){
 if(val===current.c){
 
 result.className="correct";
-result.innerHTML="✅ CORRECTO";
+result.innerHTML=" CORRECTO";
 
 setTimeout(load,1000);
 
 }else{
 
 result.className="wrong";
-result.innerHTML="❌ INCORRECTO<br>Respuesta correcta:<br>"+current.a[current.c];
+result.innerHTML="INCORRECTO<br>Respuesta correcta:<br>"+current.a[current.c];
 
 }
 

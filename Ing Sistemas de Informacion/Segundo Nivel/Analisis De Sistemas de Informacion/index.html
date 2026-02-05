@@ -60,6 +60,22 @@ border-radius:5px;
 display:none;
 }
 
+#repoBtn{
+margin-top:15px;
+padding:10px;
+border:2px solid white;
+background:white;
+color:black;
+cursor:pointer;
+border-radius:8px;
+font-size:15px;
+display:none;  
+}
+
+#repoBtn:hover{
+background:#ddd;
+}
+
 .correct{background:#2ecc71;}
 .wrong{background:#e74c3c;}
 
@@ -79,6 +95,11 @@ display:none;
 <button id="showJust" onclick="showJust()">Ver justificación correcta</button>
 
 <div id="yellow"></div>
+
+  <button id="repoBtn" onclick="irRepo()">
+   Llevar al repositorio
+</button>
+
 
 <div id="result"></div>
 
@@ -1880,6 +1901,8 @@ function load(){
 
 document.getElementById("yellow").style.display="none";
 document.getElementById("result").style.display="none";
+  document.getElementById("repoBtn").style.display="none";
+
 
 current = questions[Math.floor(Math.random()*questions.length)];
 
@@ -1961,17 +1984,28 @@ result.innerHTML="❌ INCORRECTO<br>Respuesta correcta:<br>"+current.a[current.c
 }
 
 function showJust(){
+document.getElementById("repoBtn").style.display="block";
 
 document.getElementById("yellow").style.display="block";
 
 document.getElementById("yellow").innerHTML=
-"<b>Respuesta correcta:</b> "+(current.c?"VERDADERO":"FALSO")+
+"<b>Respuesta correcta:</b> "+
+(current.type==="vf" ? (current.c?"VERDADERO":"FALSO") : current.a[current.c])+
+
 "<br><br>"+current.j;
 
 }
 
 load();
 
+function irRepo(){
+window.open(
+"https://github.com/lucassoliz/UTN-MaterialAcademico/tree/main/Ing%20Sistemas%20de%20Informacion/Segundo%20Nivel/Analisis%20De%20Sistemas%20de%20Informacion",
+"_blank"
+);
+}
+  
+  
 </script>
 
 </body>

@@ -43,6 +43,13 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 
 ![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
 
+## Sistemas de Información | Ejemplos  
+
+*PROXIMAMENTE DESPUES DEL 12/2/2026*
+
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+
+
 ## Power Point RESUMEN + EXTRAS
 
 **Teoria Primer Cuatrimeste:**
@@ -67,9 +74,16 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 **Metologías de Entrevistas:**
 - [Análisis de Sistemas Relevamiento y Metodologías de Entrevista EJEMPLO REAL.pdf](https://github.com/user-attachments/files/25116706/Analisis.de.Sistemas.Relevamiento.y.Metodologias.de.Entrevista.pdf)
 
+**Requerimientos Funcionales y NO funcionales:**  
+*Ejemplo de Sistema de Gestión de Faaena(Sist. Información):* 
+- [Transcripción de Relevamiento Sistema de Gestión de Faena.pdf](https://github.com/user-attachments/files/25117036/Transcripcion.de.Relevamiento.Sistema.de.Gestion.de.Faena.pdf)
+
+
+
 
 **Gestión de Procesos de Negocio:**
 - [Gestión y Optimización de Procesos de Negocio Caso SegurosVida (1).pdf](https://github.com/user-attachments/files/25116608/Gestion.y.Optimizacion.de.Procesos.de.Negocio.Caso.SegurosVida.1.pdf)
+
 
 
 

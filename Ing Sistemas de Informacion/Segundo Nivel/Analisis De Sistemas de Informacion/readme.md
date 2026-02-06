@@ -60,6 +60,11 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 * [Proyecto Real Modelo de Prototipos GrandReserve.pdf](https://github.com/user-attachments/files/25116287/Proyecto.Real.Modelo.de.Prototipos.GrandReserve.pdf) <-- Lo omportante de usar un prototipado
 * [Proyecto Real Modelo en Cascada Waterfall.pdf](https://github.com/user-attachments/files/25116341/Proyecto.Real.Modelo.en.Cascada.Waterfall.pdf)
 
+**SCRUM:**
+- [Guía Maestra de Scrum y Agilidad (1).pdf](https://github.com/user-attachments/files/25116383/Guia.Maestra.de.Scrum.y.Agilidad.1.pdf)
+- [Scrum en Proyecto Real HealthSync 360.pdf](https://github.com/user-attachments/files/25116485/Scrum.en.Proyecto.Real.HealthSync.360.pdf)
+
+
 
 
 

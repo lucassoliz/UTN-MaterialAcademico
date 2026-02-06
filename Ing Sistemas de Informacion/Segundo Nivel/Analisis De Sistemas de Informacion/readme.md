@@ -64,6 +64,12 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 - [Guía Maestra de Scrum y Agilidad (1).pdf](https://github.com/user-attachments/files/25116383/Guia.Maestra.de.Scrum.y.Agilidad.1.pdf)
 - [Scrum en Proyecto Real HealthSync 360.pdf](https://github.com/user-attachments/files/25116485/Scrum.en.Proyecto.Real.HealthSync.360.pdf)
 
+**Metologías de Entrevistas:**
+- [Análisis de Sistemas Relevamiento y Metodologías de Entrevista EJEMPLO REAL.pdf](https://github.com/user-attachments/files/25116706/Analisis.de.Sistemas.Relevamiento.y.Metodologias.de.Entrevista.pdf)
+
+
+**Gestión de Procesos de Negocio:**
+- [Gestión y Optimización de Procesos de Negocio Caso SegurosVida (1).pdf](https://github.com/user-attachments/files/25116608/Gestion.y.Optimizacion.de.Procesos.de.Negocio.Caso.SegurosVida.1.pdf)
 
 
 

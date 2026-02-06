@@ -43,7 +43,7 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 
 ![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
 
-## Power Point RESUMEN
+## Power Point RESUMEN + EXTRAS
 
 **Teoria Primer Cuatrimeste:**
 - [Análisis de Sistemas de Información.pdf](https://github.com/user-attachments/files/25083853/Analisis.de.Sistemas.de.Informacion.pdf)
@@ -55,6 +55,14 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 
 **Ciclos de Vida del Software:**
 - [Ciclos de Vida de Desarrollo de Software (1).pdf](https://github.com/user-attachments/files/25115835/Ciclos.de.Vida.de.Desarrollo.de.Software.1.pdf)
+* [Proyecto Real Aplicación de Ciclo de Vida Ágil EcoEat.pdf](https://github.com/user-attachments/files/25116048/Proyecto.Real.Aplicacion.de.Ciclo.de.Vida.Agil.EcoEat.pdf)
+* [Proyecto Real Modelo en Espiral SatControl-X.pdf](https://github.com/user-attachments/files/25116185/Proyecto.Real.Modelo.en.Espiral.SatControl-X.pdf)
+* [Proyecto Real Modelo de Prototipos GrandReserve.pdf](https://github.com/user-attachments/files/25116287/Proyecto.Real.Modelo.de.Prototipos.GrandReserve.pdf) <-- Lo omportante de usar un prototipado
+* [Proyecto Real Modelo en Cascada Waterfall.pdf](https://github.com/user-attachments/files/25116341/Proyecto.Real.Modelo.en.Cascada.Waterfall.pdf)
+
+
+
+
 
 
 

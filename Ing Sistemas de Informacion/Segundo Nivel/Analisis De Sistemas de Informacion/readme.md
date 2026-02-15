@@ -27,6 +27,7 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 ## Primer cuatrimestre HU - CU - Inf. Rec - Pr.Neg 
 
 - PRACTICA REQUERIMIENTO: https://docs.google.com/document/d/1rFIPVuSfHHq5Y0iHjPPKMhXOqHd88ip1KB5j-_oEms8/edit?usp=sharing
+- CONCEPTOS REQUERIMIENTO https://docs.google.com/document/d/130f7R9CKcLpXxYxe_ah4ZjnqykteGF56wnUFLEj7I-k/edit?usp=sharing
 - PRACTICA HISTORIA DE USUARIO: https://docs.google.com/document/d/1lqVuQ-lmSUqxy7EM4z9a8sNILnhkJ6Qd0s6lzLAYUa0/edit?usp=sharing
 - PRACTICA CASO DE USO: https://docs.google.com/document/d/1OAead4j7Mtskrzd15Z5UlQSV4RdTsW2JswgXYEjzZ0w/edit?usp=sharing
 - PRACTICA INFORME DE RECONOCIMIENTO: https://docs.google.com/document/d/1EsXAcoY2E8w050Zfv1FYnco5-txb3EAEolI9sYtFdqQ/edit?usp=sharing
@@ -83,6 +84,7 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 
 **Gestión de Procesos de Negocio:**
 - [Gestión y Optimización de Procesos de Negocio Caso SegurosVida (1).pdf](https://github.com/user-attachments/files/25116608/Gestion.y.Optimizacion.de.Procesos.de.Negocio.Caso.SegurosVida.1.pdf)
+
 
 
 

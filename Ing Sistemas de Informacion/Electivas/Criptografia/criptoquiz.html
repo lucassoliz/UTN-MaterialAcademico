@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criptografía · Quiz UTN</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0f1117; --surface:#161b27; --card:#1c2333; --card2:#212840;
+  --border:#2d3555; --border2:#3a4470;
+  --blue:#5b8dee; --blue-dim:rgba(91,141,238,0.12);
+  --indigo:#7c6aff; --teal:#3ecfcf;
+  --green:#3dd68c; --green-dim:rgba(61,214,140,0.12);
+  --red:#f0637a; --red-dim:rgba(240,99,122,0.12);
+  --amber:#f0b429; --amber-dim:rgba(240,180,41,0.1);
+  --purple:#a855f7; --purple-dim:rgba(168,85,247,0.12); --purple-border:rgba(168,85,247,0.35);
+  --text:#d8deea; --text2:#8892aa; --text3:#5c6680;
+  --sans:'DM Sans',sans-serif; --mono:'DM Mono',monospace;
+  --r:10px; --rs:6px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:28px 16px 64px;}
+body::before{content:'';position:fixed;top:-300px;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(91,141,238,0.05) 0%,transparent 65%);pointer-events:none;z-index:0;}
+.wrapper{width:100%;max-width:680px;position:relative;z-index:1;}
+
+/* HEADER */
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:10px;}
+.logo{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text3);}
+.logo-title{font-size:22px;font-weight:600;color:var(--text);margin-top:2px;letter-spacing:-0.02em;}
+.logo-title span{color:var(--blue);}
+.repo-btn{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;color:var(--text3);border:1px solid var(--border);padding:7px 14px;border-radius:var(--rs);transition:all 0.2s;}
+.repo-btn:hover{color:var(--blue);border-color:var(--blue);background:var(--blue-dim);}
+
+/* MODE SWITCHER */
+.mode-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;}
+.mode-btn{padding:13px 16px;border-radius:var(--r);font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;border:1px solid var(--border);background:var(--surface);color:var(--text3);display:flex;align-items:center;justify-content:center;gap:8px;}
+.mode-btn:hover{border-color:var(--blue);color:var(--text);}
+.mode-btn.on-oficial{background:var(--blue-dim);border-color:var(--blue);color:var(--blue);}
+.mode-btn.on-extra{background:var(--purple-dim);border-color:var(--purple);color:var(--purple);}
+.mode-icon{font-size:15px;}
+.mode-pill{font-size:9px;padding:2px 7px;border-radius:99px;font-family:var(--mono);letter-spacing:0.1em;}
+.pill-oficial{background:rgba(91,141,238,0.2);color:var(--blue);}
+.pill-extra{background:rgba(168,85,247,0.2);color:var(--purple);}
+
+/* EXTRA BANNER */
+.extra-banner{display:none;margin-bottom:14px;padding:10px 16px;border-radius:var(--rs);background:var(--purple-dim);border:1px solid var(--purple-border);font-family:var(--mono);font-size:10px;color:var(--purple);letter-spacing:0.1em;text-align:center;}
+.extra-banner.show{display:block;}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px;}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:12px 10px;text-align:center;}
+.stat-val{font-family:var(--mono);font-size:21px;font-weight:500;line-height:1;margin-bottom:4px;}
+.sv-b{color:var(--blue)}.sv-g{color:var(--green)}.sv-r{color:var(--red)}.sv-a{color:var(--amber)}
+.stat-label{font-size:9px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;font-family:var(--mono);}
+
+/* STREAK */
+.streak{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;color:var(--text3);min-height:40px;transition:all 0.3s;}
+.streak.on{border-color:rgba(240,180,41,0.4);background:var(--amber-dim);color:var(--amber);}
+
+/* FILTER */
+.filter-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:16px;}
+.filter-label{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:0.14em;text-transform:uppercase;}
+.tag{font-family:var(--mono);font-size:10px;padding:5px 11px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--text3);cursor:pointer;transition:all 0.15s;}
+.tag:hover{border-color:var(--blue);color:var(--blue);}
+.tag.active{background:var(--blue-dim);border-color:var(--blue);color:var(--blue);}
+.tag.active.xmode{background:var(--purple-dim);border-color:var(--purple);color:var(--purple);}
+
+/* PROGRESS */
+.prog-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-family:var(--mono);font-size:10px;color:var(--text3);}
+.prog-track{flex:1;height:3px;background:var(--border);border-radius:99px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--indigo),var(--blue));border-radius:99px;width:0%;transition:width 0.5s ease;}
+.prog-fill.xmode{background:linear-gradient(90deg,var(--purple),var(--indigo));}
+#progPct{color:var(--blue);}
+#progPct.xmode{color:var(--purple);}
+
+/* CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px 26px;position:relative;overflow:hidden;animation:cardIn 0.32s cubic-bezier(0.22,1,0.36,1);}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px) scale(0.985)}to{opacity:1;transform:none}}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--indigo),var(--blue),var(--teal));transition:background 0.4s;}
+.card.xmode::before{background:linear-gradient(90deg,var(--purple),var(--indigo),var(--blue));}
+.card-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:8px;flex-wrap:wrap;}
+.type-chip{font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:4px 10px;border-radius:99px;border:1px solid;}
+.type-chip.vf{color:var(--teal);border-color:rgba(62,207,207,0.35);background:rgba(62,207,207,0.07);}
+.type-chip.op{color:var(--amber);border-color:rgba(240,180,41,0.35);background:rgba(240,180,41,0.07);}
+.topic-chip{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;}
+.question{font-size:16px;font-weight:500;line-height:1.65;color:var(--text);margin-bottom:22px;}
+
+/* ANSWERS */
+.answers{display:flex;flex-direction:column;gap:8px;}
+.ans-btn{width:100%;padding:13px 16px;background:var(--surface);border:1px solid var(--border);color:var(--text);cursor:pointer;border-radius:var(--rs);font-family:var(--sans);font-size:13.5px;text-align:left;transition:all 0.16s;display:flex;align-items:flex-start;gap:12px;line-height:1.5;}
+.ans-btn:hover:not(:disabled){border-color:var(--blue);background:var(--blue-dim);transform:translateX(3px);}
+.btn-key{font-family:var(--mono);font-size:10px;color:var(--text3);min-width:20px;margin-top:2px;flex-shrink:0;}
+.ans-btn.correct{background:var(--green-dim);border-color:var(--green);color:var(--green);}
+.ans-btn.wrong{background:var(--red-dim);border-color:var(--red);color:var(--red);}
+.ans-btn.correct .btn-key,.ans-btn.wrong .btn-key{color:inherit;}
+.ans-btn:disabled{cursor:default;}
+.vf-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.vf-btn{padding:16px;background:var(--surface);border:1px solid var(--border);color:var(--text);cursor:pointer;border-radius:var(--rs);font-family:var(--sans);font-size:14px;font-weight:600;text-align:center;transition:all 0.16s;}
+.vf-btn.v:hover:not(:disabled){border-color:var(--green);color:var(--green);background:var(--green-dim);}
+.vf-btn.f:hover:not(:disabled){border-color:var(--red);color:var(--red);background:var(--red-dim);}
+.vf-btn.correct{background:var(--green-dim);border-color:var(--green);color:var(--green);}
+.vf-btn.wrong{background:var(--red-dim);border-color:var(--red);color:var(--red);}
+.vf-btn:disabled{cursor:default;}
+
+/* FEEDBACK */
+.fb-panel{display:none;margin-top:16px;background:var(--card2);border:1px solid var(--border2);border-radius:var(--rs);overflow:hidden;animation:fadeUp 0.22s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.fb-header{display:flex;align-items:center;gap:8px;padding:11px 16px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;border-bottom:1px solid var(--border);}
+.fb-header.correct{color:var(--green);background:var(--green-dim);}
+.fb-header.wrong{color:var(--red);background:var(--red-dim);}
+.fb-ans{padding:12px 16px;border-bottom:1px solid var(--border);}
+.fb-ans-label{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:5px;}
+.fb-ans-text{font-size:13.5px;color:var(--text);line-height:1.5;font-weight:500;}
+.expand-row{display:flex;border-bottom:1px solid var(--border);}
+.exp-btn{flex:1;padding:10px 12px;background:transparent;border:none;border-right:1px solid var(--border);color:var(--text3);cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.15s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.exp-btn:last-child{border-right:none;}
+.exp-btn:hover,.exp-btn.on{color:var(--blue);background:var(--blue-dim);}
+.exp-body{display:none;padding:14px 16px;font-size:13px;line-height:1.75;color:var(--text2);border-top:1px solid var(--border);}
+.exp-body.show{display:block;animation:fadeUp 0.2s ease;}
+.exp-body-label{font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:8px;}
+.exp-example{margin-top:10px;padding:10px 14px;background:var(--surface);border-left:3px solid var(--blue);border-radius:0 var(--rs) var(--rs) 0;font-size:12.5px;color:var(--text2);line-height:1.65;}
+
+/* CONTROLS */
+.controls{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
+.ctrl-btn{padding:10px 20px;border-radius:var(--rs);font-family:var(--mono);font-size:11px;letter-spacing:0.08em;cursor:pointer;transition:all 0.16s;border:1px solid var(--border);background:transparent;color:var(--text3);}
+.ctrl-btn:hover{border-color:var(--text2);color:var(--text);}
+.ctrl-btn.primary{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:500;}
+.ctrl-btn.primary:hover{background:#6f9df0;}
+.ctrl-btn.primary.xmode{background:var(--purple);border-color:var(--purple);}
+.ctrl-btn.primary.xmode:hover{background:#bf7afe;}
+
+/* TOAST */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(70px);background:var(--card2);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);padding:10px 22px;font-family:var(--mono);font-size:11px;z-index:999;transition:transform 0.3s cubic-bezier(0.22,1,0.36,1);white-space:nowrap;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+@media(max-width:520px){
+  .card{padding:20px 16px}.stats{grid-template-columns:repeat(2,1fr)}.question{font-size:14px}
+  .mode-btn{font-size:9px;padding:11px 8px;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div>
+      <div class="logo">UTN FRBA · Electiva</div>
+      <div class="logo-title"><span>Cripto</span>grafía · Quiz</div>
+    </div>
+    <a class="repo-btn" href="https://github.com/lucassoliz/UTN-MaterialAcademico/tree/main/Ing%20Sistemas%20de%20Informacion/Electivas/Criptografia" target="_blank">↗ Repo</a>
+  </div>
+
+  <div class="mode-row">
+    <button class="mode-btn on-oficial" id="btnOficial" onclick="setMode('oficial')">
+      <span class="mode-icon">📋</span>
+      <span>Parciales Oficiales</span>
+      <span class="mode-pill pill-oficial">REAL</span>
+    </button>
+    <button class="mode-btn" id="btnExtra" onclick="setMode('extra')">
+      <span class="mode-icon">⚡</span>
+      <span>Preguntas Extra</span>
+      <span class="mode-pill pill-extra">+65</span>
+    </button>
+  </div>
+
+  <div class="extra-banner" id="extraBanner">
+    ⚡ MODO EXTRA — Preguntas de práctica para reforzar el temario. No son preguntas oficiales de parcial.
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-val sv-b" id="s-total">0</div><div class="stat-label">Intentos</div></div>
+    <div class="stat"><div class="stat-val sv-g" id="s-cor">0</div><div class="stat-label">Correctas</div></div>
+    <div class="stat"><div class="stat-val sv-r" id="s-wrong">0</div><div class="stat-label">Incorrectas</div></div>
+    <div class="stat"><div class="stat-val sv-a" id="s-pct">—</div><div class="stat-label">Aciertos</div></div>
+  </div>
+
+  <div class="streak" id="streakBar">
+    <span id="streakIco">💤</span>
+    <span id="streakTxt">Respondé para empezar tu racha</span>
+  </div>
+
+  <div class="filter-row">
+    <span class="filter-label">Tema:</span>
+    <button class="tag active" data-t="all"           onclick="setTopic(this)">Todos</button>
+    <button class="tag"        data-t="General"       onclick="setTopic(this)">General</button>
+    <button class="tag"        data-t="Simétrico"     onclick="setTopic(this)">Simétrico</button>
+    <button class="tag"        data-t="Asimétrico"    onclick="setTopic(this)">Asimétrico</button>
+    <button class="tag"        data-t="Hash/MAC"      onclick="setTopic(this)">Hash / MAC</button>
+    <button class="tag"        data-t="Firma Digital" onclick="setTopic(this)">Firma Digital</button>
+    <button class="tag"        data-t="PKI"           onclick="setTopic(this)">PKI</button>
+    <button class="tag"        data-t="Algoritmos"    onclick="setTopic(this)">Algoritmos</button>
+  </div>
+
+  <div class="prog-row">
+    <span id="progLabel">—</span>
+    <div class="prog-track"><div class="prog-fill" id="progFill"></div></div>
+    <span id="progPct">0%</span>
+  </div>
+
+  <div class="card" id="card">
+    <div class="card-meta">
+      <span class="type-chip op" id="typeBadge">Opción múltiple</span>
+      <span class="topic-chip"   id="topicBadge">—</span>
+    </div>
+    <div class="question" id="q">Cargando…</div>
+    <div id="answers"></div>
+
+    <div class="fb-panel" id="fbPanel">
+      <div class="fb-header" id="fbHeader">
+        <span id="fbIcon">?</span><span id="fbTitle">Resultado</span>
+      </div>
+      <div class="fb-ans">
+        <div class="fb-ans-label">Respuesta correcta</div>
+        <div class="fb-ans-text" id="fbAns">—</div>
+      </div>
+      <div class="expand-row">
+        <button class="exp-btn" id="btnExp" onclick="toggle('ex')">📖 Explicación</button>
+        <button class="exp-btn" id="btnEg"  onclick="toggle('eg')">💡 Ejemplo</button>
+      </div>
+      <div class="exp-body" id="bodyEx"><div class="exp-body-label">Explicación teórica</div><p id="expTxt">—</p></div>
+      <div class="exp-body" id="bodyEg"><div class="exp-body-label">Ejemplo práctico</div><div class="exp-example" id="egTxt">—</div></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="ctrl-btn primary" id="btnNext" onclick="load()">Siguiente →</button>
+    <button class="ctrl-btn" onclick="resetStats()">Reiniciar stats</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+//  BANCO OFICIAL  —  preguntas reales de parciales UTN
+// ═══════════════════════════════════════════════════════════════
+const OFICIAL=[
+{t:"op",topic:"General",q:"¿Qué propiedades de seguridad ofrece la Criptografía?",a:["Trazabilidad, Auditabilidad, Confidencialidad, Disponibilidad","Confidencialidad, Auditabilidad, Integridad, No repudio","Privacidad, Disponibilidad, Auditabilidad, Integridad","Integridad, Disponibilidad, Confidencialidad","No Repudio, Autenticación, Confidencialidad, Integridad","Trazabilidad, Privacidad, Integridad, No Repudio","Disponibilidad, Autenticación, Confidencialidad"],c:4,ex:"La criptografía provee cuatro propiedades: CONFIDENCIALIDAD (solo el destinatario puede leer), INTEGRIDAD (detectar modificaciones), AUTENTICACIÓN (verificar identidad) y NO REPUDIO (el emisor no puede negar haber enviado). La Disponibilidad pertenece al modelo CIA general pero no es una propiedad criptográfica.",eg:"TLS/HTTPS combina las 4: AES para confidencialidad, HMAC para integridad, certificados para autenticación, y firmas digitales para no repudio."},
+{t:"op",topic:"General",q:"Completar: 'La Criptografía procura proteger la información, ofreciendo...'",a:["Confidencialidad e Integridad únicamente","Confidencialidad, Integridad y Disponibilidad","Confidencialidad, Integridad y Autenticación","Integridad, Autenticación y Disponibilidad","Ninguna de las opciones es correcta","Todas las opciones son correctas"],c:2,ex:"Las tres propiedades criptográficas son: Confidencialidad (cifrado), Integridad (hash/MAC) y Autenticación (firma/MAC). La Disponibilidad se garantiza con redundancia y backups, no con criptografía.",eg:"WhatsApp E2E: AES para confidencialidad, HMAC para integridad, claves de identidad para autenticación. La disponibilidad la garantizan los servidores, no la criptografía."},
+{t:"op",topic:"General",q:"Completar: 'La criptografía es una herramienta _______ para proteger datos, información y comunicaciones.'",a:["prescindible","optativa","sugerida","imprescindible","ninguna de estas opciones","todas las opciones","útil","dudosa"],c:3,ex:"La criptografía es IMPRESCINDIBLE en el mundo digital. Sin ella no existirían compras online, banca digital ni comunicaciones privadas. No es opcional ni meramente 'útil'.",eg:"Sin criptografía, tus contraseñas viajarían en texto plano por la red. Con HTTPS/TLS están cifradas y nadie en el camino puede interceptarlas."},
+{t:"op",topic:"General",q:"Completar: 'La seguridad del Criptosistema se basa...'",a:["en la robustez y/o secretismo de la clave","en que la complejidad del algoritmo sea muy grande","únicamente en mantener secreto del algoritmo","Ninguna de las frases completa un enunciado verdadero"],c:0,ex:"Principio de Kerckhoffs (1883): la seguridad debe residir en la CLAVE, no en el secreto del algoritmo. Los algoritmos modernos (AES, RSA) son completamente públicos y auditados por la comunidad.",eg:"AES es 100% público. Aun así, con clave de 256 bits, romperlo por fuerza bruta tomaría más tiempo que la edad del universo."},
+{t:"vf",topic:"General",q:"'La Criptología se encarga de ocultar los mensajes cifrados, de manera que no puedan ser descubiertos por un adversario.'",c:true,ex:"VERDADERO. La Criptología estudia la comunicación segura. Incluye Criptografía (diseñar sistemas seguros) y Criptoanálisis (intentar romperlos). Su objetivo central es que los mensajes no puedan ser descubiertos por adversarios.",eg:"Criptografía: AES protege el mensaje. Criptoanálisis: buscar vulnerabilidades en AES. Criptología = ambas disciplinas juntas."},
+{t:"op",topic:"General",q:"La Criptología es una disciplina que...",a:["nació con la informática y a ella le debe su historia","ninguna de las otras opciones es correcta","está conformada por la Criptografía y el Criptoanálisis","persigue la detección de intrusiones"],c:2,ex:"La Criptología precede a la informática por siglos (César, Vigenère, Enigma). Se compone de Criptografía (proteger) y Criptoanálisis (atacar). La detección de intrusiones es otra disciplina.",eg:"Cifrado César (siglo I a.C.) ya era criptografía. El criptoanálisis de Enigma en la WWII salvó millones de vidas — todo antes de las computadoras."},
+{t:"vf",topic:"General",q:"'La Criptografía ha quedado obsoleta porque los sistemas informáticos actuales no necesitan ofrecer confidencialidad, integridad ni autenticación.'",c:false,ex:"FALSO. La criptografía es más relevante que nunca. Cada conexión HTTPS, cada transacción bancaria online, cada mensaje cifrado depende de ella. La digitalización masiva aumentó la necesidad.",eg:"En 2024, más del 95% del tráfico web usa HTTPS. El homebanking, las apps de mensajería y los pagos con tarjeta usan criptografía constantemente."},
+{t:"op",topic:"General",q:"Cifrar y Codificar son conceptos...",a:["diferentes, aunque suelen confundirse como equivalentes","equivalentes o sinónimos, aunque a veces se los considera diferentes"],c:0,ex:"Son DISTINTOS. CODIFICAR transforma información en otro formato sin protección (Base64, ASCII) — reversible y público. CIFRAR transforma información con una clave secreta — requiere la clave para revertirse.",eg:"Base64('hola') = 'aG9sYQ==' — codificado, cualquiera lo decodifica. AES('hola', clave) = bytes ilegibles — cifrado, requiere la clave."},
+{t:"vf",topic:"General",q:"'Un criptosistema seguro puede basarse en mantener secreto el algoritmo utilizado.'",c:false,ex:"FALSO. 'Security through obscurity' es mala práctica. Los algoritmos secretos no pueden ser auditados y eventualmente son descubiertos. La seguridad debe estar en la clave.",eg:"Enigma era secreto y fue descifrado. AES es público desde 2001, auditado por miles de expertos, y sigue siendo el estándar mundial."},
+{t:"op",topic:"General",q:"¿Con cuál concepto completarías: 'La criptografía es una herramienta ___ para proteger datos'? (parcial con opción 'imprescindible')",a:["prescindible","optativa","sugerida","imprescindible","ninguna de estas opciones","todas las opciones","útil","dañina"],c:3,ex:"La criptografía es IMPRESCINDIBLE — no opcional ni sugerida. Proteger datos personales, financieros y empresariales es una necesidad legal y ética en el mundo digital.",eg:"Sin criptografía no existiría el comercio electrónico, la banca online ni las comunicaciones privadas en Internet."},
+{t:"op",topic:"General",q:"Solamente uno de los enunciados propuestos es correcto sobre gestión de claves. ¿Cuál?",a:["Las claves más robustas jamás son las obtenidas aleatoriamente","Los sistemas no deben dar a sus usuarios la opción de cambiar sus claves","Se deben almacenar las claves en repositorios online para acceso desde cualquier lugar","Las claves nunca deben cambiarse","Las claves deben cambiarse con cierta frecuencia","Las claves cuanto más sencillas, cortas y fáciles de recordar, más seguras son"],c:4,ex:"Solo 'las claves deben cambiarse con cierta frecuencia' es correcto. Las demás son FALSAS: las claves aleatorias son las MÁS seguras, las claves cortas y simples son fáciles de romper, y nunca cambiarlas es un riesgo si fueron comprometidas.",eg:"Estándares NIST y PCI-DSS recomiendan rotar claves regularmente para limitar el daño en caso de compromiso no detectado."},
+{t:"op",topic:"General",q:"Ante la idea de 'si no tengo nada que ocultar, no necesito proteger mi información', la postura correcta es:",a:["Muy de acuerdo","Medianamente de acuerdo","Poco de acuerdo","En desacuerdo"],c:3,ex:"EN DESACUERDO. La privacidad es un derecho fundamental. La confidencialidad protege datos médicos, financieros y personales. Todo el mundo tiene información que merece protección.",eg:"Tu historial médico, tus conversaciones personales y tus datos bancarios merecen protección aunque no seas criminal. Las empresas tienen obligaciones legales de proteger datos de clientes."},
+{t:"op",topic:"Simétrico",q:"Completar: 'Los sistemas criptográficos simétricos...'",a:["tienen 1 única clave pública conocida por emisor y receptor","tienen 1 única clave privada o secreta conocida por emisor y receptor","tienen dos claves: una pública para el emisor y otra privada para el receptor","no tienen ningún tipo de clave para cifrar mensajes"],c:1,ex:"La criptografía simétrica usa UNA SOLA CLAVE SECRETA compartida entre emisor y receptor. La misma clave cifra y descifra. Su problema principal es el intercambio seguro de esa clave.",eg:"WinZip con contraseña: cifrás con 'clave123', el destinatario descifra con la misma 'clave123'. Un solo secreto compartido."},
+{t:"op",topic:"Simétrico",q:"Completar: 'La criptografía simétrica...'",a:["utiliza la misma clave para cifrar y para descifrar","utiliza dos claves, una para cifrar y otra para descifrar","utiliza dos claves para cifrar y una tercera para descifrar","hace uso de un MAC, que es un hash con clave","ninguna de las opciones es correcta"],c:0,ex:"Definición fundamental: una única clave compartida para cifrar y descifrar. Ventaja: velocidad. Desventaja: distribución segura de la clave.",eg:"AES cifra tu disco (BitLocker). La misma contraseña sirve para cifrar y descifrar todos los datos del disco."},
+{t:"op",topic:"Simétrico",q:"Completar: 'Los sistemas de cifrado simétricos y asimétricos se diferencian por...'",a:["los simétricos usan la misma clave para cifrar y descifrar, mientras que los asimétricos tienen una clave distinta para cada acción","no hay diferencias, ambos son equivalentes","los simétricos se usan para cifrar y los asimétricos para Hash y MAC","ninguna de las opciones completa la frase correctamente","los simétricos usan una clave distinta para cifrar y descifrar, mientras que los asimétricos tienen una única clave para ambas"],c:0,ex:"SIMÉTRICO: una única clave secreta compartida para cifrar y descifrar. ASIMÉTRICO: par de claves — pública (cifrar/verificar) y privada (descifrar/firmar). Son matemáticamente relacionadas pero distintas.",eg:"Simétrico: AES con clave 'secreto' → misma clave cifra y descifra. Asimétrico: RSA con par pública/privada → lo que cifra la pública solo lo descifra la privada."},
+{t:"op",topic:"Simétrico",q:"Alicia decide utilizar un cifrado simétrico para enviar un mensaje confidencial a Bob. ¿Cuál es la acción correcta?",a:["B descifra con su propia clave privada pues A lo cifró con la pública de B","A cifra con su propia clave privada y B descifra con la pública de A","A cifra el mensaje con una clave privada compartida con B","A cifra el mensaje con una clave pública compartida con B","B descifra con su propia clave pública pues A lo cifró con la privada de B","A cifra con su propia clave pública y B descifra con la privada de A"],c:2,ex:"En cifrado simétrico hay UNA ÚNICA clave secreta compartida. Alicia cifra con esa clave, Bob descifra con la misma. No existen 'claves públicas' en el esquema simétrico puro.",eg:"Alicia y Bob acuerdan la clave 'secreto42'. Alicia cifra con AES usando 'secreto42'. Bob descifra con la misma clave."},
+{t:"op",topic:"Simétrico",q:"Completar: 'Un algoritmo de clave simétrica...'",a:["ambas opciones son posibles (block cipher y stream cipher)","divide el texto en bloques y cifra cada bloque","cifra bit a bit con XOR contra una secuencia cifrante","ninguna opción es correcta — la criptografía simétrica no cifra información","utiliza claves públicas y privadas mediante potencias modulares"],c:0,ex:"Los algoritmos simétricos se dividen en BLOCK CIPHER (bloques fijos, ej: AES, DES) y STREAM CIPHER (bit a bit con XOR, ej: RC4, ChaCha20). AMBOS son algoritmos de clave simétrica.",eg:"AES = block cipher simétrico. RC4 = stream cipher simétrico. Los dos usan una única clave secreta compartida."},
+{t:"vf",topic:"Simétrico",q:"'Cifrar archivos extensos con un algoritmo de clave pública es veloz y recomendable para cifrar comunicaciones en tiempo real como audio o video streaming.'",c:false,ex:"FALSO. La criptografía asimétrica es ÓRDENES DE MAGNITUD más lenta que la simétrica. Para grandes volúmenes y tiempo real se usa AES. La asimétrica se reserva para intercambio de claves.",eg:"TLS usa criptografía HÍBRIDA: RSA/DH solo para intercambiar la clave de sesión (pocos bytes), luego AES para todo el tráfico de audio/video."},
+{t:"vf",topic:"Simétrico",q:"'El problema con todos los algoritmos criptográficos simétricos es que existe una probabilidad no nula de recuperar el texto claro sin tener la clave.'",c:true,ex:"VERDADERO. Por fuerza bruta, siempre existe probabilidad matemáticamente no nula de adivinar la clave. La seguridad práctica consiste en hacer esa probabilidad computacionalmente inviable.",eg:"AES-128 tiene 2^128 posibles claves. Con un billón de computadoras probando un billón de claves por segundo, tardarían más de 10^16 años."},
+{t:"vf",topic:"Simétrico",q:"'Para cualquier algoritmo de cifrado simétrico y para la misma clave, para todo texto claro existe uno y solo un texto cifrado.'",c:true,ex:"VERDADERO. Los algoritmos simétricos son DETERMINISTAS: misma clave + mismo texto claro = siempre el mismo texto cifrado. Propiedad matemática fundamental.",eg:"AES-128 con clave K y texto 'hola' siempre produce el mismo ciphertext. Si produjera resultados distintos sería imposible descifrar de forma confiable."},
+{t:"op",topic:"Asimétrico",q:"Alicia mandó un mensaje cifrado a Benito con criptografía de clave pública. ¿Qué clave usa Benito para descifrar?",a:["Su propia clave pública","La clave pública de Alicia","Su propia clave privada","La clave privada de Alicia","Ninguna de las claves presentadas"],c:2,ex:"Para CONFIDENCIALIDAD asimétrica: el emisor cifra con la CLAVE PÚBLICA del destinatario. Solo el destinatario puede descifrar porque solo él posee su CLAVE PRIVADA.",eg:"Alicia busca la clave pública de Benito, cifra el mensaje con ella. Benito, único dueño de su privada, descifra."},
+{t:"vf",topic:"Asimétrico",q:"'En criptografía asimétrica, si Alicia cifra con su propia clave privada, cualquiera puede descifrar con la clave pública de Alicia.'",c:true,ex:"VERDADERO. Este es el mecanismo de FIRMA DIGITAL. No provee confidencialidad (todos pueden leer), pero sí autenticación y no repudio.",eg:"Alicia firma con su privada. El receptor descifra con la pública de Alicia. Si funciona, es prueba matemática de que Alicia firmó."},
+{t:"op",topic:"Asimétrico",q:"¿Cuál de estas situaciones NO corresponde a un cifrado asimétrico?",a:["El intercambio de Diffie-Hellman puede utilizar números primos","Cuando A cifra un mensaje y lo envía a B, además del mensaje debe mandar un certificado con un hash de la clave utilizada","El intercambio de Diffie-Hellman utiliza claves públicas y privadas","Cuando A cifra un mensaje y lo envía a B, además del mensaje debe mandar un certificado con su clave pública"],c:1,ex:"En cifrado asimétrico NO se envía un certificado con un hash de la clave utilizada. Lo que puede enviarse es la clave PÚBLICA del emisor. Diffie-Hellman sí usa números primos y claves públicas/privadas.",eg:"Protocolo correcto: A cifra con la pública de B, envía el mensaje. Si A quiere autenticarse, adjunta su certificado con su clave PÚBLICA, no un hash de la clave."},
+{t:"op",topic:"Hash/MAC",q:"Completar: 'Las funciones HASH se pueden emplear para...' (respuesta: Autenticación e Integridad)",a:["Autenticación e Integridad","Ninguna de las opciones presentadas es verdadera","Confidencialidad e Integridad","Todas las opciones son verdaderas","Integridad y Disponibilidad","Autenticación y Confidencialidad"],c:0,ex:"Las funciones hash proveen INTEGRIDAD (detectar modificaciones) y contribuyen a la AUTENTICACIÓN (contraseñas hasheadas, MACs). NO proveen confidencialidad — el hash no oculta el mensaje.",eg:"SHA256(archivo) == hash_publicado → archivo íntegro. SHA256(contraseña) almacenado en DB → autenticación."},
+{t:"op",topic:"Hash/MAC",q:"¿Cuál de las siguientes frases es correcta ante un algoritmo criptográfico MAC?",a:["Generar claves asimétricas","Generar firmas digitales avanzadas","Ninguna de las opciones es correcta","Autenticación e Integridad","Se usa en combinación con un hash para cifrar mensajes de grado militar","Generar claves simétricas"],c:3,ex:"MAC (Message Authentication Code) provee AUTENTICACIÓN e INTEGRIDAD. Autenticación porque solo quien tiene la clave simétrica puede generar un MAC válido. Integridad porque cualquier modificación del mensaje invalida el MAC.",eg:"HMAC-SHA256(mensaje, k) → tag. Receptor recalcula con la misma k. Coincide → auténtico e íntegro."},
+{t:"op",topic:"Hash/MAC",q:"Los Algoritmos MAC sirven para ofrecer... (parcial K4051)",a:["autenticación e integridad","integridad únicamente","confidencialidad únicamente","confidencialidad e integridad","ninguna de las opciones presentadas","todas las opciones presentadas","autenticación únicamente","trazabilidad e integridad"],c:6,ex:"En el parcial K4051 se marcó AUTENTICACIÓN ÚNICAMENTE. El MAC verifica el origen del mensaje mediante la clave simétrica compartida. En la práctica también verifica integridad, pero el foco del examen estuvo en autenticación.",eg:"El MAC es un sello de autenticidad: confirma que el mensaje fue generado por alguien que conoce la clave compartida."},
+{t:"op",topic:"Hash/MAC",q:"¿Para qué se utiliza el hashing en Seguridad Informática?",a:["Para anonimizar búsquedas en bases de datos","Ninguna de las opciones es correcta","Todas las opciones son correctas","No se usa hashing en Seguridad Informática","Para acelerar la transmisión de datos","Cifrar datos sensibles"],c:1,ex:"Las opciones ofrecidas son incorrectas: el hash NO cifra, NO anonimiza búsquedas y NO acelera transmisiones. El hashing se usa para integridad, almacenamiento seguro de contraseñas, y como componente en firmas y MACs. Por eso 'Ninguna es correcta'.",eg:"Usos reales del hash: SHA256(contraseña) en lugar de guardar la contraseña en texto plano, verificar integridad de archivos, componente interno de HMAC."},
+{t:"op",topic:"Hash/MAC",q:"¿Qué se entiende por 'colisión' en funciones hash?",a:["Dos entradas diferentes producen la misma salida hash","Un mensaje produce una salida hash de todos ceros","Un mensaje produce una salida hash de todos unos","Dos funciones hash diferentes producen el mismo resultado","Ninguna de las opciones es correcta"],c:0,ex:"COLISIÓN: H(m1) = H(m2) siendo m1 ≠ m2. Si un atacante puede generar colisiones, puede sustituir un documento legítimo por uno malicioso con el mismo hash. MD5 y SHA-1 tienen colisiones conocidas; SHA-256 aún no.",eg:"Se demostró que dos archivos distintos pueden tener el mismo MD5, permitiendo reemplazar un archivo legítimo con uno malicioso. Por eso MD5 está deprecado."},
+{t:"vf",topic:"Hash/MAC",q:"'Es imposible hallar colisiones en las funciones HASH, es decir que no pueden existir dos entradas distintas con la misma salida.'",c:false,ex:"FALSO. Por el principio del casillero, con entradas infinitas y salidas finitas SIEMPRE existen colisiones. La clave es que sean computacionalmente INVIABLES de encontrar.",eg:"SHA-256 produce 2^256 posibles valores. Los mensajes de entrada son infinitos → existen colisiones matemáticamente, pero encontrarlas en tiempo razonable es inviable."},
+{t:"op",topic:"Hash/MAC",q:"¿Cuál de estas afirmaciones sobre HASH y MAC es correcta?",a:["Tanto HASH como MAC requieren clave privada o simétrica","Ni HASH ni MAC requieren clave","El Hash requiere clave pública y el MAC no","El MAC requiere clave pública y el HASH no","Ninguna de las opciones es correcta","El HASH es componente fundamental en el diseño del MAC","El MAC es componente fundamental en el diseño del HASH","El HASH es asimétrico mientras que el MAC usa clave simétrica"],c:4,ex:"Ninguna opción está perfectamente formulada: HASH no requiere clave (función pública). MAC requiere clave SIMÉTRICA (no pública/privada). Ninguna de las opciones captura esto correctamente.",eg:"SHA-256('mensaje') → sin clave. HMAC-SHA256('mensaje','clave') → con clave simétrica. HMAC usa SHA-256 internamente pero ninguna opción del examen lo expresa bien."},
+{t:"op",topic:"Hash/MAC",q:"La Autenticación de la Información se logra mediante:",a:["Cifrado Asimétrico","Todas las opciones mencionadas","Cifrado Simétrico","Firma Digital","Ninguna de las opciones mencionadas","Funciones Resumen o Hash"],c:1,ex:"La autenticación puede lograrse mediante múltiples mecanismos: Firma Digital, MAC, Hash de contraseñas y Cifrado Asimétrico. Todas las opciones mencionadas pueden contribuir a la autenticación.",eg:"Firma digital: Alicia firma con su privada → verificamos con su pública. MAC: solo A y B conocen la clave → MAC válido implica autenticidad del origen."},
+{t:"op",topic:"Hash/MAC",q:"La Confidencialidad de la Información se logra mediante:",a:["Todas las opciones mencionadas","Funciones Resumen o Hash","Firma Electrónica","Funciones MAC","Ninguna de las opciones mencionadas","Cifrado Simétrico y Asimétrico","Firma Digital"],c:5,ex:"La CONFIDENCIALIDAD se logra exclusivamente mediante CIFRADO (simétrico: AES, o asimétrico: RSA). Las funciones hash NO cifran. El MAC NO oculta el mensaje. La firma digital NO cifra el mensaje completo.",eg:"AES-256 cifra tu archivo → confidencialidad. SHA256 de tu archivo → integridad (no confidencialidad). HMAC de tu mensaje → autenticación (no confidencialidad)."},
+{t:"op",topic:"Firma Digital",q:"A desea firmar un documento y usa su clave pública en lugar de la privada. ¿Cuál afirmación es correcta?",a:["B puede validar la firma de A","B puede validar la firma de A y obtener la clave privada de A","B está utilizando mal el protocolo de firma digital","B puede validar la firma pero no puede obtener la privada","A está utilizando mal el protocolo de firma digital"],c:4,ex:"El protocolo de firma digital requiere firmar con la CLAVE PRIVADA del firmante. Si A usa su clave PÚBLICA, cualquiera podría haber generado esa firma, eliminando el propósito de autenticación. ES A quien usa mal el protocolo.",eg:"Firma con clave privada → solo A pudo generarla → autenticación válida. Firma con clave pública → cualquiera pudo generarla → sin valor de autenticación."},
+{t:"op",topic:"Firma Digital",q:"¿Cuál procedimiento se utiliza para aplicar una firma digital sobre un documento?",a:["Cifrar el hash del documento con la clave privada del emisor","Cifrar el hash del documento con la clave pública del receptor","Hashear el documento y cifrar con la clave pública del receptor","Cifrar el documento con la clave privada del emisor y hashear el resultado","Firmar con la clave privada del receptor y hashear","Usar un MAC con la clave privada del emisor"],c:0,ex:"Firma digital: 1) HASHEAR el documento. 2) CIFRAR el hash con la CLAVE PRIVADA DEL EMISOR. El receptor descifra el hash con la clave pública del emisor, hashea el documento recibido y compara. Si coinciden → firma válida.",eg:"Alicia firma: SHA256(doc)=abc, cifra con su privada → firma=xyz. Bob verifica: descifra xyz con pública de Alicia=abc, calcula SHA256(doc)=abc. Coinciden → válido."},
+{t:"vf",topic:"Firma Digital",q:"'La propiedad de No Repudio puede ofrecer la criptografía para la firma digital, pero debe ser convalidada por las leyes pertinentes.'",c:true,ex:"VERDADERO. El No Repudio técnico existe (RSA prueba matemáticamente que solo A pudo firmar). Pero el No Repudio LEGAL requiere marcos normativos. En Argentina, la Ley 25.506 regula la validez legal de la firma digital.",eg:"Firmás un contrato digitalmente. Técnicamente nadie puede negarlo. Pero sin ley que lo respalde, en un juicio podría no tener valor. En Argentina, contratos con firma digital calificada tienen plena validez legal."},
+{t:"vf",topic:"Firma Digital",q:"'La firma digital garantiza confidencialidad del mensaje firmado.'",c:false,ex:"FALSO. La firma digital NO garantiza confidencialidad. El mensaje firmado queda en claro — solo se agrega la firma (hash cifrado con la clave privada). Firma digital = autenticación + integridad + no repudio.",eg:"Firmás un PDF: el contenido sigue siendo legible por todos. La firma certifica quién lo firmó y que no fue alterado. Para ocultarlo necesitarías cifrarlo adicionalmente."},
+{t:"op",topic:"Firma Digital",q:"Alicia debe enviar a Benito un mensaje con confidencialidad E integridad. ¿Cuál opción ofrece AMBAS?",a:["Hashear el mensaje y enviar mensaje + hash","Cualquiera de las opciones ofrece ambas","Hashear y cifrar el hash con la clave pública de Alicia. Enviar mensaje y hash cifrado","Cifrar el mensaje con la clave pública de Alicia y enviar cifrado + hash","Ninguna de las opciones presentadas ofrece confidencialidad e integridad simultáneamente"],c:4,ex:"Ninguna opción es correcta: A) mensaje visible → no confidencial. C/D) cifrar con pública de Alicia → todos descifran con su pública → no confidencial. Solución real (no listada): cifrar con PÚBLICA DE BENITO + firmar con PRIVADA DE ALICIA.",eg:"Protocolo correcto: 1) Alicia cifra con pública de Benito → solo Benito descifra (confidencialidad). 2) Alicia firma con su privada → Benito verifica con pública de Alicia (integridad/autenticación)."},
+{t:"op",topic:"Firma Digital",q:"En Argentina, se llama Firma Digital cuando:",a:["La otorga cualquier PKI, pública o privada, siempre que cumpla con la ley","Se estampa una firma escaneada sobre un documento digital","Se imprime una firma escaneada en un documento en papel","La otorga el estado a través de su PKI","Se imprime el hash del documento después de la firma manuscrita en el papel"],c:3,ex:"En Argentina, según la Ley 25.506, la Firma Digital con plena validez legal es la emitida por la PKI del ESTADO NACIONAL. Las PKI privadas pueden emitir firmas electrónicas, pero no tienen el mismo nivel legal.",eg:"AFIP, ANSES y otros organismos usan la PKI estatal. Una firma escaneada no es firma digital — es firma electrónica sin valor legal equivalente a la manuscrita."},
+{t:"op",topic:"PKI",q:"Una PKI crea un certificado digital para un usuario. ¿Qué clave del usuario se muestra en ese certificado?",a:["La clave pública de la Autoridad de Validación (VA)","La clave privada del propietario del certificado","Ninguna de las opciones presentadas","La clave pública del propietario del certificado","Ambas claves se muestran en el certificado","La clave pública de la Autoridad de Registro (RA)","La clave privada de la Autoridad de Certificación (CA)"],c:3,ex:"Un certificado digital contiene la CLAVE PÚBLICA del titular, su identidad, la firma de la CA y la fecha de validez. La clave PRIVADA NUNCA se incluye — permanece exclusivamente con el titular.",eg:"Certificado SSL de google.com: contiene la clave pública de Google, firmada por una CA de confianza. La clave privada de Google está en sus servidores y nunca sale."},
+{t:"vf",topic:"PKI",q:"'La CA (Autoridad de Certificación) firma digitalmente el certificado del usuario con su propia clave privada.'",c:true,ex:"VERDADERO. La CA firma el certificado usando su CLAVE PRIVADA. Cualquiera puede verificar la autenticidad usando la clave pública de la CA (pre-instalada en sistemas operativos y navegadores).",eg:"Tu navegador tiene pre-instaladas ~150 CAs raíz. Cuando visitás HTTPS, verifica que el certificado está firmado por una de esas CAs con su privada."},
+{t:"vf",topic:"PKI",q:"'La Autoridad de Registro (RA) en una PKI emite los certificados digitales.'",c:false,ex:"FALSO. La RA VERIFICA la identidad del solicitante pero NO emite certificados. Es la CA quien los emite y firma. La RA es intermediaria de verificación.",eg:"ANSES como RA: verifica tu identidad con DNI y biometría. Luego la CA genera y firma el certificado."},
+{t:"op",topic:"PKI",q:"Completar: 'Los organismos del estado como fuerzas de seguridad, defensa, gobierno, salud y banca...'",a:["deberían tener prohibido el uso de la Criptografía porque la información es pública","tienen la obligación de usar criptografía, de acuerdo a las normas vigentes","deben únicamente usar autenticación e integridad porque son organismos gubernamentales"],c:1,ex:"Los organismos estatales TIENEN OBLIGACIÓN LEGAL de proteger la información sensible. Las normativas (PCI-DSS, Ley 25.506) exigen el uso de criptografía para proteger datos sensibles.",eg:"El BCRA exige cifrado en transacciones bancarias. Los hospitales por Ley 26.529 deben proteger historias clínicas."},
+{t:"op",topic:"Algoritmos",q:"¿Cuál de estos algoritmos NO es un hash?",a:["MD-5","SHA-256","AES-256","Todos son hashes","Ninguno es hash","SHA-3","KDF"],c:6,ex:"KDF (Key Derivation Function) NO es una función hash aunque usa hash internamente. Su propósito es derivar claves criptográficas (PBKDF2, bcrypt, scrypt). MD5, SHA-256 y SHA-3 SÍ son funciones hash. AES-256 es cifrado simétrico.",eg:"bcrypt(contraseña, sal, iteraciones) → clave. Se usa para almacenar contraseñas con muchas iteraciones para frenar ataques de fuerza bruta."},
+{t:"op",topic:"Algoritmos",q:"¿Cuál de estos algoritmos NO es un block cipher?",a:["TDES","AES","DES","Los 3 son block ciphers","Ninguno es block cipher"],c:0,ex:"Pregunta con trampa del examen. En realidad TDES SÍ es un block cipher — aplica DES tres veces. AES y DES también son block ciphers. El examen marcó TDES probablemente por considerarlo una variante/composición especial.",eg:"DES: block cipher de 64 bits (deprecado). AES: block cipher de 128 bits (estándar actual). 3DES: aplica DES 3 veces (también deprecado, reemplazado por AES)."},
+{t:"vf",topic:"Algoritmos",q:"'Un algoritmo de hash puede construirse a partir de un block cipher.'",c:false,ex:"El examen marcó FALSO. Para los estándares de la materia, hash y block cipher son categorías con diseños independientes. SHA-256 no está construido sobre AES.",eg:"SHA-256 tiene su propia estructura de compresión interna, diseñada para ser unidireccional. No usa AES internamente."},
+{t:"op",topic:"Algoritmos",q:"Completar: 'En el algoritmo AES, la cantidad de rondas...'",a:["es fija, independientemente de la longitud de clave","no depende de la clave, la elige el algoritmo aleatoriamente","es 10, 12 o 14 y dependen de la longitud de la clave elegida","Ninguna es correcta"],c:2,ex:"AES varía las rondas según la clave: AES-128 → 10 rondas, AES-192 → 12 rondas, AES-256 → 14 rondas.",eg:"AES-256 (14 rondas) es más seguro pero más lento que AES-128 (10 rondas)."},
+{t:"op",topic:"Algoritmos",q:"Completar: 'En el algoritmo AES, el tamaño de la clave...'",a:["es única de 256 bits y por eso recibe el nombre de 'criptografía de grado militar'","Ninguna de las opciones de claves presentadas es verdadera","es variable y automáticamente seleccionada por el algoritmo según la longitud del mensaje","puede ser de 64, 128, 192 y 256 bits","Todas las opciones de claves presentadas son verdaderas"],c:1,ex:"¡Trampa! AES NO tiene clave de 64 bits (los tamaños válidos son 128, 192 y 256 bits). AES NO selecciona la clave automáticamente. La opción D incluye '64 bits' que es incorrecto. Por eso 'Ninguna de las opciones es verdadera'.",eg:"AES admite exactamente 3 tamaños: 128, 192 o 256 bits. No existe AES-64."},
+{t:"op",topic:"Algoritmos",q:"¿Cuál de estos algoritmos realiza operaciones matemáticas empleando números primos muy grandes?",a:["AES128","SHA2-128","SHA3","Ninguna de las opciones","TDES","RSA"],c:5,ex:"RSA basa su seguridad en la dificultad de factorizar el producto de dos números primos muy grandes (n = p × q). AES y 3DES son simétricos. SHA-2/3 son hashes. Ninguno de ellos usa números primos.",eg:"RSA: p y q son primos enormes, n=p×q. Factorizar n con números de 2048 bits tomaría millones de años con hardware actual."},
+{t:"op",topic:"Algoritmos",q:"¿Cuál de los siguientes es un algoritmo de cifrado simétrico?",a:["PKI","SHA2","Ninguno pertenece al cifrado simétrico","RSA256","AES256","RSA128","SHA3"],c:4,ex:"AES256 es el único algoritmo de cifrado simétrico en la lista. RSA es asimétrico. SHA-2 y SHA-3 son funciones hash. PKI es una infraestructura, no un algoritmo.",eg:"AES cifra tu disco con misma clave para cifrar/descifrar. RSA cifra la conexión HTTPS inicial con par pública/privada."},
+{t:"op",topic:"Algoritmos",q:"Un Stream Cipher es un algoritmo...",a:["que utiliza dos claves, una privada y otra pública","de cifrado que usa transposiciones y permutaciones","Ninguna de las opciones indicadas","de cifrado por bloques","Todas las opciones indicadas","que cifra y hace un hash al mismo tiempo","que provee un mecanismo de firma electrónica","que cifra bit a bit con XOR contra una secuencia cifrante"],c:7,ex:"Un Stream Cipher cifra BIT A BIT. Genera un keystream pseudoaleatorio y lo combina con el texto mediante XOR. Cada bit se procesa independientemente. Ejemplos: RC4, ChaCha20.",eg:"RC4: keystream = [k1, k2, k3...]. Cifrado = [t1 XOR k1, t2 XOR k2, ...]. Cada bit del mensaje se combina independientemente con el keystream."},
+{t:"op",topic:"Algoritmos",q:"Se dispone de un algoritmo Stream Cipher. ¿Cuál característica aplica?",a:["La cantidad de rondas depende de la longitud de la clave","Cada bloque cifrado se encadena con el siguiente","Cada bit se cifra dependiendo de los bits a su alrededor","Cada bit se cifra independiente de los bits a su alrededor"],c:3,ex:"Stream Cipher: cada bit se cifra INDEPENDIENTEMENTE usando XOR contra el keystream. No hay encadenamiento entre bits. Permite cifrar en tiempo real sin esperar un bloque completo.",eg:"Ventaja en llamadas de voz: cifrás cada bit del audio a medida que llega, con latencia mínima."},
+{t:"op",topic:"Algoritmos",q:"¿Cuál de estos enunciados sobre block ciphers y stream ciphers es verdadero?",a:["Los stream ciphers son más lentos que los block ciphers","Los block ciphers son más lentos que los stream ciphers","Los block ciphers son determinísticos y los stream ciphers probabilísticos","Ninguna de las opciones es correcta","Los block ciphers son probabilísticos y los stream ciphers determinísticos"],c:3,ex:"Ninguna opción es correcta. Tanto block como stream ciphers pueden ser determinísticos. La velocidad depende de la implementación específica. Las generalizaciones absolutas en las demás opciones son incorrectas.",eg:"ChaCha20 (stream cipher) puede ser más rápido que AES-CBC sin aceleración hardware. AES-GCM con instrucciones AES-NI puede ser extremadamente rápido. No hay regla general."},
+{t:"op",topic:"Algoritmos",q:"Completar: 'Los números primos se emplean en algoritmos de...'",a:["Hash","MAC","Intercambio de claves","clave simétrica","block ciphers","stream ciphers","Ninguna usa números primos","Todas usan números primos"],c:2,ex:"Los números primos se usan en INTERCAMBIO DE CLAVES y cifrado asimétrico (RSA, Diffie-Hellman). Los algoritmos simétricos, hash y MAC no basan su seguridad en números primos.",eg:"Diffie-Hellman: A y B acuerdan un primo p y base g públicos. El resultado es una clave compartida que nadie que espió pudo calcular."},
+];
+
+// ═══════════════════════════════════════════════════════════════
+//  BANCO EXTRA  —  preguntas inventadas para práctica adicional
+// ═══════════════════════════════════════════════════════════════
+const EXTRA=[
+// ── GENERAL ──────────────────────────────────────────────────
+{t:"op",topic:"General",q:"¿Cuál de las siguientes NO es una propiedad que ofrece la criptografía?",a:["Confidencialidad","Integridad","Disponibilidad","No Repudio","Autenticación"],c:2,ex:"La DISPONIBILIDAD no es una propiedad criptográfica. La criptografía ofrece Confidencialidad, Integridad, Autenticación y No Repudio. La disponibilidad se garantiza con redundancia, backups y protección anti-DDoS.",eg:"Un servidor puede tener AES-256 y estar caído por un ataque DDoS → disponibilidad cero. La criptografía no ayuda con eso."},
+{t:"vf",topic:"General",q:"'El objetivo del Criptoanálisis es diseñar nuevos algoritmos criptográficos más seguros.'",c:false,ex:"FALSO. El CRIPTOANÁLISIS busca encontrar vulnerabilidades y romper sistemas criptográficos existentes. Diseñar nuevos algoritmos seguros es tarea de la CRIPTOGRAFÍA. Ambas disciplinas forman la Criptología.",eg:"Cuando investigadores encontraron colisiones en MD5, hacían criptoanálisis. Cuando diseñaron SHA-256 como reemplazo, hacían criptografía."},
+{t:"op",topic:"General",q:"¿Qué propiedad garantiza que el emisor no puede negar haber enviado un mensaje?",a:["Confidencialidad","Integridad","Disponibilidad","No Repudio","Autenticación"],c:3,ex:"El NO REPUDIO garantiza que el emisor no puede negar haber enviado el mensaje. Se logra mediante firma digital con clave privada — solo el emisor posee esa clave.",eg:"Si Alicia firma un contrato con su clave privada, matemáticamente no puede negar haberlo firmado — solo ella tiene esa clave."},
+{t:"vf",topic:"General",q:"'La Confidencialidad garantiza que los datos no fueron modificados durante la transmisión.'",c:false,ex:"FALSO. La Confidencialidad garantiza que SOLO el destinatario autorizado puede leer el mensaje. La propiedad que garantiza que los datos no fueron modificados es la INTEGRIDAD.",eg:"AES cifra el mensaje → confidencialidad. HMAC verifica que no fue alterado → integridad. Son propiedades distintas y complementarias."},
+{t:"op",topic:"General",q:"¿En qué se diferencia la criptografía clásica de la moderna?",a:["La clásica usa computadoras y la moderna usa papel","La moderna se basa en problemas matemáticos computacionalmente difíciles; la clásica usaba sustituciones y transposiciones simples","La clásica es más segura que la moderna","La moderna no usa claves"],c:1,ex:"Criptografía CLÁSICA (César, Vigenère): sustituciones y transposiciones de letras, rompibles con análisis de frecuencia. MODERNA: se basa en problemas computacionalmente difíciles como factorización de primos (RSA) o logaritmo discreto (DH).",eg:"El cifrado César corre cada letra 3 posiciones: A→D. Se rompe en minutos analizando frecuencias. AES requeriría más tiempo que la edad del universo para romperse por fuerza bruta."},
+{t:"vf",topic:"General",q:"'La criptografía de extremo a extremo (E2E) garantiza que ni siquiera el proveedor del servicio puede leer los mensajes.'",c:true,ex:"VERDADERO. En E2E, el cifrado/descifrado ocurre en los dispositivos de los usuarios. Las claves privadas nunca salen de los dispositivos. El servidor solo transmite mensajes cifrados que no puede descifrar.",eg:"WhatsApp E2E: el servidor de Meta transmite mensajes cifrados pero no tiene las claves privadas de los usuarios. Solo el receptor con su clave privada puede descifrar."},
+{t:"op",topic:"General",q:"¿Cuál es el principal objetivo del Principio de Kerckhoffs?",a:["Que el algoritmo sea secreto para mayor seguridad","Que la seguridad no dependa del secreto del algoritmo sino de la clave","Que se use una clave diferente para cada mensaje","Que el algoritmo sea tan complejo que nadie pueda entenderlo"],c:1,ex:"Kerckhoffs (1883): un sistema criptográfico debe ser seguro aunque TODO, excepto la clave, sea de conocimiento público. La seguridad reside exclusivamente en la clave.",eg:"AES, RSA, SHA-256 son completamente públicos. Su fortaleza proviene de las claves, no de ser secretos."},
+{t:"vf",topic:"General",q:"'La esteganografía y la criptografía son técnicas equivalentes para proteger información.'",c:false,ex:"FALSO. Son técnicas distintas. CRIPTOGRAFÍA oculta el CONTENIDO del mensaje (el mensaje es visible pero ilegible sin clave). ESTEGANOGRAFÍA oculta la EXISTENCIA del mensaje dentro de otro medio.",eg:"Criptografía: 'XjK9@#mP' → mensaje cifrado, visible pero ilegible. Esteganografía: imagen de un paisaje que esconde texto en los bits menos significativos de cada pixel."},
+{t:"op",topic:"General",q:"¿Qué es la 'Perfect Forward Secrecy' (PFS)?",a:["Un cifrado imposible de romper","Una propiedad donde comprometer la clave a largo plazo no compromete las claves de sesión pasadas","Un tipo de firma digital avanzada","Un algoritmo de hash especialmente seguro"],c:1,ex:"PFS garantiza que si la clave privada a largo plazo es comprometida en el futuro, las claves de sesión pasadas permanecen seguras. Se logra con claves de sesión efímeras (Diffie-Hellman efímero).",eg:"TLS con ECDHE tiene PFS: aunque alguien robe la clave privada del servidor mañana, no podrá descifrar las comunicaciones capturadas hoy. Sin PFS, robar la clave privada permitía descifrar todo el tráfico histórico."},
+{t:"op",topic:"General",q:"¿Por qué se dice que la seguridad por oscuridad ('security through obscurity') no es una práctica recomendada?",a:["Porque hace los algoritmos más lentos","Porque los secretos sobre el algoritmo eventualmente se descubren y no pueden auditarse, dejando la seguridad sin base sólida","Porque está prohibida por estándares internacionales","Porque es más cara de implementar"],c:1,ex:"La seguridad por oscuridad falla porque: los secretos eventualmente se filtran o se descubren mediante ingeniería inversa, y al no ser auditables por expertos independientes, pueden tener vulnerabilidades no detectadas. La seguridad real debe depender de la clave, no del secreto del algoritmo.",eg:"Ejemplos famosos de fracasos: algoritmo A5/1 del GSM (secreto, luego hackeado), Enigma (secreto, descifrado en WWII). En contraste, AES fue elegido por un concurso público con análisis de la comunidad mundial."},
+// ── SIMÉTRICO ────────────────────────────────────────────────
+{t:"op",topic:"Simétrico",q:"¿Cuál es el principal problema del cifrado simétrico al comunicarse entre dos partes que nunca se vieron?",a:["Es demasiado lento","No puede cifrar mensajes grandes","El problema del intercambio seguro de la clave","No existe tal problema"],c:2,ex:"El PROBLEMA DEL INTERCAMBIO DE CLAVES es el desafío central: ¿cómo le enviás la clave secreta al destinatario sin que un atacante la intercepte? La criptografía asimétrica resuelve esto elegantemente.",eg:"Querés enviar la clave AES por email. Si alguien intercepta el email, copia la clave y puede descifrar todo. Con RSA, enviás la clave pública por email sin riesgo — no sirve para descifrar."},
+{t:"vf",topic:"Simétrico",q:"'En un sistema de cifrado simétrico, si la clave es comprometida, todos los mensajes cifrados con esa clave quedan expuestos.'",c:true,ex:"VERDADERO. Si la clave simétrica es comprometida, el atacante puede descifrar todos los mensajes cifrados con esa clave — pasados y presentes. Por eso la rotación periódica de claves es buena práctica.",eg:"Si alguien roba la clave AES que usabas para cifrar archivos desde hace 5 años, puede descifrar todos esos archivos retrospectivamente."},
+{t:"op",topic:"Simétrico",q:"¿Cuál de los siguientes algoritmos es un ejemplo de block cipher simétrico?",a:["RSA","SHA-256","Diffie-Hellman","AES","HMAC"],c:3,ex:"AES (Advanced Encryption Standard) es el block cipher simétrico más ampliamente usado. RSA es asimétrico, SHA-256 es un hash, Diffie-Hellman es un protocolo de intercambio de claves, y HMAC es un MAC.",eg:"AES-128 divide el mensaje en bloques de 128 bits y cifra cada uno con la misma clave. Es el estándar para cifrar discos, archivos y conexiones TLS."},
+{t:"op",topic:"Simétrico",q:"¿Qué representa el 'IV' (Vector de Inicialización) en modos de operación de block ciphers como CBC?",a:["Una segunda clave secreta","Un valor aleatorio que evita que bloques de texto idéntico produzcan bloques cifrados idénticos","El tamaño del bloque del algoritmo","El número de rondas del algoritmo"],c:1,ex:"El IV es un valor aleatorio (no secreto) que se usa en modos como CBC para garantizar que el mismo texto claro cifrado con la misma clave produzca cifrados distintos en cada ejecución. Rompe el determinismo puro.",eg:"AES-CBC con IV aleatorio: cifrar 'hola' hoy produce resultado diferente que mañana, aunque la clave sea la misma. Esto evita que un atacante detecte mensajes repetidos."},
+{t:"vf",topic:"Simétrico",q:"'El modo de operación ECB (Electronic Codebook) es el más seguro para cifrar datos con AES.'",c:false,ex:"FALSO. ECB es el modo MENOS seguro porque bloques de texto idéntico producen bloques cifrados idénticos, revelando patrones. Modos seguros como CBC, CTR o GCM son los recomendados.",eg:"AES-ECB cifrando una imagen: los colores sólidos (bloques de texto idéntico) producen bloques cifrados idénticos → el patrón de la imagen sigue visible. AES-CBC con IV rompe esa dependencia."},
+{t:"op",topic:"Simétrico",q:"¿Por qué 3DES fue diseñado para reemplazar a DES?",a:["Porque DES usaba claves asimétricas","Porque la clave de 56 bits de DES se volvió vulnerable a ataques de fuerza bruta","Porque DES no podía cifrar texto","Porque DES era un stream cipher"],c:1,ex:"DES usa claves de solo 56 bits. En 1977 eran suficientes, pero el aumento de la capacidad computacional hizo que 2^56 combinaciones pudieran probarse en horas. 3DES aplicó DES 3 veces para aumentar la seguridad efectiva. Hoy ambos están deprecados en favor de AES.",eg:"En 1998, la EFF construyó 'Deep Crack' por $250.000 y rompió DES en 56 horas. Con hardware actual tarda minutos. Por eso DES y 3DES están deprecados."},
+{t:"op",topic:"Simétrico",q:"¿Cuál es un algoritmo de Stream Cipher?",a:["AES-256","DES","3DES","ChaCha20","SHA-256"],c:3,ex:"ChaCha20 es un Stream Cipher moderno ampliamente usado (TLS 1.3, WireGuard). AES, DES y 3DES son Block Ciphers. SHA-256 es una función hash.",eg:"TLS 1.3 usa ChaCha20-Poly1305 como alternativa a AES-GCM, especialmente en dispositivos sin aceleración hardware AES."},
+// ── ASIMÉTRICO ───────────────────────────────────────────────
+{t:"op",topic:"Asimétrico",q:"En un esquema de cifrado asimétrico para confidencialidad, ¿con qué clave cifra el emisor?",a:["Con su propia clave privada","Con su propia clave pública","Con la clave privada del receptor","Con la clave pública del receptor"],c:3,ex:"Para CONFIDENCIALIDAD asimétrica: el emisor cifra con la CLAVE PÚBLICA DEL RECEPTOR. Solo el receptor puede descifrar porque solo él posee su clave privada.",eg:"Alicia quiere enviarle un secreto a Benito. Busca la clave pública de Benito (publicada en un directorio), cifra el mensaje con ella y lo envía. Solo Benito con su clave privada puede descifrar."},
+{t:"vf",topic:"Asimétrico",q:"'En RSA, la clave pública y la clave privada son matemáticamente independientes entre sí.'",c:false,ex:"FALSO. En RSA, las claves pública y privada están matemáticamente RELACIONADAS — ambas se generan a partir del mismo par de primos p y q. La seguridad reside en que derivar la privada desde la pública requiere factorizar n = p×q.",eg:"RSA genera: n=p×q, e (exponente público), d (exponente privado). Clave pública es (n,e) y privada es (n,d). Son relacionadas matemáticamente pero encontrar d desde (n,e) requiere factorizar n."},
+{t:"op",topic:"Asimétrico",q:"¿Qué resuelve el algoritmo de intercambio de claves Diffie-Hellman?",a:["Permite firmar documentos digitalmente","Permite que dos partes establezcan una clave secreta compartida a través de un canal inseguro","Permite cifrar mensajes largos eficientemente","Permite generar certificados digitales"],c:1,ex:"Diffie-Hellman (1976) fue revolucionario: permite que dos partes acuerden una clave secreta compartida a través de un canal público (que puede ser espiado) sin necesidad de compartir secretos previos.",eg:"Alice elige a (secreto), publica A=g^a mod p. Bob elige b (secreto), publica B=g^b mod p. Ambos calculan la clave compartida: A^b mod p = B^a mod p. El espía no puede calcularla."},
+{t:"vf",topic:"Asimétrico",q:"'La criptografía asimétrica es más rápida que la simétrica para cifrar grandes archivos.'",c:false,ex:"FALSO. La criptografía asimétrica es MUCHO MÁS LENTA que la simétrica para cifrar datos en volumen. RSA puede cifrar apenas ~100 KB/s vs ~10 GB/s de AES. Por eso se usa criptografía híbrida.",eg:"TLS: RSA/ECDH para intercambiar la clave de sesión (pocos bytes). Luego AES para todo el tráfico HTTP. Si todo se cifrara con RSA, la navegación web sería miles de veces más lenta."},
+{t:"op",topic:"Asimétrico",q:"¿Qué es la criptografía de curvas elípticas (ECC)?",a:["Un tipo de hash basado en curvas matemáticas","Una variante de cifrado simétrico más eficiente","Una forma de criptografía asimétrica que ofrece la misma seguridad que RSA con claves mucho más cortas","Un protocolo para intercambiar claves simétricas"],c:2,ex:"ECC (Elliptic Curve Cryptography) es criptografía ASIMÉTRICA basada en la matemática de curvas elípticas. Ofrece la misma seguridad que RSA con claves MUCHO más cortas: una clave ECC de 256 bits equivale en seguridad a una RSA de 3072 bits.",eg:"TLS 1.3 usa ECDHE por defecto. Clave ECDSA de 256 bits ≈ RSA-3072 en seguridad, pero mucho más eficiente para dispositivos móviles e IoT."},
+{t:"op",topic:"Asimétrico",q:"Si Bob quiere enviarle un mensaje AUTENTICADO (pero no confidencial) a Alicia, ¿qué hace?",a:["Cifra el mensaje con la clave pública de Alicia","Cifra el mensaje con su propia clave privada","Cifra el mensaje con la clave pública de Bob","Hashea el mensaje y se lo envía sin más"],c:1,ex:"Para AUTENTICACIÓN sin confidencialidad (firma digital): Bob cifra/firma con su propia CLAVE PRIVADA. Cualquiera puede descifrar/verificar con la clave pública de Bob, pero solo Bob pudo haber firmado, probando su identidad.",eg:"Bob firma el comunicado con su clave privada. Alicia lo verifica con la clave pública de Bob. Cualquiera puede verificarlo → no hay confidencialidad, pero sí autenticación."},
+// ── HASH / MAC ───────────────────────────────────────────────
+{t:"op",topic:"Hash/MAC",q:"¿Cuál de las siguientes propiedades NO es requerida de una función hash criptográfica?",a:["Resistencia a la preimagen","Resistencia a colisiones","Reversibilidad","Resistencia a la segunda preimagen"],c:2,ex:"Una función hash criptográfica debe ser IRREVERSIBLE (unidireccional). Las propiedades requeridas son: resistencia a preimagen (dado H(x) no se puede encontrar x), resistencia a segunda preimagen y resistencia a colisiones.",eg:"SHA-256('contraseña') = abc123... — imposible obtener 'contraseña' a partir de abc123... Esto es lo que hace seguro el almacenamiento de contraseñas como hash."},
+{t:"vf",topic:"Hash/MAC",q:"'HMAC es simplemente aplicar un hash al mensaje — no requiere ninguna clave.'",c:false,ex:"FALSO. HMAC (Hash-based MAC) es un HASH CON CLAVE SIMÉTRICA. Requiere una clave secreta compartida, que es lo que le da la propiedad de autenticación.",eg:"SHA256('mensaje') → sin clave, cualquiera puede calcularlo. HMAC-SHA256('mensaje', 'claveSecreta') → requiere la clave → autenticación + integridad."},
+{t:"op",topic:"Hash/MAC",q:"¿Por qué NO se recomienda almacenar contraseñas con SHA-256 simple en una base de datos?",a:["Porque SHA-256 no es suficientemente rápido","Porque SHA-256 es reversible","Porque SHA-256 sin sal es vulnerable a ataques de diccionario y tablas rainbow","Porque SHA-256 solo acepta entradas cortas"],c:2,ex:"SHA-256 simple sin sal es vulnerable a TABLAS RAINBOW (bases de datos precalculadas de hash→contraseña) y ATAQUES DE DICCIONARIO. La solución: usar KDF lentos (bcrypt, scrypt, Argon2) con sal aleatoria por usuario.",eg:"SHA256('password123') = ef92b778... — esta combinación está en todas las tablas rainbow. Con bcrypt la misma contraseña produce resultado único por usuario gracias a la sal aleatoria."},
+{t:"vf",topic:"Hash/MAC",q:"'Un hash siempre produce una salida de longitud variable dependiendo del tamaño de la entrada.'",c:false,ex:"FALSO. Una característica fundamental de las funciones hash es que producen una salida de LONGITUD FIJA independientemente del tamaño de la entrada.",eg:"SHA-256('a') = 256 bits. SHA-256('Todo el texto de Don Quijote...') = también 256 bits. La longitud fija de salida es una propiedad esencial del hash."},
+{t:"op",topic:"Hash/MAC",q:"¿Qué es la 'sal' (salt) en el contexto del almacenamiento de contraseñas?",a:["Una clave secreta adicional que el usuario debe recordar","Un valor aleatorio único por usuario que se agrega a la contraseña antes de hashear","El número de iteraciones del algoritmo","El algoritmo específico usado para hashear"],c:1,ex:"La SAL es un valor ALEATORIO ÚNICO generado para cada usuario que se concatena con su contraseña antes de hashear. Se almacena junto al hash (no es secreta). Garantiza que usuarios con la misma contraseña tengan hashes distintos.",eg:"Usuario1 contraseña 'abc' + sal 'xK9p' → hash1. Usuario2 contraseña 'abc' + sal 'mZ2q' → hash2. Misma contraseña → hashes distintos → tablas rainbow inútiles."},
+{t:"op",topic:"Hash/MAC",q:"¿Cuál es la diferencia entre MAC y firma digital en términos de no repudio?",a:["No hay diferencia, ambos proveen no repudio","El MAC provee no repudio porque solo el emisor conoce la clave","La firma digital provee no repudio porque solo el emisor tiene su clave privada; el MAC no provee no repudio porque ambas partes tienen la misma clave","El MAC es más seguro que la firma digital"],c:2,ex:"FIRMA DIGITAL: solo el emisor tiene su clave privada → puede probar ante terceros que fue él quien firmó → NO REPUDIO. MAC: ambas partes tienen la misma clave simétrica → cualquiera de los dos pudo haber generado el MAC → NO HAY NO REPUDIO.",eg:"Contrato firmado digitalmente: Alicia no puede negar haberlo firmado (solo ella tiene su privada). Contrato autenticado con MAC: Alicia podría argumentar que fue Bob quien lo generó, ya que Bob también tiene la clave."},
+{t:"vf",topic:"Hash/MAC",q:"'SHA-1 sigue siendo recomendado para uso en sistemas de seguridad actuales.'",c:false,ex:"FALSO. SHA-1 está DEPRECADO para uso en seguridad desde que en 2017 Google demostró el primer ataque de colisión práctica (SHAttered). Fue reemplazado por SHA-256 y SHA-3.",eg:"En 2017, Google produjo dos archivos PDF distintos con el mismo hash SHA-1 (ataque SHAttered). Chrome, Firefox y los navegadores modernos rechazaron certificados SHA-1 desde 2017."},
+{t:"op",topic:"Hash/MAC",q:"¿Para qué sirve el algoritmo PBKDF2?",a:["Para cifrar mensajes usando clave pública","Para generar firmas digitales","Para derivar una clave criptográfica segura a partir de una contraseña con múltiples iteraciones de hash","Para intercambiar claves entre dos partes"],c:2,ex:"PBKDF2 toma una contraseña y aplica una función hash miles de veces (iteraciones). Esto hace que generar una clave sea deliberadamente lento, protegiendo contra ataques de fuerza bruta.",eg:"PBKDF2(contraseña, sal, 100000 iteraciones, SHA256) → clave. Con 100.000 iteraciones, calcular UNA clave toma ~0.1 segundos. Un atacante con millones de candidatas necesitaría tiempo inviable."},
+{t:"vf",topic:"Hash/MAC",q:"'El hash de un mensaje es equivalente al cifrado de ese mensaje, ya que ambos transforman el dato original.'",c:false,ex:"FALSO. El CIFRADO es REVERSIBLE (con la clave podés recuperar el original). El HASH es IRREVERSIBLE (dado el hash, no podés recuperar el mensaje original). Son operaciones con propósitos y propiedades completamente distintas.",eg:"AES(mensaje, clave) → se puede deshacer con la misma clave. SHA256(mensaje) → imposible obtener el mensaje original desde el hash. Objetivos: cifrado = confidencialidad. Hash = integridad."},
+// ── FIRMA DIGITAL ────────────────────────────────────────────
+{t:"op",topic:"Firma Digital",q:"¿Cuál es el orden correcto del proceso de VERIFICACIÓN de una firma digital?",a:["Descifrar el mensaje con la clave pública del emisor y comparar","Calcular el hash del documento recibido, descifrar la firma con la clave pública del emisor y comparar ambos hashes","Calcular el hash del documento y cifrarlo con la clave pública del receptor","Descifrar el documento con la clave privada del receptor"],c:1,ex:"Verificación: 1) Calcular SHA256 del documento recibido. 2) Descifrar la firma (hash cifrado) con la CLAVE PÚBLICA del emisor. 3) Comparar ambos hashes. Si coinciden → firma válida, documento íntegro, emisor autenticado.",eg:"Bob recibe doc + firma. Calcula SHA256(doc)=abc. Descifra la firma con pública de Alicia=abc. Coinciden → Alicia firmó este documento y no fue alterado."},
+{t:"vf",topic:"Firma Digital",q:"'La firma digital de un documento garantiza que el documento no fue modificado después de ser firmado.'",c:true,ex:"VERDADERO. La firma digital incluye el hash del documento. Si el documento es modificado después de firmado, el hash cambia y no coincidirá con el hash descifrado de la firma → verificación falla → modificación detectada.",eg:"Alicia firma contrato.pdf. Si alguien modifica una coma del texto, el SHA256 cambia completamente. Al verificar la firma, los hashes no coinciden → alteración detectada."},
+{t:"op",topic:"Firma Digital",q:"¿Por qué se hashea el documento antes de firmarlo en lugar de cifrar todo el documento con la clave privada?",a:["Porque la clave privada solo puede cifrar datos pequeños","Por eficiencia: el hash es de tamaño fijo y pequeño; cifrar el documento completo con RSA sería muy lento","Porque el hash es más seguro que el cifrado asimétrico","Porque la ley exige hashear antes de firmar"],c:1,ex:"EFICIENCIA: RSA es muy lento para datos grandes. En lugar de cifrar el documento completo, se calcula su hash (32 bytes en SHA-256) y se cifra solo el hash con la clave privada. Resultado: firma de tamaño fijo y proceso rápido.",eg:"Documento de 100 MB + RSA directo: imposiblemente lento. Documento de 100 MB → SHA256 = 32 bytes → RSA(32 bytes, clave_privada) = firma de 256 bytes. El proceso es casi instantáneo."},
+{t:"vf",topic:"Firma Digital",q:"'Cualquier persona con la clave pública de Alicia puede GENERAR una firma válida que parezca ser de Alicia.'",c:false,ex:"FALSO. CUALQUIER persona puede VERIFICAR una firma de Alicia con su clave pública. Pero solo Alicia puede GENERAR la firma, porque solo ella tiene su clave PRIVADA. Esto es el fundamento de la autenticación.",eg:"La clave pública de Alicia es pública — todos la conocen. Con ella verificás que la firma es de Alicia. Pero para CREAR la firma necesitás la privada de Alicia, que solo ella tiene."},
+{t:"op",topic:"Firma Digital",q:"¿Cuál es la diferencia entre 'firma electrónica' y 'firma digital' en el contexto legal argentino?",a:["Son exactamente lo mismo, se usan indistintamente","La firma digital tiene mayor valor probatorio, emitida por la PKI del estado; la firma electrónica incluye cualquier mecanismo electrónico de identificación","La firma electrónica es más segura que la digital","La firma digital solo vale para documentos privados"],c:1,ex:"En Argentina (Ley 25.506): FIRMA DIGITAL = emitida por PKI estatal, tiene la misma validez legal que la firma manuscrita, el que la repudia debe probar que no firmó. FIRMA ELECTRÓNICA = cualquier mecanismo electrónico, valor probatorio menor.",eg:"Una empresa que emite sus propios certificados genera firmas ELECTRÓNICAS. Un certificado emitido por la Autoridad Certificante del Estado argentino genera firmas DIGITALES con plena validez legal."},
+{t:"op",topic:"Firma Digital",q:"¿Cuántas propiedades provee simultáneamente una firma digital correctamente implementada?",a:["Solo 1: autenticación","Solo 2: autenticación e integridad","3 propiedades: autenticación, integridad y no repudio","4 propiedades: autenticación, integridad, no repudio y confidencialidad"],c:2,ex:"La firma digital provee exactamente 3 propiedades: AUTENTICACIÓN (verificar quién firmó), INTEGRIDAD (detectar modificaciones) y NO REPUDIO (el firmante no puede negar haber firmado). NO provee confidencialidad — el mensaje firmado queda legible.",eg:"Un PDF firmado digitalmente: cualquiera puede leer el contenido (no hay confidencialidad). Pero pueden verificar que fue firmado por X, que no fue alterado, y que X no puede negar haberlo firmado."},
+// ── PKI ──────────────────────────────────────────────────────
+{t:"op",topic:"PKI",q:"¿Cuál es la función principal de una Autoridad de Certificación (CA)?",a:["Generar contraseñas para los usuarios","Emitir y firmar certificados digitales que vinculan una identidad con su clave pública","Almacenar las claves privadas de los usuarios","Cifrar los mensajes entre usuarios"],c:1,ex:"La CA (Certificate Authority) es una entidad de confianza que EMITE Y FIRMA DIGITALMENTE certificados. Un certificado vincula una identidad con su clave pública. La CA garantiza con su firma que esa clave pública pertenece a esa identidad.",eg:"DigiCert (CA) verifica que google.com pertenece a Google Inc., emite un certificado firmado con su clave privada. Tu navegador confía en DigiCert → confía en el certificado de Google."},
+{t:"vf",topic:"PKI",q:"'Un certificado digital puede ser válido técnicamente pero haber sido revocado por la CA que lo emitió.'",c:true,ex:"VERDADERO. Las CAs mantienen listas de revocación (CRL) y servicios OCSP para anunciar certificados revocados antes de su vencimiento. Razones: clave privada comprometida, cambio de organización, fraude.",eg:"Si hackean un servidor y roban la clave privada, la empresa pide a la CA que revoque el certificado. Tu navegador consulta la CRL/OCSP y detecta que fue revocado → muestra advertencia."},
+{t:"op",topic:"PKI",q:"¿Qué es la 'cadena de confianza' (chain of trust) en PKI?",a:["Una lista de contraseñas seguras","Una jerarquía donde los certificados de entidades inferiores son validados por CAs superiores, llegando hasta una CA raíz confiable","Un protocolo para intercambiar claves","Una lista de algoritmos permitidos"],c:1,ex:"La cadena de confianza es una JERARQUÍA: CA Raíz (pre-instalada) → CA Intermedia → Certificado del servidor. Cada nivel valida al siguiente con su firma.",eg:"google.com tiene un certificado firmado por Google Trust Services (CA intermedia), que a su vez está firmado por GlobalSign (CA raíz). Tu SO confía en GlobalSign → confía en toda la cadena."},
+{t:"vf",topic:"PKI",q:"'La clave privada del usuario debe enviarse a la CA para que pueda incluirla en el certificado digital.'",c:false,ex:"FALSO. La clave privada NUNCA se comparte ni sale del dispositivo del usuario. El usuario genera su par de claves localmente y envía solo la clave PÚBLICA a la CA (en una CSR). La CA firma la clave pública y devuelve el certificado.",eg:"Para obtener un certificado SSL: generar par de claves en tu servidor (privada se queda ahí, nunca sale). Enviar CSR (con clave pública) a la CA. La CA verifica tu dominio y devuelve el certificado con tu clave pública firmada."},
+{t:"op",topic:"PKI",q:"¿Qué verifica tu navegador cuando accedés a un sitio HTTPS?",a:["Solo que la URL empieza con 'https://'","Solo que el sitio tiene un candado verde","Que el certificado fue emitido por una CA de confianza, que no fue revocado, que no expiró y que el dominio coincide","Solo que la conexión está cifrada"],c:2,ex:"El navegador verifica: 1) Firmado por una CA de confianza. 2) No revocado (CRL/OCSP). 3) Dentro del período de validez. 4) El CN/SAN del certificado coincide con el dominio visitado.",eg:"Si visitás https://google.com con el certificado de microsoft.com → error de nombre. Si el certificado expiró → advertencia. Si fue revocado → advertencia. Todos estos controles protegen del MITM."},
+{t:"vf",topic:"PKI",q:"'Una vez que un certificado digital es emitido por una CA, es válido de por vida.'",c:false,ex:"FALSO. Los certificados digitales tienen FECHA DE VENCIMIENTO. Los certificados SSL típicamente duran 1-2 años. Además pueden ser revocados antes de su vencimiento si la clave privada es comprometida.",eg:"Los certificados Let's Encrypt (gratuitos) duran 90 días y se renuevan automáticamente. Los browsers muestran advertencia cuando expiran."},
+// ── ALGORITMOS ───────────────────────────────────────────────
+{t:"op",topic:"Algoritmos",q:"¿Qué longitud de clave usa AES-256?",a:["64 bits","128 bits","192 bits","256 bits","512 bits"],c:3,ex:"AES-256 usa claves de 256 bits. Los tres tamaños válidos de AES son: 128, 192 y 256 bits. No existe AES-64 ni AES-512.",eg:"Para cifrar datos que necesiten protección a largo plazo (post-cuántica), se recomienda AES-256. Para uso general, AES-128 es suficientemente seguro y más rápido."},
+{t:"vf",topic:"Algoritmos",q:"'SHA-3 y SHA-256 están basados en la misma estructura interna.'",c:false,ex:"FALSO. SHA-256 (familia SHA-2) usa la construcción Merkle-Damgård. SHA-3 usa una arquitectura completamente diferente llamada Keccak/sponge. SHA-3 fue diseñado como alternativa ante posibles vulnerabilidades en SHA-2.",eg:"SHA-2 y SHA-3 coexisten como estándares del NIST. Si se encontrara una vulnerabilidad en SHA-2, SHA-3 (con su arquitectura distinta) sería el reemplazo natural."},
+{t:"op",topic:"Algoritmos",q:"¿Qué significa que un algoritmo de cifrado sea 'determinístico'?",a:["Que siempre usa la misma clave","Que para la misma entrada y la misma clave, siempre produce la misma salida","Que no puede ser roto","Que el tiempo de ejecución es siempre el mismo"],c:1,ex:"DETERMINÍSTICO: dada la misma entrada y la misma clave, el algoritmo SIEMPRE produce la misma salida. Esto es fundamental para que el descifrado sea posible.",eg:"AES-128(clave='K', texto='hola') = siempre el mismo ciphertext. Si no fuera determinístico, el receptor no podría descifrar el mensaje de forma confiable."},
+{t:"op",topic:"Algoritmos",q:"¿Cuál de los siguientes describe mejor cómo funciona RSA para cifrar?",a:["Aplica múltiples sustituciones y permutaciones en bloques","Genera un keystream y lo combina con XOR","Usa exponenciación modular con la clave pública del receptor","Aplica la función hash SHA-256 al mensaje"],c:2,ex:"RSA cifra usando exponenciación modular: C = M^e mod n, donde e es el exponente público y n = p×q. Para descifrar: M = C^d mod n, donde d es la clave privada.",eg:"RSA cifra: C = M^65537 mod n (e=65537 es el exponente público estándar). RSA descifra: M = C^d mod n (d es la clave privada). Solo el dueño de d puede descifrar."},
+{t:"vf",topic:"Algoritmos",q:"'MD5 sigue siendo seguro para verificar la integridad de archivos descargados.'",c:false,ex:"FALSO. MD5 está COMPLETAMENTE DEPRECADO para seguridad. Se han demostrado ataques de colisión prácticos: es posible generar dos archivos distintos con el mismo MD5. Para verificación de integridad se deben usar SHA-256 o SHA-3.",eg:"En 2012, el malware Flame usó colisiones MD5 para falsificar certificados de Windows Update. Hoy solo SHA-256 o superior es aceptable para verificación de integridad."},
+{t:"op",topic:"Algoritmos",q:"¿Qué caracteriza a los algoritmos de 'Criptografía Liviana' (Lightweight Cryptography)?",a:["Son algoritmos menos seguros diseñados para uso casual","Son versiones simplificadas de AES para uso doméstico","Son algoritmos diseñados para funcionar eficientemente en dispositivos con recursos limitados (IoT, smart cards, RFID)","Son algoritmos que solo cifran textos cortos"],c:2,ex:"La Criptografía Liviana está diseñada para dispositivos con recursos EXTREMADAMENTE limitados: poca RAM, procesador lento, batería mínima (sensores IoT, smart cards, RFID, implantes médicos). Ejemplos: PRESENT, GIFT, ASCON.",eg:"Un sensor IoT con 1KB de RAM no puede ejecutar AES-256 eficientemente. ASCON fue diseñado para funcionar en hardware mínimo, ganando el concurso NIST 2023."},
+{t:"vf",topic:"Algoritmos",q:"'El algoritmo RSA puede usarse directamente para cifrar grandes volúmenes de datos sin necesidad de criptografía simétrica.'",c:false,ex:"FALSO. RSA tiene dos limitaciones para cifrado masivo: 1) Solo puede cifrar mensajes menores al módulo n. 2) Es mucho más lento que los algoritmos simétricos. Por eso en la práctica se usa criptografía HÍBRIDA.",eg:"En TLS: RSA/ECDH intercambia la clave de sesión (handshake, pocos bytes). Luego AES cifra todo el tráfico HTTP. RSA directo en todo el tráfico haría la web miles de veces más lenta."},
+{t:"op",topic:"Algoritmos",q:"¿Qué ventaja tiene HMAC-SHA256 sobre simplemente aplicar SHA256(clave || mensaje)?",a:["HMAC es más rápido","HMAC protege contra ataques de extensión de longitud (length extension attacks)","HMAC produce un hash más largo","No hay diferencia entre ambos"],c:1,ex:"SHA256(clave || mensaje) es vulnerable al ataque de extensión de longitud: un atacante puede añadir datos al final y calcular un nuevo hash válido sin conocer la clave. HMAC está diseñado específicamente para evitar este ataque.",eg:"Con SHA256(clave || 'pagar 100'), un atacante puede calcular SHA256(clave || 'pagar 100' || 'pagar 1000000') sin conocer la clave. Con HMAC esto es imposible por su estructura de doble hash."},
+{t:"op",topic:"Algoritmos",q:"¿Cuáles son los tres tamaños de clave válidos para AES?",a:["64, 128 y 256 bits","128, 192 y 256 bits","128, 256 y 512 bits","56, 112 y 168 bits"],c:1,ex:"AES admite exactamente tres tamaños de clave: 128, 192 y 256 bits. No existen AES-64 ni AES-512. Los 56, 112 y 168 bits corresponden a DES y 3DES.",eg:"AES-128 (10 rondas), AES-192 (12 rondas), AES-256 (14 rondas). A mayor clave → más rondas → más seguro pero marginalmente más lento."},
+{t:"op",topic:"Algoritmos",q:"¿Qué tipo de criptografía usa el protocolo TLS cuando cifra los datos del canal (no el handshake)?",a:["Asimétrica, con RSA","Hash, con SHA-256","Simétrica, con AES u otro cifrado rápido","Ningún tipo de cifrado, solo integridad"],c:2,ex:"Una vez completado el handshake TLS (que es asimétrico), todos los datos del canal se cifran con un algoritmo SIMÉTRICO (generalmente AES-128-GCM o AES-256-GCM en TLS 1.3). El cifrado simétrico es mucho más eficiente para el tráfico continuo.",eg:"Handshake TLS 1.3: ECDHE (asimétrico) para acordar clave de sesión. Después: AES-256-GCM (simétrico) para todo el tráfico HTTP, imágenes, videos, etc."},
+{t:"vf",topic:"Algoritmos",q:"'Los algoritmos de Criptografía Liviana únicamente se pueden aplicar en hardware, pues para eso fueron diseñados.'",c:false,ex:"FALSO. Los algoritmos de Criptografía Liviana pueden implementarse tanto en hardware como en software. Fueron diseñados para ser eficientes en hardware con recursos mínimos, pero también pueden ejecutarse en software.",eg:"ASCON puede ejecutarse en software en un microcontrolador de 8 bits. El objetivo es la eficiencia en recursos (memoria, ciclos de procesador), no la restricción al hardware exclusivamente."},
+];
+
+// ═══════════════════════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════════════════════
+let mode='oficial', activeTopic='all', used=[];
+let stats={total:0,cor:0,wrong:0}, streak=0, best=0, answered=false;
+
+function getPool(){
+  const bank = mode==='oficial' ? OFICIAL : EXTRA;
+  return activeTopic==='all' ? bank : bank.filter(q=>q.topic===activeTopic);
+}
+
+function setMode(m){
+  if(mode===m) return;
+  mode=m; used=[]; activeTopic='all';
+  // tags
+  document.querySelectorAll('.tag').forEach(t=>t.classList.remove('active','xmode'));
+  const allTag=document.querySelector('.tag[data-t="all"]');
+  allTag.classList.add('active');
+  if(m==='extra') allTag.classList.add('xmode');
+  // buttons
+  document.getElementById('btnOficial').className='mode-btn'+(m==='oficial'?' on-oficial':'');
+  document.getElementById('btnExtra').className='mode-btn'+(m==='extra'?' on-extra':'');
+  // card stripe
+  document.getElementById('card').classList.toggle('xmode',m==='extra');
+  // next btn
+  document.getElementById('btnNext').classList.toggle('xmode',m==='extra');
+  // progress
+  document.getElementById('progFill').classList.toggle('xmode',m==='extra');
+  document.getElementById('progPct').classList.toggle('xmode',m==='extra');
+  // banner
+  document.getElementById('extraBanner').classList.toggle('show',m==='extra');
+  load();
+}
+
+function setTopic(el){
+  document.querySelectorAll('.tag').forEach(t=>t.classList.remove('active','xmode'));
+  el.classList.add('active');
+  if(mode==='extra') el.classList.add('xmode');
+  activeTopic=el.dataset.t;
+  used=[];
+  load();
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  LOAD
+// ═══════════════════════════════════════════════════════════════
+function load(){
+  answered=false;
+  const pool=getPool();
+  if(!pool.length) return;
+  if(used.length>=pool.length) used=[];
+  let idx; do{idx=Math.floor(Math.random()*pool.length);}while(used.includes(idx));
+  used.push(idx); cur=pool[idx];
+
+  const card=document.getElementById('card');
+  card.style.animation='none'; card.offsetHeight; card.style.animation='';
+  card.classList.toggle('xmode',mode==='extra');
+
+  document.getElementById('q').textContent=cur.q;
+  const badge=document.getElementById('typeBadge');
+  badge.textContent=cur.t==='vf'?'Verdadero / Falso':'Opción múltiple';
+  badge.className='type-chip '+cur.t;
+  document.getElementById('topicBadge').textContent=cur.topic;
+  document.getElementById('fbPanel').style.display='none';
+  document.getElementById('bodyEx').classList.remove('show');
+  document.getElementById('bodyEg').classList.remove('show');
+  document.getElementById('btnExp').classList.remove('on');
+  document.getElementById('btnEg').classList.remove('on');
+
+  const icon=mode==='oficial'?'📋':'⚡';
+  document.getElementById('progLabel').innerHTML=
+    `${icon} Pregunta ${used.length} <span style="color:var(--text3)">/ ${pool.length}</span>`;
+
+  renderAnswers();
+}
+
+const KEYS=['A','B','C','D','E','F','G','H'];
+let cur=null;
+
+function renderAnswers(){
+  const wrap=document.getElementById('answers'); wrap.innerHTML='';
+  if(cur.t==='vf'){
+    const row=document.createElement('div'); row.className='vf-row';
+    [['Verdadero','v',true],['Falso','f',false]].forEach(([lbl,cls,val])=>{
+      const b=document.createElement('button');
+      b.className='vf-btn '+cls; b.id='vf-'+cls; b.textContent=lbl;
+      b.onclick=()=>check(val,b); row.appendChild(b);
+    });
+    wrap.appendChild(row);
+  } else {
+    cur.a.forEach((opt,i)=>{
+      const b=document.createElement('button');
+      b.className='ans-btn'; b.id='opt-'+i;
+      b.innerHTML=`<span class="btn-key">${KEYS[i]}</span>${opt}`;
+      b.onclick=()=>check(i,b); wrap.appendChild(b);
+    });
+  }
+}
+
+function check(val,btn){
+  if(answered) return; answered=true;
+  const ok=val===cur.c;
+  registerResult(ok);
+  document.querySelectorAll('.vf-btn,.ans-btn').forEach(b=>b.disabled=true);
+  if(cur.t==='vf'){
+    document.getElementById('vf-v').classList.add(cur.c===true?'correct':(val===true?'wrong':''));
+    document.getElementById('vf-f').classList.add(cur.c===false?'correct':(val===false?'wrong':''));
+  } else {
+    document.getElementById('opt-'+cur.c).classList.add('correct');
+    if(!ok) btn.classList.add('wrong');
+  }
+  showFeedback(ok);
+  if(ok) setTimeout(load,1600);
+}
+
+function showFeedback(ok){
+  const panel=document.getElementById('fbPanel'),hdr=document.getElementById('fbHeader');
+  panel.style.display='block';
+  hdr.className='fb-header '+(ok?'correct':'wrong');
+  document.getElementById('fbIcon').textContent=ok?'✓':'✗';
+  document.getElementById('fbTitle').textContent=ok?'¡Correcto!':'Incorrecto';
+  const label=cur.t==='vf'?(cur.c?'Verdadero':'Falso'):cur.a[cur.c];
+  document.getElementById('fbAns').textContent=label;
+  document.getElementById('expTxt').textContent=cur.ex||'—';
+  document.getElementById('egTxt').textContent=cur.eg||'—';
+}
+
+function toggle(which){
+  const bx=document.getElementById('bodyEx'),bg=document.getElementById('bodyEg');
+  const be=document.getElementById('btnExp'),bg2=document.getElementById('btnEg');
+  if(which==='ex'){
+    const o=bx.classList.contains('show');
+    bx.classList.toggle('show',!o); bg.classList.remove('show');
+    be.classList.toggle('on',!o); bg2.classList.remove('on');
+  } else {
+    const o=bg.classList.contains('show');
+    bg.classList.toggle('show',!o); bx.classList.remove('show');
+    bg2.classList.toggle('on',!o); be.classList.remove('on');
+  }
+}
+
+function registerResult(ok){
+  stats.total++;
+  if(ok){stats.cor++;streak++;if(streak>best)best=streak;}
+  else{stats.wrong++;streak=0;}
+  updateStats(); updateStreak();
+}
+function updateStats(){
+  document.getElementById('s-total').textContent=stats.total;
+  document.getElementById('s-cor').textContent=stats.cor;
+  document.getElementById('s-wrong').textContent=stats.wrong;
+  const p=stats.total?Math.round(stats.cor/stats.total*100):null;
+  document.getElementById('s-pct').textContent=p!==null?p+'%':'—';
+  if(p!==null){
+    document.getElementById('progFill').style.width=p+'%';
+    document.getElementById('progPct').textContent=p+'%';
+  }
+}
+function updateStreak(){
+  const bar=document.getElementById('streakBar'),
+        txt=document.getElementById('streakTxt'),
+        ico=document.getElementById('streakIco');
+  if(streak===0){
+    bar.classList.remove('on'); ico.textContent='💤';
+    txt.textContent=stats.total>0?'Racha rota. ¡A recuperarla!':'Respondé para empezar tu racha';
+  } else {
+    bar.classList.add('on');
+    ico.textContent=streak>=10?'🔥🔥🔥':streak>=5?'🔥🔥':'🔥';
+    txt.textContent=`Racha: ${streak} correctas seguidas · Mejor: ${best}`;
+  }
+}
+function resetStats(){
+  stats={total:0,cor:0,wrong:0}; streak=0; best=0;
+  document.getElementById('progFill').style.width='0%';
+  document.getElementById('progPct').textContent='0%';
+  updateStats(); updateStreak();
+  showToast('Stats reiniciadas ✓');
+}
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
+}
+
+load();
+</script>
+</body>
+</html>

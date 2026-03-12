@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASI · Quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --card: #16161f;
+    --border: #2a2a3a;
+    --accent: #7c6aff;
+    --accent2: #ff6a9d;
+    --green: #3effa3;
+    --red: #ff4e6a;
+    --yellow: #ffd166;
+    --text: #e8e8f0;
+    --muted: #6b6b8a;
+    --mono: 'Space Mono', monospace;
+    --sans: 'Syne', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 48px;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Background grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(124,106,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124,106,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Glow orbs */
+  body::after {
+    content: '';
+    position: fixed;
+    top: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(124,106,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .orb2 {
+    position: fixed;
+    bottom: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,106,157,0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 680px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── HEADER ── */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .logo {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .logo span {
+    color: var(--accent);
+  }
+
+  .repo-link {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    letter-spacing: 0.1em;
+  }
+
+  .repo-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(124,106,255,0.08);
+  }
+
+  /* ── STATS BAR ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .stat-val {
+    font-family: var(--mono);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-val.green { color: var(--green); }
+  .stat-val.red   { color: var(--red); }
+  .stat-val.yellow{ color: var(--yellow); }
+  .stat-val.purple{ color: var(--accent); }
+
+  .stat-label {
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: var(--mono);
+  }
+
+  /* ── STREAK ── */
+  .streak-bar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    min-height: 42px;
+    transition: all 0.3s;
+  }
+
+  .streak-bar.active {
+    border-color: var(--yellow);
+    background: rgba(255,209,102,0.05);
+    color: var(--yellow);
+  }
+
+  .streak-emoji { font-size: 18px; }
+
+  /* ── FILTER ── */
+  .filter-wrap {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-right: 2px;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.18s;
+    letter-spacing: 0.05em;
+  }
+
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+
+  .tag.active {
+    background: rgba(124,106,255,0.15);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 0.35s cubic-bezier(0.22,1,0.36,1);
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(18px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 16px 16px 0 0;
+  }
+
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .type-badge {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid;
+  }
+
+  .type-badge.vf        { color: var(--accent);  border-color: rgba(124,106,255,0.4); background: rgba(124,106,255,0.08); }
+  .type-badge.opciones  { color: var(--yellow);  border-color: rgba(255,209,102,0.4); background: rgba(255,209,102,0.08); }
+  .type-badge.completar { color: var(--green);   border-color: rgba(62,255,163,0.4);  background: rgba(62,255,163,0.08); }
+
+  .topic-badge {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .question {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── BUTTONS ── */
+  .answers { display: flex; flex-direction: column; gap: 10px; }
+
+  .ans-btn {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    transition: all 0.18s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ans-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.18s;
+  }
+
+  .ans-btn:hover:not(:disabled) {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  .ans-btn .btn-letter {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    min-width: 18px;
+    transition: color 0.18s;
+  }
+
+  .ans-btn:hover .btn-letter { color: var(--accent); }
+
+  .ans-btn.correct {
+    background: rgba(62,255,163,0.1);
+    border-color: var(--green);
+    color: var(--green);
+    transform: none;
+  }
+
+  .ans-btn.wrong {
+    background: rgba(255,78,106,0.1);
+    border-color: var(--red);
+    color: var(--red);
+    transform: none;
+  }
+
+  .ans-btn.correct .btn-letter,
+  .ans-btn.wrong .btn-letter { color: inherit; }
+
+  .ans-btn:disabled { cursor: default; }
+
+  /* VF special */
+  .vf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .vf-btn {
+    padding: 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-align: center;
+    transition: all 0.18s;
+  }
+
+  .vf-btn.v:hover:not(:disabled) { border-color: var(--green); color: var(--green); background: rgba(62,255,163,0.05); }
+  .vf-btn.f:hover:not(:disabled) { border-color: var(--red);   color: var(--red);   background: rgba(255,78,106,0.05); }
+
+  .vf-btn.correct {
+    background: rgba(62,255,163,0.1);
+    border-color: var(--green);
+    color: var(--green);
+  }
+
+  .vf-btn.wrong {
+    background: rgba(255,78,106,0.1);
+    border-color: var(--red);
+    color: var(--red);
+  }
+
+  .vf-btn:disabled { cursor: default; }
+
+  /* Completar */
+  .completar-wrap { display: flex; flex-direction: column; gap: 12px; }
+
+  .completar-input {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .completar-input:focus { border-color: var(--accent); }
+
+  .completar-input.correct { border-color: var(--green); background: rgba(62,255,163,0.06); color: var(--green); }
+  .completar-input.wrong   { border-color: var(--red);   background: rgba(255,78,106,0.06);  color: var(--red); }
+
+  .submit-btn {
+    padding: 13px 24px;
+    background: var(--accent);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.18s;
+    text-transform: uppercase;
+  }
+
+  .submit-btn:hover { background: #9585ff; transform: translateY(-1px); }
+
+  /* ── FEEDBACK ── */
+  .feedback {
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 14px;
+    line-height: 1.6;
+    display: none;
+    animation: fadeUp 0.25s ease;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .feedback.correct {
+    background: rgba(62,255,163,0.08);
+    border: 1px solid rgba(62,255,163,0.3);
+    color: var(--green);
+  }
+
+  .feedback.wrong {
+    background: rgba(255,78,106,0.08);
+    border: 1px solid rgba(255,78,106,0.3);
+    color: var(--red);
+  }
+
+  .feedback strong {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  .feedback .justif {
+    color: var(--text);
+    opacity: 0.85;
+    font-size: 13px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* ── BOTTOM CONTROLS ── */
+  .controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+  }
+
+  .ctrl-btn {
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.18s;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+  }
+
+  .ctrl-btn:hover { border-color: var(--text); color: var(--text); }
+
+  .ctrl-btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .ctrl-btn.primary:hover { background: #9585ff; }
+
+  /* PROGRESS  */
+  .progress-ring {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .ring-wrap {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .ring-wrap svg { transform: rotate(-90deg); }
+
+  .ring-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .ring-info {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .ring-info span { color: var(--text); }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text);
+    letter-spacing: 0.05em;
+    z-index: 999;
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+    white-space: nowrap;
+  }
+
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ── JUSTIFICATION TEXTAREA ── */
+  .just-area {
+    width: 100%;
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 13px;
+    resize: vertical;
+    min-height: 70px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .just-area:focus { border-color: var(--accent); }
+
+  .just-area::placeholder { color: var(--muted); }
+
+  @media (max-width: 520px) {
+    .card { padding: 22px 18px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .question { font-size: 16px; }
+    .vf-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="orb2"></div>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo"><span>//</span> ASI · Quiz <span>UTN</span></div>
+    <a class="repo-link" href="https://github.com/lucassoliz/UTN-MaterialAcademico/tree/main/Ing%20Sistemas%20de%20Informacion/Segundo%20Nivel/Analisis%20De%20Sistemas%20de%20Informacion" target="_blank">↗ REPO</a>
+  </header>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-val purple" id="s-total">0</div>
+      <div class="stat-label">Intentos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val green" id="s-correct">0</div>
+      <div class="stat-label">Correctas</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val red" id="s-wrong">0</div>
+      <div class="stat-label">Incorrectas</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val yellow" id="s-pct">—</div>
+      <div class="stat-label">Aciertos</div>
+    </div>
+  </div>
+
+  <!-- STREAK -->
+  <div class="streak-bar" id="streakBar">
+    <span class="streak-emoji">💤</span>
+    <span id="streakText">Respondé para empezar tu racha</span>
+  </div>
+
+  <!-- FILTER -->
+  <div class="filter-wrap">
+    <span class="filter-label">Tema:</span>
+    <button class="tag active" data-topic="all" onclick="setTopic(this)">Todos</button>
+    <button class="tag" data-topic="Agilidad" onclick="setTopic(this)">Agilidad</button>
+    <button class="tag" data-topic="Casos de Uso" onclick="setTopic(this)">Casos de Uso</button>
+    <button class="tag" data-topic="PERT/GANTT" onclick="setTopic(this)">PERT/GANTT</button>
+    <button class="tag" data-topic="Sistemas" onclick="setTopic(this)">Sistemas</button>
+    <button class="tag" data-topic="Procesos" onclick="setTopic(this)">Procesos</button>
+    <button class="tag" data-topic="Requerimientos" onclick="setTopic(this)">Requisitos</button>
+    <button class="tag" data-topic="Metodología" onclick="setTopic(this)">Metodología</button>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-ring">
+    <div class="ring-wrap">
+      <svg width="42" height="42" viewBox="0 0 42 42">
+        <circle cx="21" cy="21" r="17" fill="none" stroke="#2a2a3a" stroke-width="3.5"/>
+        <circle id="ringCircle" cx="21" cy="21" r="17" fill="none" stroke="#7c6aff"
+          stroke-width="3.5" stroke-linecap="round"
+          stroke-dasharray="106.8" stroke-dashoffset="106.8"
+          style="transition: stroke-dashoffset 0.5s ease;"/>
+      </svg>
+      <div class="ring-text" id="ringPct">0%</div>
+    </div>
+    <div class="ring-info">
+      Pregunta <span id="qCount">1</span> · Filtro activo: <span id="filterInfo">Todos</span>
+    </div>
+  </div>
+
+  <!-- CARD -->
+  <div class="card" id="card">
+    <div class="card-meta">
+      <span class="type-badge vf" id="typeBadge">V / F</span>
+      <span class="topic-badge" id="topicBadge">—</span>
+    </div>
+    <div class="question" id="q">Cargando...</div>
+    <div id="answers"></div>
+    <textarea class="just-area" id="justArea" placeholder="Tu justificación (opcional)..."></textarea>
+    <div class="feedback" id="feedback"></div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <button class="ctrl-btn" onclick="showJust()">Ver justificación</button>
+    <button class="ctrl-btn primary" onclick="load()">Siguiente →</button>
+    <button class="ctrl-btn" onclick="resetStats()">Reiniciar stats</button>
+  </div>
+
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+
+//  PREGUNTAAAAS 
+
+const questions = [
+  {type:"vf",q:"En agilidad puede ocurrir cambios pero solo hasta la etapa de desarrollo",c:false,j:"El Manifiesto Ágil acepta cambios incluso en etapas tardías.",topic:"Agilidad"},
+  {type:"vf",q:"Un Caso de Uso debe tener obligatoriamente INCLUDE",c:false,j:"Include y Extend son opcionales. Un CU puede ser atómico.",topic:"Casos de Uso"},
+  {type:"vf",q:"La planificación es perfecta cuando no hay cambios",c:false,j:"La planificación es dinámica. Cambios indican feedback.",topic:"Metodología"},
+  {type:"vf",q:"La entropía ocurre cuando un empleado baja su rendimiento",c:false,j:"La entropía es desgaste sistémico, no problema individual.",topic:"Sistemas"},
+  {type:"vf",q:"Un CU es colección de escenarios",c:true,j:"Tiene escenario principal y alternativos.",topic:"Casos de Uso"},
+  {type:"vf",q:"No hace falta conocer estructura organizacional en reconocimiento",c:false,j:"Es vital entender jerarquías y áreas.",topic:"Metodología"},
+  {type:"vf",q:"El margen libre puede afectar duración del proyecto",c:false,j:"Solo el margen total impacta la fecha final.",topic:"PERT/GANTT"},
+  {type:"vf",q:"El analista decide la solución sin el cliente",c:false,j:"La decisión es conjunta.",topic:"Metodología"},
+  {type:"vf",q:"La entropía aparece cuando el sistema queda obsoleto",c:true,j:"La obsolescencia técnica indica aumento de entropía.",topic:"Sistemas"},
+  {type:"vf",q:"En agilidad solo cambian requerimientos antes del desarrollo",c:false,j:"Agilidad acepta cambios en cualquier etapa.",topic:"Agilidad"},
+  {type:"vf",q:"Para que un REQUERIMIENTO esté bien DEFINIDO debe cumplir 3 cosas: completo, no ambiguo y verificable",c:false,j:"FALSO, debe cumplir esas 3 y ser CONSISTENTE",topic:"Requerimientos"},
+  {type:"vf",q:"Dado que la naturaleza de gestión por procesos es interdepartamental, el área responsable es aquella que debe dar seguimiento general del proceso",c:true,j:"VERDAD, los procesos pueden pasar por más de una Área de la organización, pero una de ellas es el responsable del proceso y supervisar",topic:"Procesos"},
+  {type:"vf",q:"La permeabilidad de un sistema mide la interacción que este recibe del medio",c:true,j:"VERDAD, una característica de los sistemas por la TGS es la permeabilidad que mide la interacción del sistema con el entorno",topic:"Sistemas"},
+  {type:"vf",q:"En la etapa de relevamiento se utilizan cuestionarios para documentar información",c:false,j:"En el Relevamiento los cuestionarios son apoyo, no el método principal de documentar.",topic:"Metodología"},
+  {type:"vf",q:"Si en el reconocimiento se identifica rápidamente el problema, se puede pasar directamente al planeamiento",c:false,j:"No puedes planificar sin el Relevamiento. En él obtenés los detalles del 'cómo' funciona todo hoy.",topic:"Metodología"},
+  {type:"vf",q:"Los procesos se clasifican en tecnológicos, operativos y estratégicos",c:false,j:"La clasificación es: Estratégicos, Operativos y de APOYO.",topic:"Procesos"},
+  {type:"vf",q:"El reconocimiento tiene como objetivo principal brindar una solución al problema",c:false,j:"El objetivo es entender el sistema actual, determinar factibilidad y definir alcance.",topic:"Metodología"},
+  {type:"vf",q:"Las precondiciones son las que desatan el flujo en un Caso de Uso",c:false,j:"Las precondiciones son el estado previo. Lo que inicia el flujo es el Trigger o acción del actor.",topic:"Casos de Uso"},
+  {type:"vf",q:"La persona es el factor principal de éxito en la creación ágil de un producto",c:true,j:"Pilar del Manifiesto Ágil: 'Individuos e interacciones sobre procesos y herramientas'.",topic:"Agilidad"},
+  {type:"vf",q:"El Caso de Uso no puede utilizarse en un proyecto estructurado",c:false,j:"Los CU pueden usarse en cualquier metodología, incluso estructurada.",topic:"Casos de Uso"},
+  {type:"vf",q:"En un sistema de clínica, la edad del paciente es información y la dirección es dato",c:true,j:"La dirección es un hecho crudo (Dato). La edad surge de un procesamiento a partir de la fecha de nacimiento.",topic:"Sistemas"},
+  {type:"vf",q:"Las etapas identificar declaración de procesos, identificar macroprocesos, etc. pertenecen a la gestión de proyectos",c:false,j:"Pertenecen a la GESTIÓN POR PROCESOS.",topic:"Procesos"},
+  {type:"vf",q:"En metodologías ágiles las entregas parciales no generan valor al usuario",c:false,j:"Cada incremento debe ser funcional y aportar valor real al usuario final.",topic:"Agilidad"},
+  {type:"vf",q:"Con el GANTT puedo determinar la duración del proyecto, ver tareas paralelas y calendarizar",c:true,j:"VERDAD, son las funciones principales del diagrama de Gantt.",topic:"PERT/GANTT"},
+  {type:"vf",q:"En el estudio de Factibilidad el profesional de sistemas decide cuál es la solución al problema",c:true,j:"Se evalúan alternativas de solución y se elige la más viable con criterios consensuados.",topic:"Metodología"},
+  {type:"vf",q:"El camino crítico está formado por todas las tareas que se encuentran entre nodos críticos con intervalo de flotamiento igual a 0",c:false,j:"El camino crítico está formado por tareas cuyo margen total (MT) es igual a 0.",topic:"PERT/GANTT"},
+  {type:"vf",q:"Conviene hacer el análisis de Factibilidad al mismo tiempo que el relevamiento",c:false,j:"No se puede hacer el análisis de factibilidad sin conocer al cliente, el sistema y su necesidad.",topic:"Metodología"},
+  {type:"vf",q:"Si se necesita avanzar rápido y no gestionar riesgo, el ciclo de vida ideal es el espiral",c:false,j:"El espiral es para proyectos COMPLEJOS y en cada iteración hace hincapié en el riesgo.",topic:"Metodología"},
+  {type:"vf",q:"En el Relevamiento lo mejor es hacer preguntas abiertas para obtener más información",c:false,j:"Depende del tipo de información: abiertas dan cualitativa, cerradas cuantitativa.",topic:"Metodología"},
+  {type:"vf",q:"Si un PERT posee una tarea que no es crítica, entonces esa tarea nunca será crítica",c:false,j:"Si sufre un atraso mayor o igual a su margen total, se vuelve crítica.",topic:"PERT/GANTT"},
+  {type:"vf",q:"Las tareas ficticias no tienen duración, ni consumen recursos, sirven para reflejar dependencias",c:true,j:"VERDAD, duración 0, sin inversión económica ni de personal.",topic:"PERT/GANTT"},
+  {type:"vf",q:"El camino crítico tiene sentido solo al principio del proyecto",c:false,j:"Si se atrasan tareas hay que recalcular el camino crítico.",topic:"PERT/GANTT"},
+  {type:"vf",q:"La jerarquía de sistemas sirve para ver los niveles de los usuarios en la empresa",c:false,j:"No está relacionado con niveles de usuario sino con subsistemas.",topic:"Sistemas"},
+  {type:"vf",q:"La detección de requerimientos NO FUNCIONALES puede no realizarse en las etapas previas de la metodología",c:true,j:"Puede surgir a medida que se comprende mejor el contexto del sistema.",topic:"Requerimientos"},
+  {type:"vf",q:"Un proceso puede ser realizado por varias áreas y no tener un único responsable",c:true,j:"Los procesos suelen ser transversales. Aunque intervengan varias áreas, lo ideal es un único Dueño del Proceso.",topic:"Procesos"},
+  {type:"vf",q:"Las historias de usuario son útiles solo en el desarrollo y no en el análisis",c:false,j:"Son útiles en el análisis para analizar funcionalidades orientadas a necesidades del cliente.",topic:"Agilidad"},
+  {type:"vf",q:"Las encuestas son una técnica cualitativa para comprensión profunda de un proceso",c:false,j:"Las encuestas son pasivas y cuantitativas. Para comprensión profunda se usan entrevistas.",topic:"Metodología"},
+  {type:"vf",q:"Un requerimiento no funcional puede ser opcional si no afecta directamente al usuario",c:false,j:"Los RNF son fundamentales; establecen el 'cómo' debe ser un sistema.",topic:"Requerimientos"},
+  {type:"vf",q:"El modelo de Espiral incorpora análisis de riesgo en cada iteración",c:true,j:"El espiral es un enfoque orientado a riesgos que evalúa riesgos en cada ciclo.",topic:"Metodología"},
+  {type:"vf",q:"El evento en el cual se prioriza y planifica el trabajo del SPRINT se denomina REVIEW",c:false,j:"Se denomina SPRINT PLANNING.",topic:"Agilidad"},
+  {type:"vf",q:"El margen total afecta directamente a la duración del proyecto",c:true,j:"VERDAD.",topic:"PERT/GANTT"},
+  {type:"vf",q:"El escenario representa una descripción verbal de las excepciones para el caso de uso principal",c:false,j:"El escenario describe el flujo de pasos (normal y alternativo).",topic:"Casos de Uso"},
+  {type:"vf",q:"En un Banco, la cantidad de clientes con cuenta de caja de ahorro es información",c:true,j:"Es información: dato procesado con significado específico.",topic:"Sistemas"},
+  {type:"vf",q:"En el Relevamiento, si se necesita info detallada de una función, se usan entrevistas tipo embudo",c:true,j:"La entrevista tipo embudo comienza general y va a detalles específicos.",topic:"Metodología"},
+  {type:"vf",q:"El ciclo de vida iterativo incremental ágil entrega valor en forma constante",c:true,j:"Increments funcionales continuos.",topic:"Agilidad"},
+  {type:"vf",q:"Que el sistema soporte 100.000 usuarios concurrentes es un RNF de seguridad",c:false,j:"Es RNF de rendimiento, no seguridad. Seguridad es protección de datos y control de acceso.",topic:"Requerimientos"},
+  {type:"vf",q:"En HU, la lista de condiciones para dar por completa una historia se denomina conversations",c:false,j:"Es CONFIRMATION, por la regla de las 3C: CARD, CONVERSATION, CONFIRMATION.",topic:"Agilidad"},
+  {type:"vf",q:"La jerarquía sistémica se define según el organigrama de la organización",c:false,j:"No está relacionado con el organigrama, sino con los sistemas y subsistemas.",topic:"Sistemas"},
+  {type:"vf",q:"En gestión por procesos el trabajo lo define la estructura jerárquica",c:false,j:"La gestión por procesos es horizontal a la estructura de la empresa.",topic:"Procesos"},
+  {type:"vf",q:"Si una tarea no crítica se retrasa, siempre se vuelve crítica",c:false,j:"Solo se convierte en crítica si el atraso iguala o supera su margen total.",topic:"PERT/GANTT"},
+  {type:"vf",q:"La gestión de configuración garantiza que el producto no tenga fallas",c:false,j:"Garantiza la validez de cada etapa y evita trabajo duplicado.",topic:"Metodología"},
+  {type:"vf",q:"La diferencia entre PERT y CPM es que en PERT no se reconocen las actividades",c:false,j:"La diferencia es que en PERT no se conocen las duraciones (probabilístico) y en CPM sí (determinístico).",topic:"PERT/GANTT"},
+  {type:"vf",q:"El informe de reconocimiento carece de utilidad cuando el Sponsor no lo solicita",c:false,j:"Nunca carece de utilidad; es clave para las siguientes etapas.",topic:"Metodología"},
+  {type:"vf",q:"En CU, los actores son únicamente Personas/Usuarios",c:true,j:"Un actor puede ser persona, sistema externo o dispositivo. Si dijera 'únicamente' sería falso, pero el enunciado es correcto como tipo de actor.",topic:"Casos de Uso"},
+  {type:"vf",q:"Un Ing. de SI puede proponer solución en reconocimiento si tiene experiencia",c:false,j:"Nunca se propone solución en reconocimiento. Las soluciones se proponen en el DIAGNÓSTICO.",topic:"Metodología"},
+  {type:"vf",q:"En CU los escenarios solo están representados por el flujo normal",c:false,j:"Están representados por los pasos de flujo Normal y Alternativo.",topic:"Casos de Uso"},
+  {type:"vf",q:"Una metodología solo es necesaria con equipos grandes",c:false,j:"Una metodología aporta orden, control y trazabilidad en todos los casos.",topic:"Metodología"},
+  {type:"vf",q:"La adaptabilidad permite al sistema modificarse según el contexto",c:true,j:"La adaptabilidad es la capacidad de ajustar su funcionamiento ante cambios del entorno.",topic:"Sistemas"},
+  {type:"vf",q:"La entropía define el nivel de respuesta y adaptación al contexto",c:false,j:"La adaptación al contexto corresponde a la homeostasis, no a la entropía.",topic:"Sistemas"},
+  {type:"vf",q:"Si a un nodo llegan una tarea real y una ficticia, la ficticia no interviene en la fecha temprana",c:false,j:"Las tareas ficticias sí pueden intervenir en la determinación de la fecha temprana.",topic:"PERT/GANTT"},
+  {type:"vf",q:"La relación INCLUDE es obligatoria y EXTEND es opcional",c:true,j:"INCLUDE es obligatoria (flujo principal). EXTEND ocurre solo en condiciones del flujo alternativo.",topic:"Casos de Uso"},
+  {type:"vf",q:"En la conclusión del Informe de Reconocimiento se plantea la solución",c:false,j:"Se detallan áreas a relevar. Las soluciones se proponen en el DIAGNÓSTICO.",topic:"Metodología"},
+  {type:"vf",q:"En cascada se paralelizan todas las etapas",c:false,j:"El modelo cascada es secuencial, cada etapa comienza cuando la anterior termina.",topic:"Metodología"},
+  {type:"vf",q:"En un PERT, una tarea crítica es aquella que indica que la tarea es opcional",c:false,j:"Tarea crítica: MT = 0. Si se retrasa, atrasa todo el proyecto.",topic:"PERT/GANTT"},
+  {type:"vf",q:"Las minutas de reunión no son necesarias cuando los integrantes son de la misma empresa",c:false,j:"Las minutas documentan lo hablado en toda reunión, sin importar el origen de los participantes.",topic:"Metodología"},
+  {type:"vf",q:"En organizaciones pequeñas no es necesario hacer un Reconocimiento",c:false,j:"El reconocimiento es siempre necesario: es el primer contacto con la empresa.",topic:"Metodología"},
+  {type:"vf",q:"Para saber si una tarea es crítica basta que el intervalo de flotamiento de sus nodos sea 0",c:false,j:"Una tarea es crítica cuando su Margen Total (MT) es igual a 0.",topic:"PERT/GANTT"},
+  {type:"vf",q:"Los CU no tienen un único escenario",c:true,j:"Describen múltiples formas en las que un usuario puede interactuar con el sistema.",topic:"Casos de Uso"},
+  {type:"vf",q:"En un diagrama de GANTT no se puede asegurar dependencia entre tareas consecutivas",c:false,j:"Las dependencias se ven en el CPM. El GANTT muestra la calendarización.",topic:"PERT/GANTT"},
+  {type:"vf",q:"El CU es una combinatoria de Flujo Alternativo y Flujo Principal",c:true,j:"Es la definición de CU.",topic:"Casos de Uso"},
+  {type:"vf",q:"Los informes de avances carecen de utilidad cuando el proyecto está en tiempo",c:false,j:"Son útiles siempre para monitorear, anticipar desvíos y mantener informados a stakeholders.",topic:"Metodología"},
+  {type:"vf",q:"Los casos de uso solo se aconsejan cuando el paradigma es estructurado",c:false,j:"Los CU pueden usarse tanto en paradigma estructurado como en POO.",topic:"Casos de Uso"},
+  {type:"vf",q:"En una fábrica de alfajores la cantidad de materia prima es dato y la receta es información",c:true,j:"El dato es un hecho crudo. La información surge al procesar o contextualizar esos datos.",topic:"Sistemas"},
+  {type:"vf",q:"El ciclo de vida espiral no contempla iteraciones",c:false,j:"El modelo espiral es iterativo, refinando requerimientos y soluciones en cada vuelta.",topic:"Metodología"},
+  {type:"vf",q:"La gestión de calidad se realiza solo luego del desarrollo del producto",c:false,j:"La gestión de calidad debe estar presente durante todo el ciclo de vida del sistema.",topic:"Metodología"},
+  {type:"vf",q:"El margen libre es menos estricto que el margen total porque no impacta sobre todo el proyecto",c:true,j:"El margen libre es cuánto puede retrasarse sin afectar la siguiente actividad.",topic:"PERT/GANTT"},
+  {type:"vf",q:"La entropía se puede detectar en un SI cuando el mismo se vuelve obsoleto tecnológicamente",c:true,j:"Cuando un sistema queda obsoleto y no se adapta, refleja aumento de entropía.",topic:"Sistemas"},
+  {type:"vf",q:"Los requerimientos funcionales los define el usuario y los no funcionales el analista",c:false,j:"Ambos tipos deben definirse en conjunto entre usuario y analista.",topic:"Requerimientos"},
+  {type:"vf",q:"Los procesos estratégicos proveen todos los recursos necesarios para generar valor al cliente",c:false,j:"Eso corresponde a procesos de apoyo. Los estratégicos definen objetivos y estrategias.",topic:"Procesos"},
+  {type:"vf",q:"En las entrevistas siempre es mejor utilizar solo preguntas abiertas",c:false,j:"Deben combinarse según el tipo de información que se desea obtener.",topic:"Metodología"},
+  {type:"vf",q:"Los requerimientos NO funcionales pueden omitirse",c:false,j:"Son restricciones de los RF. Son características de CÓMO el sistema realiza el trabajo.",topic:"Requerimientos"},
+  {type:"vf",q:"La relación include se establece entre actores",c:false,j:"Es obligatoria pero se establece entre Casos de Uso, no actores.",topic:"Casos de Uso"},
+  {type:"vf",q:"Un sistema cerrado no intercambia información con el entorno",c:true,j:"Por definición, un sistema cerrado no interactúa con su entorno.",topic:"Sistemas"},
+  {type:"vf",q:"La sinergia implica que el resultado conjunto supera la suma individual",c:true,j:"La acción cooperativa de subsistemas origina un producto mayor que la suma de sus partes.",topic:"Sistemas"},
+  {type:"vf",q:"El reconocimiento tiene como objetivo proponer soluciones",c:false,j:"El objetivo es entender el sistema actual. Las soluciones se proponen en el DIAGNÓSTICO.",topic:"Metodología"},
+  {type:"vf",q:"La retroalimentación permite ajustar el sistema",c:true,j:"El feedback permite al sistema corregir y ajustar su funcionamiento.",topic:"Sistemas"},
+  {type:"vf",q:"El modelo cascada permite volver etapas fácilmente",c:false,j:"El modelo cascada es secuencial y rígido; volver atrás es costoso.",topic:"Metodología"},
+  {type:"vf",q:"Las historias de usuario describen funcionalidad desde perspectiva del usuario",c:true,j:"Eso es exactamente la definición de HU.",topic:"Agilidad"},
+  {type:"vf",q:"El camino crítico determina duración mínima del proyecto",c:true,j:"El camino más largo en duración determina el tiempo mínimo del proyecto.",topic:"PERT/GANTT"},
+  {type:"vf",q:"Las tareas paralelas reducen duración total",c:true,j:"Ejecutar tareas en paralelo reduce el tiempo total del proyecto.",topic:"PERT/GANTT"},
+  {type:"vf",q:"El backlog se congela al iniciar el proyecto",c:false,j:"En agilidad el backlog es dinámico y puede modificarse en cualquier momento.",topic:"Agilidad"},
+  {type:"vf",q:"Un sistema abierto interactúa con el entorno",c:true,j:"Por definición, un sistema abierto intercambia materia, energía o información con su entorno.",topic:"Sistemas"},
+  {type:"vf",q:"La homeostasis mantiene el equilibrio interno del sistema",c:true,j:"La homeostasis es la capacidad del sistema de mantener el equilibrio ante perturbaciones.",topic:"Sistemas"},
+  {type:"vf",q:"La sinergia es negativa",c:false,j:"La sinergia es positiva: el resultado conjunto supera la suma de partes.",topic:"Sistemas"},
+  {type:"vf",q:"Un SI solo sirve para registrar información",c:false,j:"Un SI almacena, calcula, produce y publica información para apoyar la toma de decisiones.",topic:"Sistemas"},
+  {type:"vf",q:"La información reduce incertidumbre",c:true,j:"Esa es una de las funciones clave de la información.",topic:"Sistemas"},
+  {type:"vf",q:"La entropía puede ser combatida mediante mantenimiento y actualización",c:true,j:"El mantenimiento y la actualización frenan el desgaste sistémico.",topic:"Sistemas"},
+  {type:"vf",q:"El feedback puede ser positivo o negativo",c:true,j:"El feedback positivo amplifica cambios; el negativo los amortigua.",topic:"Sistemas"},
+  {type:"vf",q:"Un proceso transforma inputs en outputs",c:true,j:"Esa es la definición básica de proceso.",topic:"Procesos"},
+  {type:"vf",q:"Un SI eficaz es necesariamente eficiente",c:false,j:"Eficacia (lograr objetivos) no implica eficiencia (uso óptimo de recursos).",topic:"Sistemas"},
+  {type:"vf",q:"La adaptabilidad permite supervivencia del sistema",c:true,j:"Adaptarse al entorno cambiante es clave para la supervivencia.",topic:"Sistemas"},
+  {type:"vf",q:"La entropía siempre es externa",c:false,j:"La entropía puede ser interna o externa al sistema.",topic:"Sistemas"},
+  {type:"vf",q:"La mejora continua combate la entropía",c:true,j:"La mejora continua contrarresta el desgaste y la obsolescencia.",topic:"Sistemas"},
+  {type:"vf",q:"En los CU, un actor es aquel que asume el rol de interactuar directamente con el sistema",c:true,j:"Definición correcta de actor en CU.",topic:"Casos de Uso"},
+  {type:"vf",q:"El margen libre es más estricto que el margen total porque impacta en todo el proyecto",c:false,j:"Es al revés: el margen total es más restrictivo porque impacta la fecha fin.",topic:"PERT/GANTT"},
+  {type:"vf",q:"La entropía en un SI se detecta cuando el mismo se vuelve obsoleto tecnológicamente",c:true,j:"Obsolescencia refleja aumento de entropía.",topic:"Sistemas"},
+  {type:"vf",q:"Los requerimientos funcionales los define el usuario y los NO funcionales el analista",c:false,j:"Ambos se definen en conjunto.",topic:"Requerimientos"},
+  {type:"vf",q:"Los procesos estratégicos son responsables de proveer recursos como personas y maquinaria",c:false,j:"Eso corresponde a procesos de APOYO.",topic:"Procesos"},
+  {type:"vf",q:"El Scrum Master es el jefe del equipo",c:false,j:"El Scrum Master facilita el proceso, no es un jefe. El equipo es autoorganizado.",topic:"Agilidad"},
+  {type:"vf",q:"El Product Owner prioriza el backlog",c:true,j:"Es la responsabilidad principal del Product Owner.",topic:"Agilidad"},
+  {type:"vf",q:"PERT permite calcular tiempos esperados",c:true,j:"PERT usa estimaciones probabilísticas para calcular tiempos esperados.",topic:"PERT/GANTT"},
+  {type:"vf",q:"Un requerimiento debe ser medible",c:true,j:"Ser verificable/medible es una de las características de un buen requerimiento.",topic:"Requerimientos"},
+  {type:"vf",q:"El relevamiento recopila información del negocio",c:true,j:"El objetivo del relevamiento es recopilar información detallada del negocio.",topic:"Metodología"},
+  {type:"vf",q:"Un actor siempre es una persona",c:false,j:"Un actor puede ser persona, sistema externo o dispositivo.",topic:"Casos de Uso"},
+  {type:"vf",q:"La relación EXTEND indica comportamiento opcional",c:true,j:"EXTEND representa comportamiento condicional u opcional en CU.",topic:"Casos de Uso"},
+  {type:"vf",q:"La frontera del sistema define sus límites",c:true,j:"La frontera separa el sistema de su entorno.",topic:"Sistemas"},
+  {type:"vf",q:"El entorno influye en el comportamiento del sistema",c:true,j:"El entorno es fuente de inputs e influye en el sistema.",topic:"Sistemas"},
+  {type:"vf",q:"Un subsistema forma parte de un sistema mayor",c:true,j:"Por definición, un subsistema es componente de un sistema de nivel superior.",topic:"Sistemas"},
+  {type:"vf",q:"Los indicadores permiten medir desempeño",c:true,j:"Esa es la función de los indicadores de gestión.",topic:"Procesos"},
+  {type:"vf",q:"Los objetivos del sistema deben ser claros",c:true,j:"Sin objetivos claros no se puede evaluar si el sistema cumple su propósito.",topic:"Sistemas"},
+  {type:"vf",q:"Los procesos primarios generan valor directo",c:true,j:"Los procesos operativos/primarios crean valor para el cliente.",topic:"Procesos"},
+  {type:"vf",q:"Los procesos secundarios apoyan a los primarios",c:true,j:"Los procesos de apoyo sostienen a los operativos.",topic:"Procesos"},
+  {type:"vf",q:"Eficacia significa lograr objetivos",c:true,j:"Eficacia = lograr lo propuesto. Eficiencia = lograr con menos recursos.",topic:"Sistemas"},
+  {type:"vf",q:"Eficiencia significa usar menos recursos",c:true,j:"Eficiencia = lograr el mismo resultado usando menos recursos.",topic:"Sistemas"},
+  {type:"vf",q:"El margen libre puede afectar tareas posteriores",c:true,j:"Si se excede el margen libre, se retrasa la tarea siguiente.",topic:"PERT/GANTT"},
+
+  //     OPCIONES
+  {type:"opciones",q:"¿Qué es un requerimiento funcional?",a:["Define qué debe hacer un sistema y cómo transforma entradas en salidas. Ej: verificar usuario y validar datos","Describe solamente el diseño visual del sistema","Se refiere únicamente al hardware","Indica solo tiempos de respuesta"],c:0,topic:"Requerimientos"},
+  {type:"opciones",q:"¿Cuál es la diferencia entre Cascada e Iterativo Incremental?",a:["Cascada es rígido y secuencial; Iterativo incremental es flexible y acepta cambios","Cascada permite cambios tardíos; Iterativo no","Ambos funcionan igual","Iterativo no permite feedback"],c:0,topic:"Metodología"},
+  {type:"opciones",q:"Diferencia entre Sprint Backlog y Product Backlog",a:["Sprint backlog es del sprint actual; Product backlog contiene todos los requerimientos","Ambos contienen exactamente lo mismo","Product backlog solo sirve al final","Sprint backlog no cambia"],c:0,topic:"Agilidad"},
+  {type:"opciones",q:"Diferencia entre objetivo del mandato y objetivo de la organización",a:["Mandato indica por qué se contrata el sistema; organización define a qué se dedica","Ambos son iguales","Mandato describe productos","Organización define requerimientos técnicos"],c:0,topic:"Metodología"},
+  {type:"opciones",q:"¿Qué es un proceso de negocio y por qué modelar antes?",a:["Conjunto de actividades que generan valor; modelar organiza tareas antes del desarrollo","Solo un diagrama","Un módulo del sistema","No es necesario modelar"],c:0,topic:"Procesos"},
+  {type:"opciones",q:"¿Qué efecto pueden tener los requerimientos ambiguos?",a:["Los requerimientos ambiguos generan confusión, retrabajo, costos extras y retrasos","No afectan significativamente","Pueden resolverse en etapas posteriores sin inconvenientes","No generan ningún problema"],c:0,topic:"Requerimientos"},
+  {type:"opciones",q:"¿Qué relación existe entre el ciclo de vida de SW y la gestión de proyectos?",a:["El ciclo de vida define las etapas del desarrollo; la gestión organiza y controla esas etapas en tiempo, forma y costo","Son lo mismo","La gestión no influye en el ciclo de vida","El ciclo de vida reemplaza a la gestión"],c:0,topic:"Metodología"},
+  {type:"opciones",q:"¿Qué significa que un requerimiento sea verificable?",a:["Que puede ser evaluado objetivamente mediante pruebas o revisiones","Que solo el cliente puede validarlo","Que no necesita documentarse","Que el analista lo aprueba"],c:0,topic:"Requerimientos"},
+  {type:"opciones",q:"¿Cuáles son los principios ágiles?",a:["Colaboración con el cliente, entregas frecuentes de SW funcional, adaptación, confianza con el equipo y mejoras constantes","Solo velocidad de entrega","Documentación exhaustiva","Planificación rígida"],c:0,topic:"Agilidad"},
+  {type:"opciones",q:"La diferencia entre margen total y margen libre es:",a:["El margen total indica cuánto puede demorar una actividad sin retrasar el proyecto; el margen libre sin afectar la siguiente tarea","Ambos significan lo mismo","Solo importa el margen libre","No existen diferencias"],c:0,topic:"PERT/GANTT"},
+  {type:"opciones",q:"Una entrevista tipo Pirámide:",a:["Empieza con preguntas cerradas y termina con abiertas","Empieza abierta y termina cerrada","Solo usa abiertas","Solo usa cerradas"],c:0,topic:"Metodología"},
+  {type:"opciones",q:"La inexactitud en la especificación de requerimientos:",a:["Causa muchos problemas en la Ingeniería de SW","No afecta significativamente","Puede resolverse en etapas posteriores sin inconvenientes","N.a"],c:0,topic:"Requerimientos"},
+  {type:"opciones",q:"Lo que determina un período de demora posible para las tareas en cada nodo se denomina:",a:["Camino crítico","Fecha temprana y tardía","N.a","Intervalo de flotamiento"],c:3,topic:"PERT/GANTT"},
+  {type:"opciones",q:"¿Cuál es una característica de los procesos de Apoyo?",a:["Ofrecer soporte a los Procesos Operativos","Están orientados exclusivamente a los clientes","Pueden ser fácilmente tercerizados","N.a"],c:0,topic:"Procesos"},
+  {type:"opciones",q:"Los procesos de negocio que generan valor para otros procesos y no para el cliente directamente se denominan:",a:["Procesos Estratégicos","Procesos Operativos","Procesos de Apoyo","N.a"],c:2,topic:"Procesos"},
+  {type:"opciones",q:"El concepto de que el todo es mayor que la suma de sus partes se refiere a:",a:["Homeostasis","Entropía","Sinergia","N.a"],c:2,topic:"Sistemas"},
+  {type:"opciones",q:"La etapa de Reconocimiento: las entrevistas se realizan a:",a:["Nivel operativo","Sponsor","Niveles superiores / alta gerencia","N.a"],c:2,topic:"Metodología"},
+  {type:"opciones",q:"En las especificaciones de un CU, los escenarios están determinados por:",a:["Ejecución de los pasos del Flujo normal solamente","Ejecución de pasos del Flujo normal y alternativo","Ejecución de los pasos del flujo alternativo solamente","N.a"],c:1,topic:"Casos de Uso"},
+  {type:"opciones",q:"Los casos de uso tienen las siguientes características:",a:["Solo pueden utilizarse con el POO","Se pueden utilizar para confeccionar los casos de prueba para testeo","Son una técnica de redacción de secuencias de acciones del sistema","N.a"],c:1,topic:"Casos de Uso"},
+  {type:"opciones",q:"El desgaste que el sistema presenta por el transcurso del tiempo se denomina:",a:["Sinergia","Entropía","Mantenibilidad","N.a"],c:1,topic:"Sistemas"},
+  {type:"opciones",q:"El diagrama de PERT tiene las siguientes características:",a:["No puede tener más de un camino crítico","Muestra claramente la superposición de tareas","La estimación del tiempo es determinista","Ninguna de las anteriores"],c:3,topic:"PERT/GANTT"},
+  {type:"opciones",q:"Los requerimientos No funcionales:",a:["No deben tenerse en cuenta","Se refieren a alternativas si no se cumple un RF","Están relacionadas con funcionalidades pero no son relevantes","N.a"],c:3,topic:"Requerimientos"},
+  {type:"opciones",q:"Para definir los problemas en el informe de reconocimiento se debe tener en cuenta:",a:["Que deben estar vinculados al SI y relacionados con el objetivo del mandato","No es importante vincularlos con el SI","Solo importa el presupuesto","Solo importa el cliente"],c:0,topic:"Metodología"},
+  {type:"opciones",q:"En CU un escenario es:",a:["Un actor","Una instancia concreta del CU","Un error del sistema"],c:1,topic:"Casos de Uso"},
+  {type:"opciones",q:"SCRUM divide el trabajo en periodos breves llamados:",a:["Releases","Sprints","Fases"],c:1,topic:"Agilidad"},
+  {type:"opciones",q:"Los requerimientos ambiguos generan:",a:["Claridad","Confusión, retrabajo y retrasos","Optimización"],c:1,topic:"Requerimientos"},
+  {type:"opciones",q:"GANTT permite:",a:["Definir actores","Determinar duración del proyecto y tareas paralelas","Detectar requerimientos"],c:1,topic:"PERT/GANTT"},
+  {type:"opciones",q:"KANBAN sirve para visualizar:",a:["Arquitectura del sistema","Flujo de trabajo (Work in Progress)","Base de datos"],c:1,topic:"Agilidad"},
+  {type:"opciones",q:"El Sprint Planning sirve para:",a:["Entregar el producto","Planificar el sprint","Auditar el equipo"],c:1,topic:"Agilidad"},
+  {type:"opciones",q:"Las preguntas abiertas brindan información:",a:["Cuantitativa","Cualitativa"],c:1,topic:"Metodología"},
+  {type:"opciones",q:"El macroproceso representa:",a:["Detalle técnico","Visión general del sistema de procesos","Base de datos"],c:1,topic:"Procesos"},
+  {type:"opciones",q:"El mandato define:",a:["Cómo programar","Alcance y límites del proyecto","Lenguaje del sistema"],c:1,topic:"Metodología"},
+  {type:"opciones",q:"Product Backlog contiene:",a:["Solo tareas actuales","Todo el producto (todos los requerimientos)","Solo errores"],c:1,topic:"Agilidad"},
+  {type:"opciones",q:"Sprint Backlog contiene:",a:["Historias del sprint actual","Todo el sistema","Requerimientos futuros"],c:0,topic:"Agilidad"},
+  {type:"opciones",q:"Los stakeholders son:",a:["Solo programadores","Personas interesadas en el sistema","Solo usuarios técnicos"],c:1,topic:"Metodología"},
+  {type:"opciones",q:"El diagrama de contexto muestra:",a:["Clases del sistema","Relación del sistema con su entorno","Algoritmos internos"],c:1,topic:"Sistemas"},
+  {type:"opciones",q:"Daily Scrum es una reunión:",a:["Mensual","Diaria y corta","De auditoría"],c:1,topic:"Agilidad"},
+  {type:"opciones",q:"La factibilidad técnica evalúa:",a:["Costos del proyecto","Disponibilidad tecnológica","Perfil de los usuarios"],c:1,topic:"Metodología"},
+  {type:"opciones",q:"Un flujo de proceso ITERATIVO:",a:["No repite actividades","Repite una o más actividades antes de pasar a la siguiente","Es solo del modelo cascada","No existe"],c:1,topic:"Procesos"},
+  {type:"opciones",q:"Un SI tiene como objetivo:",a:["Guardar datos","Apoyar la toma de decisiones","Eliminar personal"],c:1,topic:"Sistemas"},
+  {type:"opciones",q:"Los inputs son:",a:["Resultados del sistema","Entradas al sistema","Errores del sistema"],c:1,topic:"Sistemas"},
+  {type:"opciones",q:"Los outputs representan:",a:["Procesos internos","Salidas del sistema","Datos internos"],c:1,topic:"Sistemas"},
+  {type:"opciones",q:"En el ciclo de vida ITERATIVO INCREMENTAL ÁGIL, la prioridad es:",a:["Cascada completa","Satisfacer al cliente mediante la entrega temprana y continua de SW","Diseño exhaustivo al inicio"],c:1,topic:"Agilidad"},
+  {type:"opciones",q:"En el enfoque de gestión FUNCIONAL, el foco está en:",a:["FUNCIONAL: las áreas de la organización","POR PROCESOS: los flujos transversales","SISTÉMICO: el entorno"],c:0,topic:"Procesos"},
+  {type:"opciones",q:"El diagrama de PERT tiene la siguiente característica:",a:["No puede tener más de un camino crítico","Muestra claramente la superposición de tareas","La estimación de tiempo es probabilística","Es determinista como el GANTT"],c:2,topic:"PERT/GANTT"},
+  {type:"opciones",q:"Las declaraciones representan:",a:["Las definiciones generales de la organización, su misión, visión y alcance de actividades","Solo el organigrama","Los requerimientos técnicos","El plan de proyecto"],c:0,topic:"Metodología"},
+  {type:"opciones",q:"La entropía en un sistema se produce por:",a:["Errores humanos solamente","Desgaste, obsolescencia y falta de adaptación","Renuncia de empleados"],c:1,topic:"Sistemas"},
+
+  // COMPLETAR
+  {type:"completar",q:"En el enfoque de gestión FUNCIONAL el foco está en...",r:"las áreas de la organización",topic:"Procesos"},
+  {type:"completar",q:"En el ciclo de vida ITERATIVO INCREMENTAL ÁGIL la prioridad es...",r:"satisfacer al cliente mediante la entrega temprana y continua de software",topic:"Agilidad"},
+  {type:"completar",q:"En los CU un actor es...",r:"aquel que asume el rol de interactuar directamente con el sistema y sus funcionalidades",topic:"Casos de Uso"},
+  {type:"completar",q:"La entropía es el fenómeno por el cual un sistema...",r:"se desgasta o deteriora con el tiempo si no recibe mantenimiento",topic:"Sistemas"},
+  {type:"completar",q:"El camino crítico es aquel cuyas tareas tienen margen total igual a...",r:"cero",topic:"PERT/GANTT"},
+  {type:"completar",q:"En SCRUM, el período de trabajo breve en el que se ejecutan las tareas del sprint backlog se llama...",r:"Sprint",topic:"Agilidad"},
+  {type:"completar",q:"Un requerimiento bien definido debe ser completo, consistente, no ambiguo y...",r:"verificable",topic:"Requerimientos"},
+  {type:"completar",q:"La relación EXTEND en CU indica un comportamiento...",r:"opcional o condicional",topic:"Casos de Uso"},
+  {type:"completar",q:"La sinergia es la propiedad de un sistema por la que el resultado conjunto es ________ que la suma de sus partes.",r:"mayor",topic:"Sistemas"},
+  {type:"completar",q:"Las 3C de las Historias de Usuario son: Card, Conversation y...",r:"Confirmation",topic:"Agilidad"},
+];
+
+// ═══════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════
+let current       = null;
+let activeTopic   = 'all';
+let pool          = [];
+let usedIndices   = [];
+let stats         = { total:0, correct:0, wrong:0 };
+let streak        = 0;
+let bestStreak    = 0;
+let answered      = false;
+
+// ═══════════════════════════════════════════════
+//  TOPIC FILTER
+// ═══════════════════════════════════════════════
+function setTopic(el) {
+  document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  activeTopic = el.dataset.topic;
+  document.getElementById('filterInfo').textContent = activeTopic === 'all' ? 'Todos' : activeTopic;
+  usedIndices = [];
+  load();
+}
+
+function getPool() {
+  return activeTopic === 'all'
+    ? questions
+    : questions.filter(q => q.topic === activeTopic);
+}
+
+// ═══════════════════════════════════════════════
+//  LOAD
+// ═══════════════════════════════════════════════
+function load() {
+  answered = false;
+  pool = getPool();
+  if (!pool.length) return;
+
+  // anti-repeat
+  if (usedIndices.length >= pool.length) usedIndices = [];
+
+  let idx;
+  do { idx = Math.floor(Math.random() * pool.length); }
+  while (usedIndices.includes(idx));
+  usedIndices.push(idx);
+  current = pool[idx];
+
+  // reset card
+  document.getElementById('q').textContent = current.q;
+  document.getElementById('justArea').value = '';
+  document.getElementById('justArea').style.display = current.type === 'vf' ? 'block' : 'none';
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('feedback').className = 'feedback';
+
+  // type badge
+  const badge = document.getElementById('typeBadge');
+  const labels = { vf:'V / F', opciones:'Opción múltiple', completar:'Completar' };
+  badge.textContent = labels[current.type];
+  badge.className = 'type-badge ' + current.type;
+
+  document.getElementById('topicBadge').textContent = current.topic || '—';
+
+  // re-render card for animation
+  const card = document.getElementById('card');
+  card.style.animation = 'none';
+  card.offsetHeight; // reflow
+  card.style.animation = '';
+
+  renderAnswers();
+  updateCounter();
+}
+
+// ═══════════════════════════════════════════════
+//  RENDER ANSWERS
+// ═══════════════════════════════════════════════
+const LETTERS = ['A','B','C','D','E'];
+
+function renderAnswers() {
+  const wrap = document.getElementById('answers');
+  wrap.innerHTML = '';
+
+  if (current.type === 'vf') {
+    const row = document.createElement('div');
+    row.className = 'vf-row';
+    ['VERDADERO','FALSO'].forEach((label, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'vf-btn ' + (i===0?'v':'f');
+      btn.id = 'vf-btn-' + i;
+      btn.textContent = label;
+      btn.onclick = () => check(i===0 ? true : false, btn);
+      row.appendChild(btn);
+    });
+    wrap.appendChild(row);
+
+  } else if (current.type === 'opciones') {
+    current.a.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'ans-btn';
+      btn.id = 'opt-btn-' + i;
+      btn.innerHTML = `<span class="btn-letter">${LETTERS[i]}</span>${opt}`;
+      btn.onclick = () => check(i, btn);
+      wrap.appendChild(btn);
+    });
+
+  } else if (current.type === 'completar') {
+    const div = document.createElement('div');
+    div.className = 'completar-wrap';
+    const inp = document.createElement('input');
+    inp.type = 'text';
+    inp.className = 'completar-input';
+    inp.id = 'completar-inp';
+    inp.placeholder = 'Escribí tu respuesta...';
+    inp.onkeydown = e => { if(e.key==='Enter') checkCompletar(); };
+    const btn = document.createElement('button');
+    btn.className = 'submit-btn';
+    btn.textContent = 'VERIFICAR';
+    btn.onclick = checkCompletar;
+    div.appendChild(inp);
+    div.appendChild(btn);
+    wrap.appendChild(div);
+    setTimeout(()=>inp.focus(), 50);
+  }
+}
+
+// ═══════════════════════════════════════════════
+//  CHECK
+// ═══════════════════════════════════════════════
+function check(val, clickedBtn) {
+  if (answered) return;
+  answered = true;
+
+  const isCorrect = val === current.c;
+  registerResult(isCorrect);
+
+  // Disable all buttons
+  document.querySelectorAll('.vf-btn, .ans-btn').forEach(b => b.disabled = true);
+
+  if (current.type === 'vf') {
+    const vBtn = document.getElementById('vf-btn-0');
+    const fBtn = document.getElementById('vf-btn-1');
+    if (current.c === true) {
+      vBtn.classList.add('correct');
+      if (!isCorrect) fBtn.classList.add('wrong');
+    } else {
+      fBtn.classList.add('correct');
+      if (!isCorrect) vBtn.classList.add('wrong');
+    }
+  } else {
+    document.getElementById('opt-btn-' + current.c).classList.add('correct');
+    if (!isCorrect) clickedBtn.classList.add('wrong');
+  }
+
+  showFeedback(isCorrect);
+  if (isCorrect) setTimeout(load, 1500);
+}
+
+function checkCompletar() {
+  if (answered) return;
+  answered = true;
+
+  const inp = document.getElementById('completar-inp');
+  const userAns = inp.value.trim().toLowerCase();
+  const correctAns = current.r.toLowerCase();
+  const isCorrect = userAns === correctAns ||
+                    correctAns.includes(userAns) ||
+                    userAns.includes(correctAns.split(' ')[0]);
+
+  inp.disabled = true;
+  inp.classList.add(isCorrect ? 'correct' : 'wrong');
+  registerResult(isCorrect);
+  showFeedback(isCorrect);
+  if (isCorrect) setTimeout(load, 1800);
+}
+
+
+//   fFEEDBACK
+function showFeedback(isCorrect) {
+  const fb = document.getElementById('feedback');
+  fb.style.display = 'block';
+  fb.className = 'feedback ' + (isCorrect ? 'correct' : 'wrong');
+
+  let correctLabel = '';
+  if (current.type === 'vf') correctLabel = current.c ? 'VERDADERO' : 'FALSO';
+  else if (current.type === 'opciones') correctLabel = current.a[current.c];
+  else if (current.type === 'completar') correctLabel = current.r;
+
+  const justif = current.j || current.r || '';
+  fb.innerHTML = `<strong>${isCorrect ? '✓ CORRECTO' : '✗ INCORRECTO'}</strong>
+    Respuesta: ${correctLabel}
+    ${justif ? `<div class="justif">${justif}</div>` : ''}`;
+}
+
+function showJust() {
+  if (!current) return;
+  showFeedback(false); 
+
+  if (!answered) {
+    const fb = document.getElementById('feedback');
+    fb.className = 'feedback wrong';
+    fb.style.background = 'rgba(124,106,255,0.08)';
+    fb.style.borderColor = 'rgba(124,106,255,0.3)';
+    fb.style.color = 'var(--text)';
+  }
+}
+
+function registerResult(isCorrect) {
+  stats.total++;
+  if (isCorrect) { stats.correct++; streak++; if(streak>bestStreak) bestStreak=streak; }
+  else           { stats.wrong++;   streak=0; }
+  updateStats();
+  updateStreak();
+}
+
+function updateStats() {
+  document.getElementById('s-total').textContent   = stats.total;
+  document.getElementById('s-correct').textContent = stats.correct;
+  document.getElementById('s-wrong').textContent   = stats.wrong;
+  const pct = stats.total ? Math.round(stats.correct/stats.total*100) : null;
+  const pctEl = document.getElementById('s-pct');
+  pctEl.textContent = pct !== null ? pct+'%' : '—';
+
+  const circ = 106.8;
+  const offset = pct !== null ? circ - (pct/100)*circ : circ;
+  document.getElementById('ringCircle').style.strokeDashoffset = offset;
+  document.getElementById('ringPct').textContent = pct !== null ? pct+'%' : '0%';
+}
+
+function updateStreak() {
+  const bar  = document.getElementById('streakBar');
+  const text = document.getElementById('streakText');
+  if (streak === 0) {
+    bar.classList.remove('active');
+    text.textContent = 'Racha rota. ¡A recuperarla!';
+    bar.querySelector('.streak-emoji').textContent = '💤';
+  } else {
+    bar.classList.add('active');
+    const emoji = streak >= 10 ? '🔥🔥🔥' : streak >= 5 ? '🔥🔥' : '🔥';
+    bar.querySelector('.streak-emoji').textContent = emoji;
+    text.textContent = `Racha: ${streak} correctas seguidas · Mejor: ${bestStreak}`;
+  }
+}
+
+function updateCounter() {
+  document.getElementById('qCount').textContent = usedIndices.length;
+}
+
+function resetStats() {
+  stats = { total:0, correct:0, wrong:0 };
+  streak = 0; bestStreak = 0;
+  updateStats();
+  updateStreak();
+  toast('Stats reiniciadas ✓');
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2500);
+}
+
+load();
+</script>
+</body>
+</html>

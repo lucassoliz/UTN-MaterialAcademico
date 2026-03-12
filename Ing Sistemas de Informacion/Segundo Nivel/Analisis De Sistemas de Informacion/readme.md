@@ -5,8 +5,14 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 Full teoria del primer cuatrimestre (al igual que teoria tomados en finales)  
 https://docs.google.com/document/d/1u7fDHeFd_RgU6sa68mMcmzqZwGSzntlEH1A43aXMhVw/edit?usp=sharing  
 
-### Haz clic aquí para iniciar el Quiz!
-[![Ejecutar Quiz](https://img.shields.io/badge/INICIAR-QUIZ-brightgreen?style=for-the-badge&logo=rocket)](https://lucassoliz.github.io/UTN-MaterialAcademico/Ing%20Sistemas%20de%20Informacion/Segundo%20Nivel/Analisis%20De%20Sistemas%20de%20Informacion/index.html)
+### Haz clic aquí para iniciar el Quiz!  
+### Versión estándar 
+[![Ejecutar Quiz](https://img.shields.io/badge/INICIAR-QUIZ-brightgreen?style=for-the-badge&logo=rocket)](https://lucassoliz.github.io/UTN-MaterialAcademico/Ing%20Sistemas%20de%20Informacion/Segundo%20Nivel/Analisis%20De%20Sistemas%20de%20Informacion/index.html)  
+
+### Versión PRO
+[![Ejecutar Quiz](https://img.shields.io/badge/INICIAR-QUIZ-brightgreen?style=for-the-badge&logo=rocket)](https://lucassoliz.github.io/UTN-MaterialAcademico/Ing%20Sistemas%20de%20Informacion/Segundo%20Nivel/Analisis%20De%20Sistemas%20de%20Informacion/quizASI.html)
+
+
 
 ![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
 

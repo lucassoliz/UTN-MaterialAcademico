@@ -27,6 +27,10 @@ Video: Los secretos de la Criptografia: https://youtu.be/Jr5tmmkY8A8?si=6d2FERcD
 
 [2020 - HASH y MAC.pdf](https://github.com/user-attachments/files/27151725/2020.-.HASH.y.MAC.pdf)
 
+## Criptografia Asimetrica y Firma Digital
+
+[Firma Digital y PKI.pdf](https://github.com/user-attachments/files/27151742/Firma.Digital.y.PKI.pdf)
+[2021- Criptografia Asimetrica.pdf](https://github.com/user-attachments/files/27151737/2021-.Criptografia.Asimetrica.pdf)
 
 
 

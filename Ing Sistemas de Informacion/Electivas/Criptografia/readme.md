@@ -32,6 +32,11 @@ Video: Los secretos de la Criptografia: https://youtu.be/Jr5tmmkY8A8?si=6d2FERcD
 [Firma Digital y PKI.pdf](https://github.com/user-attachments/files/27151742/Firma.Digital.y.PKI.pdf)
 [2021- Criptografia Asimetrica.pdf](https://github.com/user-attachments/files/27151737/2021-.Criptografia.Asimetrica.pdf)
 
+## Material Adicional
+
+[Material Adicional Criptografía Maliciosa.pdf](https://github.com/user-attachments/files/27151771/Material.Adicional.Criptografia.Maliciosa.pdf)
+[Material Extra - Criptografía Aplicada y Redes.pdf](https://github.com/user-attachments/files/27151770/Material.Extra.-.Criptografia.Aplicada.y.Redes.pdf)
+[Material Adicional - Internet de las Cosas y Criptografía Liviana.pdf](https://github.com/user-attachments/files/27151767/Material.Adicional.-.Internet.de.las.Cosas.y.Criptografia.Liviana.pdf)
 
 
 

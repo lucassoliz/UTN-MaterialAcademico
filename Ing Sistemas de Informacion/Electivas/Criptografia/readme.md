@@ -14,6 +14,9 @@ Video: Los secretos de la Criptografia: https://youtu.be/Jr5tmmkY8A8?si=6d2FERcD
 
 [Aprendizaje de la Criptografía - Cryptool.pdf](https://github.com/user-attachments/files/27151657/Aprendizaje.de.la.Criptografia.-.Cryptool.pdf)
 
+## Teoria Matematica de la informacion, la Comunicacion y Codigos
+
+[2020 - Teorías de la Información y la Comunicación.pdf](https://github.com/user-attachments/files/27151676/2020.-.Teorias.de.la.Informacion.y.la.Comunicacion.pdf)
 
 
 

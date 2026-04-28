@@ -60,5 +60,21 @@ Excelente libro, cuarta edición del año 2019. Contiene claras definiciones y m
 Nivel intermedio y avanzado.
 [Stinson-Paterson_CryptographyTheoryAndPractice-CRC Press (2019).pdf](https://github.com/user-attachments/files/27151855/Stinson-Paterson_CryptographyTheoryAndPractice-CRC.Press.2019.pdf)
 
+## Material Adicional
 
+Haga clic en el enlace Diario Perfil, Artículo sobre el Manuscrito Voynich para abrir el recurso.  https://www.perfil.com/noticias/cultura/el-misterio-del-manuscrito-voynich.phtml
+
+Haga clic en el enlace Página Web de la Universidad de Yale con información del Manuscrito Voynich para abrir el recurso.  https://beinecke.library.yale.edu/collections/highlights/voynich-manuscript
+
+Haga clic en el enlace Manuscrito completo online Universidad de Yale para abrir el recurso. https://collections.library.yale.edu/catalog/2002046
+
+Haga clic en el enlace Simulador Online de la famosa máquina de cifrado Enigma para abrir el recurso. https://www.101computing.net/enigma-machine-emulator/ 
+
+Haga clic en el enlace Video Youtube: Funcionamiento de la Máquina Enigma para abrir el recurso. https://youtu.be/ybkkiGtJmkM?si=39RJVMfoGRfWOklA
+
+Haga clic en el enlace Artículo "Misterio de la Máquina Enigma y la Argentina" para abrir el recurso. https://www.defensa.com/ayer-noticia/misterio-de-la-maquina-enigma
+ 
+Haga clic en el enlace Diario Infobae, Artículo sobre el Asesino del Zoodíaco para abrir el recurso. https://www.infobae.com/realidad-aumentada/2023/07/03/asi-descubrimos-quien-es-el-asesino-del-zodiaco-entrevista-a-los-detectives-privados-del-caso-mas-enigmatico-del-siglo-xx/
+
+Haga clic en el enlace Página de archivo del FBI sobre el Asesino del Zoodíaco para abrir el recurso.  https://archives.fbi.gov/archives/news/stories/2007/march/zodiac_030207
 

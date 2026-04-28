@@ -38,7 +38,27 @@ Video: Los secretos de la Criptografia: https://youtu.be/Jr5tmmkY8A8?si=6d2FERcD
 [Material Extra - Criptografía Aplicada y Redes.pdf](https://github.com/user-attachments/files/27151770/Material.Extra.-.Criptografia.Aplicada.y.Redes.pdf)
 [Material Adicional - Internet de las Cosas y Criptografía Liviana.pdf](https://github.com/user-attachments/files/27151767/Material.Adicional.-.Internet.de.las.Cosas.y.Criptografia.Liviana.pdf)
 
+## Bibliografia -- Material de Lectura y Consulta
 
+LIBRO - Lucerna López - "Criptografía y Seguridad en Computadoras"
+
+Esta versión gratuita online es del año 2010. Pero los fundamentos de criptografía son sólidos y están muy bien explicados. Recomendable para leer y comprender nivel básico e intermedio.
+[Criptografía y seguridad en computadores.pdf](https://github.com/user-attachments/files/27151791/Criptografia.y.seguridad.en.computadores.pdf)
+
+
+
+LIBRO - Alfred J. Menezes, Paul C. van Oorschot and Scott A. Vanstone - Handbook of Applied Cryptography.
+
+Última edición del año 2001. Más de 800 páginas de nivel avanzado. Incluye seudocódigo de muchos algoritmos matemáticos, para implementar.
+https://cacr.uwaterloo.ca/hac/
+
+
+LIBRO - Stinson-Paterson. Cryptography Theory And Practice.
+
+Excelente libro, cuarta edición del año 2019. Contiene claras definiciones y muy buenas explicaciones. Además expone en seudocódigo, los algoritmos más importantes, tanto sea matemáticos como criptográficos. 
+
+Nivel intermedio y avanzado.
+[Stinson-Paterson_CryptographyTheoryAndPractice-CRC Press (2019).pdf](https://github.com/user-attachments/files/27151855/Stinson-Paterson_CryptographyTheoryAndPractice-CRC.Press.2019.pdf)
 
 
 

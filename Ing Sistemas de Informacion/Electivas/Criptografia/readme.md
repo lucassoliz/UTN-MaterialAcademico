@@ -18,6 +18,13 @@ Video: Los secretos de la Criptografia: https://youtu.be/Jr5tmmkY8A8?si=6d2FERcD
 
 [2020 - Teorías de la Información y la Comunicación.pdf](https://github.com/user-attachments/files/27151676/2020.-.Teorias.de.la.Informacion.y.la.Comunicacion.pdf)
 
+## Criptografia Simetrica
+
+[2021 - Criptografía Simétrica - Block Ciphers.pdf](https://github.com/user-attachments/files/27151699/2021.-.Criptografia.Simetrica.-.Block.Ciphers.pdf)
+[2021 - Criptografía Simétrica - Stream Ciphers.pdf](https://github.com/user-attachments/files/27151685/2021.-.Criptografia.Simetrica.-.Stream.Ciphers.pdf)
+
+
+
 
 
 

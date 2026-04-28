@@ -1,80 +1,111 @@
+<a href="https://lucassoliz.github.io/UTN-MaterialAcademico/Ing%20Sistemas%20de%20Informacion/Electivas/Criptografia/criptoquiz.html">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=180&section=header&text=Criptograf%C3%ADa&fontSize=60&fontAlignY=42&fontColor=ffffff&animation=fadeIn" alt="Criptografía" />
+</a>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2800&pause=900&color=00E5FF&center=true&vCenter=true&width=720&height=50&lines=Criptolog%C3%ADa+Cl%C3%A1sica+y+Steganograf%C3%ADa;Cifrado+Sim%C3%A9trico+y+Asim%C3%A9trico;Funciones+HASH+y+MAC;Firma+Digital+y+PKI" alt="Typing SVG" />
+</p>
 
 ### Haz clic aquí para iniciar el Quiz
+
 [![Ejecutar Quiz](https://img.shields.io/badge/INICIAR-QUIZ-brightgreen?style=for-the-badge&logo=rocket)](https://lucassoliz.github.io/UTN-MaterialAcademico/Ing%20Sistemas%20de%20Informacion/Electivas/Criptografia/criptoquiz.html)
 
-# Material 
+![divider](https://raw.githubusercontent.com/BrunoSobrino/BrunoSobrino/main/img/line.gif)
 
-## Criptografia Clásica y Steganografía 
+# Material
 
- [2022 - Criptología Clásica y Steganografía.pdf](https://github.com/user-attachments/files/27151614/2022.-.Criptologia.Clasica.y.Steganografia.pdf)
+## Criptografia Clásica y Steganografía
+
+[![PDF](https://img.shields.io/badge/PDF-2022%20%C2%B7%20Criptolog%C3%ADa%20Cl%C3%A1sica%20y%20Steganograf%C3%ADa-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151614/2022.-.Criptologia.Clasica.y.Steganografia.pdf)
 
 Video introductorio de una charla TEX, sobre el uso y aplicación de la Criptografía en la actualidad.
 La expositora es una colega matemática española, llamada Pino Caballero Gi, que se ha dedicado como investigadora, a esta disciplina.
-Video: Los secretos de la Criptografia: https://youtu.be/Jr5tmmkY8A8?si=6d2FERcDlwnmsYKl
 
-[Aprendizaje de la Criptografía - Cryptool.pdf](https://github.com/user-attachments/files/27151657/Aprendizaje.de.la.Criptografia.-.Cryptool.pdf)
+Video: Los secretos de la Criptografia
+
+[![Ver en YouTube](https://img.shields.io/badge/VER%20EN-YOUTUBE-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/Jr5tmmkY8A8?si=6d2FERcDlwnmsYKl)
+
+[![PDF](https://img.shields.io/badge/PDF-Aprendizaje%20de%20la%20Criptograf%C3%ADa%20%C2%B7%20Cryptool-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151657/Aprendizaje.de.la.Criptografia.-.Cryptool.pdf)
+
+![divider](https://raw.githubusercontent.com/BrunoSobrino/BrunoSobrino/main/img/line.gif)
 
 ## Teoria Matematica de la informacion, la Comunicacion y Codigos
 
-[2020 - Teorías de la Información y la Comunicación.pdf](https://github.com/user-attachments/files/27151676/2020.-.Teorias.de.la.Informacion.y.la.Comunicacion.pdf)
+[![PDF](https://img.shields.io/badge/PDF-2020%20%C2%B7%20Teor%C3%ADas%20de%20la%20Informaci%C3%B3n%20y%20la%20Comunicaci%C3%B3n-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151676/2020.-.Teorias.de.la.Informacion.y.la.Comunicacion.pdf)
+
+![divider](https://raw.githubusercontent.com/BrunoSobrino/BrunoSobrino/main/img/line.gif)
 
 ## Criptografia Simetrica
 
-[2021 - Criptografía Simétrica - Block Ciphers.pdf](https://github.com/user-attachments/files/27151699/2021.-.Criptografia.Simetrica.-.Block.Ciphers.pdf)
-[2021 - Criptografía Simétrica - Stream Ciphers.pdf](https://github.com/user-attachments/files/27151685/2021.-.Criptografia.Simetrica.-.Stream.Ciphers.pdf)
+[![PDF](https://img.shields.io/badge/PDF-2021%20%C2%B7%20Block%20Ciphers-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151699/2021.-.Criptografia.Simetrica.-.Block.Ciphers.pdf)
+
+[![PDF](https://img.shields.io/badge/PDF-2021%20%C2%B7%20Stream%20Ciphers-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151685/2021.-.Criptografia.Simetrica.-.Stream.Ciphers.pdf)
+
+![divider](https://raw.githubusercontent.com/BrunoSobrino/BrunoSobrino/main/img/line.gif)
 
 ## HASH y MAC
 
-[2020 - HASH y MAC.pdf](https://github.com/user-attachments/files/27151725/2020.-.HASH.y.MAC.pdf)
+[![PDF](https://img.shields.io/badge/PDF-2020%20%C2%B7%20HASH%20y%20MAC-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151725/2020.-.HASH.y.MAC.pdf)
+
+![divider](https://raw.githubusercontent.com/BrunoSobrino/BrunoSobrino/main/img/line.gif)
 
 ## Criptografia Asimetrica y Firma Digital
 
-[Firma Digital y PKI.pdf](https://github.com/user-attachments/files/27151742/Firma.Digital.y.PKI.pdf)
-[2021- Criptografia Asimetrica.pdf](https://github.com/user-attachments/files/27151737/2021-.Criptografia.Asimetrica.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Firma%20Digital%20y%20PKI-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151742/Firma.Digital.y.PKI.pdf)
+
+[![PDF](https://img.shields.io/badge/PDF-2021%20%C2%B7%20Criptograf%C3%ADa%20Asim%C3%A9trica-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151737/2021-.Criptografia.Asimetrica.pdf)
+
+![divider](https://raw.githubusercontent.com/BrunoSobrino/BrunoSobrino/main/img/line.gif)
 
 ## Material Adicional
 
-[Material Adicional Criptografía Maliciosa.pdf](https://github.com/user-attachments/files/27151771/Material.Adicional.Criptografia.Maliciosa.pdf)
-[Material Extra - Criptografía Aplicada y Redes.pdf](https://github.com/user-attachments/files/27151770/Material.Extra.-.Criptografia.Aplicada.y.Redes.pdf)
-[Material Adicional - Internet de las Cosas y Criptografía Liviana.pdf](https://github.com/user-attachments/files/27151767/Material.Adicional.-.Internet.de.las.Cosas.y.Criptografia.Liviana.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Criptograf%C3%ADa%20Maliciosa-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151771/Material.Adicional.Criptografia.Maliciosa.pdf)
+
+[![PDF](https://img.shields.io/badge/PDF-Criptograf%C3%ADa%20Aplicada%20y%20Redes-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151770/Material.Extra.-.Criptografia.Aplicada.y.Redes.pdf)
+
+[![PDF](https://img.shields.io/badge/PDF-IoT%20y%20Criptograf%C3%ADa%20Liviana-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151767/Material.Adicional.-.Internet.de.las.Cosas.y.Criptografia.Liviana.pdf)
+
+![divider](https://raw.githubusercontent.com/BrunoSobrino/BrunoSobrino/main/img/line.gif)
 
 ## Bibliografia -- Material de Lectura y Consulta
 
 LIBRO - Lucerna López - "Criptografía y Seguridad en Computadoras"
-
 Esta versión gratuita online es del año 2010. Pero los fundamentos de criptografía son sólidos y están muy bien explicados. Recomendable para leer y comprender nivel básico e intermedio.
-[Criptografía y seguridad en computadores.pdf](https://github.com/user-attachments/files/27151791/Criptografia.y.seguridad.en.computadores.pdf)
 
-
+[![PDF](https://img.shields.io/badge/PDF-Criptograf%C3%ADa%20y%20seguridad%20en%20computadores-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151791/Criptografia.y.seguridad.en.computadores.pdf)
 
 LIBRO - Alfred J. Menezes, Paul C. van Oorschot and Scott A. Vanstone - Handbook of Applied Cryptography.
-
 Última edición del año 2001. Más de 800 páginas de nivel avanzado. Incluye seudocódigo de muchos algoritmos matemáticos, para implementar.
-https://cacr.uwaterloo.ca/hac/
 
+[![Sitio](https://img.shields.io/badge/SITIO-Handbook%20of%20Applied%20Cryptography-1572B6?style=for-the-badge&logo=googlescholar&logoColor=white)](https://cacr.uwaterloo.ca/hac/)
 
 LIBRO - Stinson-Paterson. Cryptography Theory And Practice.
-
-Excelente libro, cuarta edición del año 2019. Contiene claras definiciones y muy buenas explicaciones. Además expone en seudocódigo, los algoritmos más importantes, tanto sea matemáticos como criptográficos. 
-
+Excelente libro, cuarta edición del año 2019. Contiene claras definiciones y muy buenas explicaciones. Además expone en seudocódigo, los algoritmos más importantes, tanto sea matemáticos como criptográficos.
 Nivel intermedio y avanzado.
-[Stinson-Paterson_CryptographyTheoryAndPractice-CRC Press (2019).pdf](https://github.com/user-attachments/files/27151855/Stinson-Paterson_CryptographyTheoryAndPractice-CRC.Press.2019.pdf)
+
+[![PDF](https://img.shields.io/badge/PDF-Stinson%20%C2%B7%20Paterson%20%C2%B7%20Cryptography%20Theory%20and%20Practice-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/27151855/Stinson-Paterson_CryptographyTheoryAndPractice-CRC.Press.2019.pdf)
+
+![divider](https://raw.githubusercontent.com/BrunoSobrino/BrunoSobrino/main/img/line.gif)
 
 ## Material Adicional
 
-Haga clic en el enlace Diario Perfil, Artículo sobre el Manuscrito Voynich para abrir el recurso.  https://www.perfil.com/noticias/cultura/el-misterio-del-manuscrito-voynich.phtml
+### Manuscrito Voynich
 
-Haga clic en el enlace Página Web de la Universidad de Yale con información del Manuscrito Voynich para abrir el recurso.  https://beinecke.library.yale.edu/collections/highlights/voynich-manuscript
+[![Artículo](https://img.shields.io/badge/ART%C3%8DCULO-Diario%20Perfil-0A66C2?style=for-the-badge&logo=readthedocs&logoColor=white)](https://www.perfil.com/noticias/cultura/el-misterio-del-manuscrito-voynich.phtml)
+[![Universidad](https://img.shields.io/badge/UNIVERSIDAD-Yale%20%C2%B7%20Beinecke%20Library-00356B?style=for-the-badge&logo=googlescholar&logoColor=white)](https://beinecke.library.yale.edu/collections/highlights/voynich-manuscript)
+[![Manuscrito](https://img.shields.io/badge/MANUSCRITO-Versi%C3%B3n%20completa%20online-00356B?style=for-the-badge&logo=bookstack&logoColor=white)](https://collections.library.yale.edu/catalog/2002046)
 
-Haga clic en el enlace Manuscrito completo online Universidad de Yale para abrir el recurso. https://collections.library.yale.edu/catalog/2002046
+### Máquina Enigma
 
-Haga clic en el enlace Simulador Online de la famosa máquina de cifrado Enigma para abrir el recurso. https://www.101computing.net/enigma-machine-emulator/ 
+[![Simulador](https://img.shields.io/badge/SIMULADOR-Enigma%20Online-6DB33F?style=for-the-badge&logo=codesandbox&logoColor=white)](https://www.101computing.net/enigma-machine-emulator/)
+[![Ver en YouTube](https://img.shields.io/badge/VER%20EN-YOUTUBE-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/ybkkiGtJmkM?si=39RJVMfoGRfWOklA)
+[![Artículo](https://img.shields.io/badge/ART%C3%8DCULO-Enigma%20y%20la%20Argentina-0A66C2?style=for-the-badge&logo=readthedocs&logoColor=white)](https://www.defensa.com/ayer-noticia/misterio-de-la-maquina-enigma)
 
-Haga clic en el enlace Video Youtube: Funcionamiento de la Máquina Enigma para abrir el recurso. https://youtu.be/ybkkiGtJmkM?si=39RJVMfoGRfWOklA
+### Asesino del Zodíaco
 
-Haga clic en el enlace Artículo "Misterio de la Máquina Enigma y la Argentina" para abrir el recurso. https://www.defensa.com/ayer-noticia/misterio-de-la-maquina-enigma
- 
-Haga clic en el enlace Diario Infobae, Artículo sobre el Asesino del Zoodíaco para abrir el recurso. https://www.infobae.com/realidad-aumentada/2023/07/03/asi-descubrimos-quien-es-el-asesino-del-zodiaco-entrevista-a-los-detectives-privados-del-caso-mas-enigmatico-del-siglo-xx/
+[![Artículo](https://img.shields.io/badge/ART%C3%8DCULO-Diario%20Infobae-0A66C2?style=for-the-badge&logo=readthedocs&logoColor=white)](https://www.infobae.com/realidad-aumentada/2023/07/03/asi-descubrimos-quien-es-el-asesino-del-zodiaco-entrevista-a-los-detectives-privados-del-caso-mas-enigmatico-del-siglo-xx/)
+[![FBI](https://img.shields.io/badge/ARCHIVO-FBI%20%C2%B7%20Caso%20Zod%C3%ADaco-1A1A1A?style=for-the-badge&logo=fbi&logoColor=white)](https://archives.fbi.gov/archives/news/stories/2007/march/zodiac_030207)
 
-Haga clic en el enlace Página de archivo del FBI sobre el Asesino del Zoodíaco para abrir el recurso.  https://archives.fbi.gov/archives/news/stories/2007/march/zodiac_030207
+![divider](https://raw.githubusercontent.com/BrunoSobrino/BrunoSobrino/main/img/line.gif)
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0f2027&height=120&section=footer&animation=fadeIn" />

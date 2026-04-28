@@ -23,6 +23,9 @@ Video: Los secretos de la Criptografia: https://youtu.be/Jr5tmmkY8A8?si=6d2FERcD
 [2021 - Criptografía Simétrica - Block Ciphers.pdf](https://github.com/user-attachments/files/27151699/2021.-.Criptografia.Simetrica.-.Block.Ciphers.pdf)
 [2021 - Criptografía Simétrica - Stream Ciphers.pdf](https://github.com/user-attachments/files/27151685/2021.-.Criptografia.Simetrica.-.Stream.Ciphers.pdf)
 
+## HASH y MAC
+
+[2020 - HASH y MAC.pdf](https://github.com/user-attachments/files/27151725/2020.-.HASH.y.MAC.pdf)
 
 
 

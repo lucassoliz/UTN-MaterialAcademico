@@ -6,9 +6,6 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2800&pause=900&color=00E5FF&center=true&vCenter=true&width=720&height=50&lines=Criptolog%C3%ADa+Cl%C3%A1sica+y+Steganograf%C3%ADa;Cifrado+Sim%C3%A9trico+y+Asim%C3%A9trico;Funciones+HASH+y+MAC;Firma+Digital+y+PKI" alt="Typing SVG" />
 </p>
 
-### Haz clic aquí para iniciar el Quiz
-
-[![Ejecutar Quiz](https://img.shields.io/badge/INICIAR-QUIZ-brightgreen?style=for-the-badge&logo=rocket)](https://lucassoliz.github.io/UTN-MaterialAcademico/Ing%20Sistemas%20de%20Informacion/Electivas/Criptografia/criptoquiz.html)
 
 ![divider](https://raw.githubusercontent.com/BrunoSobrino/BrunoSobrino/main/img/line.gif)
 
@@ -109,3 +106,7 @@ Nivel intermedio y avanzado.
 ![divider](https://raw.githubusercontent.com/BrunoSobrino/BrunoSobrino/main/img/line.gif)
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0f2027&height=120&section=footer&animation=fadeIn" />
+
+### Haz clic aquí para iniciar el Quiz
+
+[![Ejecutar Quiz](https://img.shields.io/badge/INICIAR-QUIZ-brightgreen?style=for-the-badge&logo=rocket)](https://lucassoliz.github.io/UTN-MaterialAcademico/Ing%20Sistemas%20de%20Informacion/Electivas/Criptografia/criptoquiz.html)

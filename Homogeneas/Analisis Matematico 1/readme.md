@@ -9,10 +9,10 @@
 [![Google Docs](https://img.shields.io/badge/RECOPILACI%C3%93N%20FINAL-Documento%20completo-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://docs.google.com/document/d/11wxR1ZEij07O0NHZ5a5mbnkEHLe0S_HRA1-IExbb-qM/edit?usp=sharing)
 
 > [!note]
-> Este documento contiene una gran recopilacion de exmanes finales.
+> Este documento contiene una gran recopilacion de exámenes finales.
 > Esta diseñado para que puedas:
->  - **Practicar:**  Ideal para imprimir y resolver a mano, simulando el entorno real del exmane
->  - **Medir tu nivel:** Úsalo para realizar simulacros cronometrados y evaluar tu preparacion antes del Dia del fianal
+>  - **Practicar:**  Ideal para imprimir y resolver a mano, simulando el entorno real del examen
+>  - **Medir tu nivel:** Úsalo para realizar simulacros cronometrados y evaluar tu preparacion antes del Dia del final
 
 SOLUCION FINAL *(Puede contener errores leves)*:
 

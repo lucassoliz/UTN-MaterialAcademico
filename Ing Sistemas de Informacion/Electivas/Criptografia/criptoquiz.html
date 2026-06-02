@@ -463,8 +463,8 @@ function check(val,btn){
   registerResult(ok);
   document.querySelectorAll('.vf-btn,.ans-btn').forEach(b=>b.disabled=true);
   if(cur.t==='vf'){
-    document.getElementById('vf-v').classList.add(cur.c===true?'correct':(val===true?'wrong':''));
-    document.getElementById('vf-f').classList.add(cur.c===false?'correct':(val===false?'wrong':''));
+    document.getElementById(cur.c===true?'vf-v':'vf-f').classList.add('correct');
+    if(val!==cur.c) document.getElementById(val===true?'vf-v':'vf-f').classList.add('wrong');
   } else {
     document.getElementById('opt-'+cur.c).classList.add('correct');
     if(!ok) btn.classList.add('wrong');

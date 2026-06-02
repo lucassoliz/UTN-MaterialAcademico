@@ -1039,9 +1039,9 @@ function checkCompletar() {
   const inp = document.getElementById('completar-inp');
   const userAns = inp.value.trim().toLowerCase();
   const correctAns = current.r.toLowerCase();
-  const isCorrect = userAns === correctAns ||
+  const isCorrect = userAns !== '' && (userAns === correctAns ||
                     correctAns.includes(userAns) ||
-                    userAns.includes(correctAns.split(' ')[0]);
+                    userAns.includes(correctAns.split(' ')[0]));
 
   inp.disabled = true;
   inp.classList.add(isCorrect ? 'correct' : 'wrong');

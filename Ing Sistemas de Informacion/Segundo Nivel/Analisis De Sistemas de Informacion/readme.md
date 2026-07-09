@@ -35,8 +35,8 @@ Full teoria del segundo cuatrimestre (al igual que teoria tomados en finales)
 
 - [![Google Docs](https://img.shields.io/badge/DOC-Teor%C3%ADa%20Preguntas-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://docs.google.com/document/d/1LIYHSeZl6cbACUuq7m-g4NKG7S_KQKjOb9-Yp_ovbqA/edit?usp=sharing)
 - [![Google Docs](https://img.shields.io/badge/DOC-Teor%C3%ADa%20Soluci%C3%B3n-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://docs.google.com/document/d/1RPXS4tjVW3uKfmig5ny1KDMNFcTPXNePTppcUtmyD7w/edit?usp=sharing)
-- [![Google Docs](https://img.shields.io/badge/DOC-Tabla%20de%20Decisi%C3%B3n%20%7C%20Choice-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://docs.google.com/document/d/14UFWHzhYsctS7XHbSR0js_YBCp0PfdYrkzqtO4VTQvA/edit?usp=sharing)
-- [![Google Docs](https://img.shields.io/badge/DOC-UML-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://docs.google.com/document/d/17_7lXhymQcXuTqU0A9Eya2xVsYw-Mh7ZrDPYVTtf0JY/edit?usp=sharing)
+- [![Google Docs](https://img.shields.io/badge/DOC-Tabla%20de%20Decisi%C3%B3n%20%7C%20Choice-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://docs.google.com/document/d/14UFWHzhYsctS7XHbSR0js_YBCp0PfdYrkzqtO4VTQvA/edit?usp=sharing) <-- CUESTIONARIO
+- [![Google Docs](https://img.shields.io/badge/DOC-UML-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://docs.google.com/document/d/17_7lXhymQcXuTqU0A9Eya2xVsYw-Mh7ZrDPYVTtf0JY/edit?usp=sharing) <-- CUESTIONARIO
 
 ![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
 
@@ -71,7 +71,39 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 
 ![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
 
-## Power Point RESUMEN + EXTRAS
+# PARCIALES + RECUPERATORIOS + PARCIALITOS
+
+### Primer Parcial
+- [![PDF](https://img.shields.io/badge/PDF-Primer%20Parcial%20de%20An%C3%A1lisis%20de%20Sistemas%20K2101%20--070725-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868779/Primer.Parcial.de.Analisis.de.Sistemas.K2101.-070725.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-Primer%20Parcial%202024-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868773/Primer.Parcial.2024.pdf)  
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)  
+### Recus de los Primeros Parciales
+- [![PDF](https://img.shields.io/badge/PDF-1Rec1Parcial%20de%20An%C3%A1lisis%20de%20Sistemas%20K2101--180825-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868776/1Rec1Parcial.de.Analisis.de.Sistemas.K2101-180825.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-Recuperatorio%20Primer%20Parcial%202024-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868772/Recuperatorio.Primer.Parcial.2024.pdf)  
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+### Segundo Parcial
+- [![PDF](https://img.shields.io/badge/PDF-2Partial%20de%20Analisis%20de%20Sistemas101125K2%20001%20Tems%201-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868771/2Partial.de.Analisis.de.Sistemas101125K2.001.Tems.1.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-2Parcial%20de%20An%C3%A1lisis%20de%20Sistemas--1011255-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868770/2Parcial.de.Analisis.de.Sistemas-1011255.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-2Parcial%20de%20An%C3%A1lisis%20de%20Sistemas%20--%20101125TEMA2.-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868768/2Parcial.de.Analisis.de.Sistemas.-.101125TEMA2.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-2Parcial%20de%20An%C4%83lisis%20de%20Sistemas--101125TEM2-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868766/2Parcial.de.Analisis.de.Sistemas-101125TEM2.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-2Parcial%20de%20An%C3%A1lisis%20de%20Sistemas%20--%20101125K2.001%20Tema%201-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868765/2Parcial.de.Analisis.de.Sistemas.-.101125K2.001.Tema.1.pdf)  
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+### Recuperatorios de Segundos Parciales
+- [![PDF](https://img.shields.io/badge/PDF-1Rec2Parcial%20de%20An%C3%A1lisis%20de%20Sistemas%20031225TEMA2-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868782/1Rec2Parcial.de.Analisis.de.Sistemas.031225TEMA2.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-1Rec2Parcial%20de%20An%C3%A1lisis%20de%20Sistemas%20031225TEMA2%20%281%29-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868781/1Rec2Parcial.de.Analisis.de.Sistemas.031225TEMA2.1.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-1Rec2Parcial%20de%20An%C3%A1lisis%20de%20Sistemas%20031225-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868775/1Rec2Parcial.de.Analisis.de.Sistemas.031225.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-1Rec2Parcial%20de%20An%C3%A1lisis%20de%20Sistemas%20031225TEMA1-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868761/1Rec2Parcial.de.Analisis.de.Sistemas.031225TEMA1.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-1Rec2Parcial%20de%20An%C3%A1lisis%20de%20Sistemas%20031225..-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868759/1Rec2Parcial.de.Analisis.de.Sistemas.031225.pdf)  
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+### Parcialitos
+- [![PDF](https://img.shields.io/badge/PDF-TABLA%20DECISI%C3%93N%20PARCIALITO-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868774/TABLA.DECISION.PARCIALITO.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-TablaDecision%20PARCIALITO-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868769/TablaDecision.PARCIALITO.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-TablaDecision%20RECU-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868764/TablaDecision.RECU.pdf)  
+- [![PDF](https://img.shields.io/badge/PDF-TablaDecision%20RECU%20%281%29-D14836?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/29868763/TablaDecision.RECU.1.pdf)  
+
+
+
+## Power Point RESUMEN + EXTRAS + EJEMPLOS APLICADOS
 
 **Teoria Primer Cuatrimeste:**
 

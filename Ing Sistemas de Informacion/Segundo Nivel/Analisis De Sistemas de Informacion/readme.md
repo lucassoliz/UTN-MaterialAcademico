@@ -64,6 +64,8 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 
 ## Sistemas de Información | Ejemplos
 
+[![Google Docs](https://img.shields.io/badge/DOC-SISTEMA%20DE%20INFORMACION-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://docs.google.com/document/d/1Ubng_sRyTTAxY6WEHXt6BwH3ghpfiGwTyWW3eWu39-E/edit?usp=sharing)
+
 [![Próximamente](https://img.shields.io/badge/PR%C3%93XIMAMENTE-Despu%C3%A9s%20del%2012%2F2%2F2026-lightgrey?style=for-the-badge&logo=clockify&logoColor=white)](#)
 
 ![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)

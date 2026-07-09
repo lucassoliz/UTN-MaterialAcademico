@@ -56,7 +56,7 @@ Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
 ![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
 
 ## Segundo cuatrimestre DC - TE - DFD - DER - TD
-
+ En un Doc esta el enunciado y en el Otro Doc esta la Solución (Se pueden guiar en base al TITULO del enunciado y practica), esto con el objetivo de fotocopiar o tener en una pestaña el enunciado y en el otro la solución 
 - [![Google Docs](https://img.shields.io/badge/DOC-Pr%C3%A1ctica%20Enunciado-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://docs.google.com/document/d/1y3veubIDA6x8rRXZIuiFwi18vbXtT_XqngzQ5EkqfMQ/edit?usp=sharing)
 - [![Google Docs](https://img.shields.io/badge/DOC-Pr%C3%A1ctica%20Soluci%C3%B3n-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://docs.google.com/document/d/1LN2CBf9o0Xt_9SfUvbmmtaJte_H4nQ486Lz9y_CQzes/edit?usp=sharing)
 - [![Google Docs](https://img.shields.io/badge/DOC-Pr%C3%A1ctica%20Tabla%20de%20Decisi%C3%B3n-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://docs.google.com/document/d/1P92_gRW58C18w6dOyePXeUK4f-a3f4lxNMiucqy1JDM/edit?usp=sharing)

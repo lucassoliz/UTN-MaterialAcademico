@@ -8,7 +8,8 @@
 
 # Teoria resolucion + Finales teoria
 
-Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra
+Material de parciales tomados por los docentes Ing. Garbarini y Ing. Saavedra  
+Cualquier consulta/duda, algun link caido, o si quieren agregar mas material me pueden enviar un mail a: lucasg5plus@gmail.com
 
 ## Primer cuatrimestre
 

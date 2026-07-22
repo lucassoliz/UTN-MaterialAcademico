@@ -1,74 +1,67 @@
-# Economia
+# Economía
+## Trabajo Práctico + Parciales
+### Ejercicios para Practicar
+[![DOCX](https://img.shields.io/badge/DOCX-210622%20--%20BLOQUE%20N%C2%B005%20COSTOS%20Y%20SISTEMAS%20DE%20%20COSTEO%20RESUELTO-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269544/210622.-.BLOQUE.N.05.COSTOS.Y.SISTEMAS.DE.COSTEO.RESUELTO.docx)
+[![DOCX](https://img.shields.io/badge/DOCX-210622%20--%20BLOQUE%20N%C2%B005%20COSTOS%20Y%20SISTEMAS%20DE%20%20COSTEO-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269546/210622.-.BLOQUE.N.05.COSTOS.Y.SISTEMAS.DE.COSTEO.docx)
+[![DOCX](https://img.shields.io/badge/DOCX-210622%20--%20BLOQUE%20N%C2%B006%20SISTEMA%20CONTABLE%20TABLERO%20DE%20COMANDO%20RESUELTO-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269556/210622.-.BLOQUE.N.06.SISTEMA.CONTABLE.TABLERO.DE.COMANDO.RESUELTO.docx)
+[![DOCX](https://img.shields.io/badge/DOCX-210622%20--%20BLOQUE%20N%C2%B006%20SISTEMA%20CONTABLE%20TABLERO%20DE%20COMANDO-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269548/210622.-.BLOQUE.N.06.SISTEMA.CONTABLE.TABLERO.DE.COMANDO.docx)
+[![DOCX](https://img.shields.io/badge/DOCX-210622%20--%20BLOQUE%20N%C2%B007%20PROYECTOS%20DE%20INVERSI%C3%93N-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269545/210622.-.BLOQUE.N.07.PROYECTOS.DE.INVERSION.docx)
+[![DOC](https://img.shields.io/badge/DOC-230306%20--%20EH%20%20Ex%C3%A1men%20Final-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269550/230306.-.EH.Examen.Final.doc)
+[![XLSX](https://img.shields.io/badge/XLSX-230306%20--%20EH%20EXAMEN%20FINAL%20RESUELTO-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](https://github.com/user-attachments/files/30269553/230306.-.EH.EXAMEN.FINAL.RESUELTO.xlsx)
+[![XLSX](https://img.shields.io/badge/XLSX-EVALUACION%20DE%20PROYECTOS%20%283%29-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](https://github.com/user-attachments/files/30269549/EVALUACION.DE.PROYECTOS.3.xlsx)
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+### Parcial
+[![DOCX](https://img.shields.io/badge/DOCX-PUNTO%20DE%20EQUILIBRIO-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269600/PUNTO.DE.EQUILIBRIO.docx)
+[![DOCX](https://img.shields.io/badge/DOCX-1P%20E.H.19--09--27%20T1%20%284%29-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269596/1P.E.H.19-09-27.T1.4.docx)
+[![DOCX](https://img.shields.io/badge/DOCX-2P%20E.H.%2019--07--12%20%281%29-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269598/2P.E.H.19-07-12.1.docx)
+[![DOC](https://img.shields.io/badge/DOC-Ex%C3%A1men%20Final%2022--05--27-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269595/Examen.Final.22-05-27.doc)
+[![DOCX](https://img.shields.io/badge/DOCX-Examen%20E.H.24--07--12%20T1-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269599/Examen.E.H.24-07-12.T1.docx)
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+### Finales
+[![DOC](https://img.shields.io/badge/DOC-230927%20--%20Ex%C3%A1men%20Final-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269653/230927.-.Examen.Final.doc)
+[![XLSX](https://img.shields.io/badge/XLSX-230927%20--%20RESUELTO%20EXAMEN%20FINAL-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](https://github.com/user-attachments/files/30269663/230927.-.RESUELTO.EXAMEN.FINAL.xlsx)
+[![DOC](https://img.shields.io/badge/DOC-240214%20--%20Ex%C3%A1men%20Final-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269650/240214.-.Examen.Final.doc)
+[![DOC](https://img.shields.io/badge/DOC-240510%20--%20Ex%C3%A1men%20Final-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269651/240510.-.Examen.Final.doc)
+[![XLSX](https://img.shields.io/badge/XLSX-240510%20--RESUELTO%20EXAMEN%20FINAL-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](https://github.com/user-attachments/files/30269657/240510.-RESUELTO.EXAMEN.FINAL.xlsx)
+[![XLSX](https://img.shields.io/badge/XLSX-Copia%20de%20240214%20--%20RESUELTO%20EXAMEN%20FINAL-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](https://github.com/user-attachments/files/30269655/Copia.de.240214.-.RESUELTO.EXAMEN.FINAL.xlsx)
+[![DOC](https://img.shields.io/badge/DOC-Copia%20de%20240228%20--%20Ex%C3%A1men%20Final-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269664/Copia.de.240228.-.Examen.Final.doc)
+[![XLSX](https://img.shields.io/badge/XLSX-Copia%20de%20240228%20--RESUELTO%20EXAMEN%20FINAL-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](https://github.com/user-attachments/files/30269654/Copia.de.240228.-RESUELTO.EXAMEN.FINAL.xlsx)
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+### Finales Drive
+[![DRIVE](https://img.shields.io/badge/DRIVE-Carpeta%20de%20Finales%20--%20Drive-0F9D58?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/drive/u/1/folders/1hq6GSFb7zP7Pwtaw6ufJ_fC6mgYjqmmb)
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+## Bloque 1
+[![PPTX](https://img.shields.io/badge/PPTX-2021%20--%20BLOQUE%20N%C2%B001_1%20--%20EL%20PROBLEMA%20ECONOMICO%20--%2021-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269241/2021.-.BLOQUE.N.01_1.-.EL.PROBLEMA.ECONOMICO.-.21.pptx)
+[![PPTX](https://img.shields.io/badge/PPTX-2021%20--%20BLOQUE%20N%C2%B001_2%20--%20MODELO%20MICRO%20ECON%C3%93MICO%20B%C3%81SICO%20--%2023%20%20%283%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269227/2021.-.BLOQUE.N.01_2.-.MODELO.MICRO.ECONOMICO.BASICO.-.23.3.pptx)
+[![PPTX](https://img.shields.io/badge/PPTX-2021%20--%20BLOQUE%20N%C2%B002%252F1%20--%20TEOR%C3%8DA%20DEL%20CONSUMO%20--%20DEMANDA%20--%2014%20%283%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269233/2021.-.BLOQUE.N.02.2F1.-.TEORIA.DEL.CONSUMO.-.DEMANDA.-.14.3.pptx)
+[![PPTX](https://img.shields.io/badge/PPTX-2021%20--%20BLOQUE%20N%C2%B002%252F2%20--%20FACTORES%20DE%20LA%20%20PRODUCCI%C3%93N%20--%2025-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269249/2021.-.BLOQUE.N.02.2F2.-.FACTORES.DE.LA.PRODUCCION.-.25.pptx)
+[![PPTX](https://img.shields.io/badge/PPTX-2021%20--%20BLOQUE%20N%C2%B002%252F3%20TEOR%C3%8DA%20DE%20LA%20PRODUCCI%C3%93N%20--%20OFERTA%20--%2040%20%20%281%29%20%284%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269236/2021.-.BLOQUE.N.02.2F3.TEORIA.DE.LA.PRODUCCION.-.OFERTA.-.40.1.4.pptx)
+[![PPTX](https://img.shields.io/badge/PPTX-2021%20--%20BLOQUE%20N%C2%B002%252F4%20--%20%20MERCADOS%20--%2025%20%284%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269231/2021.-.BLOQUE.N.02.2F4.-.MERCADOS.-.25.4.pptx)
+[![DOCX](https://img.shields.io/badge/DOCX-2020%20--%20TRABAJO%20PR%C3%81CTICO%20BLOQUE%20N%C2%B002%20--%20MICROECONOM%C3%8DA%20%286%29-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269238/2020.-.TRABAJO.PRACTICO.BLOQUE.N.02.-.MICROECONOMIA.6.docx)
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+## Bloque 2
+[![PPTX](https://img.shields.io/badge/PPTX-2020%20--%20BLOQUE%20N%C2%B006_1%20--%20ESTADOS%20CONTABLES%20--%2034%20%282%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269306/2020.-.BLOQUE.N.06_1.-.ESTADOS.CONTABLES.-.34.2.pptx)
+[![PPTX](https://img.shields.io/badge/PPTX-2021%20--%20BLOQUE%20N%C2%B004_1%20--%20DEPRECIACI%C3%93N%20AMORTIZACI%C3%93N%20--%2032%20%282%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269299/2021.-.BLOQUE.N.04_1.-.DEPRECIACION.AMORTIZACION.-.32.2.pptx)
+[![PPTX](https://img.shields.io/badge/PPTX-2020%20--%20BLOQUE%20N%C2%B006_2%20--%20TABLERO%20DE%20COMANDO%20--%2031%20%282%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269302/2020.-.BLOQUE.N.06_2.-.TABLERO.DE.COMANDO.-.31.2.pptx)
+[![DOCX](https://img.shields.io/badge/DOCX-2020%20TRABAJO%20PRACTICO%20BLOQUE%20N%C2%B004%20TASA%20DE%20COSTO%20DE%20CAPITAL%20Y%20AMORTIZACIONES%20%285%29-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269301/2020.TRABAJO.PRACTICO.BLOQUE.N.04.TASA.DE.COSTO.DE.CAPITAL.Y.AMORTIZACIONES.5.docx)
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+## Bloque 3
+[![PPTX](https://img.shields.io/badge/PPTX-2021%20--%20BLOQUE%20N%C2%B004_2%20--%20TASA%20DE%20COSTO%20DE%20CAPITAL%20--%2018%20%284%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269364/2021.-.BLOQUE.N.04_2.-.TASA.DE.COSTO.DE.CAPITAL.-.18.4.pptx)
+[![PPTX](https://img.shields.io/badge/PPTX-2021%20--%20BLOQUE%20N%C2%B005_1%20--%20COSTOS%20--%2031%20%284%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269362/2021.-.BLOQUE.N.05_1.-.COSTOS.-.31.4.pptx)
+[![PPTX](https://img.shields.io/badge/PPTX-2021%20--%20BLOQUE%20N%C2%B005_3%20--%20SISTEMAS%20DE%20COSTEO%20--%2024--2%20%284%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269365/2021.-.BLOQUE.N.05_3.-.SISTEMAS.DE.COSTEO.-.24-2.4.pptx)
+[![DOC](https://img.shields.io/badge/DOC-TP%20Costo%20de%20Capital%20%20%284%29-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269368/TP.Costo.de.Capital.4.doc)
+[![DOCX](https://img.shields.io/badge/DOCX-2020%20BLOQUE%20N%C2%B005%20COSTOS%20Y%20SISTEMAS%20DE%20COSTEO%20%282%29-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269369/2020.BLOQUE.N.05.COSTOS.Y.SISTEMAS.DE.COSTEO.2.docx)
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+## Bloque 4
+[![PPTX](https://img.shields.io/badge/PPTX-2020%20--%20BLOQUE%20N%C2%B007%20--%20PROYECTOS%20DE%20INVERSI%C3%93N%20--%2040%20%281%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269406/2020.-.BLOQUE.N.07.-.PROYECTOS.DE.INVERSION.-.40.1.pptx)
+[![DOCX](https://img.shields.io/badge/DOCX-2020%20--%20TRABAJO%20PR%C3%81CTICO%20BLOQUE%20N%C2%B007%20DESARROLLO%2C%20EVALUACI%C3%93N%20Y%20SELECCI%C3%93N%20DE%20PROYECTOS%20DE%20INVERSI%C3%93N%20%282%29-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269409/2020.-.TRABAJO.PRACTICO.BLOQUE.N.07.DESARROLLO.EVALUACION.Y.SELECCION.DE.PROYECTOS.DE.INVERSION.2.docx)
+[![XLSX](https://img.shields.io/badge/XLSX-EVALUACION%20DE%20PROYECTOS%20%282%29-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](https://github.com/user-attachments/files/30269411/EVALUACION.DE.PROYECTOS.2.xlsx)
+[![PPTX](https://img.shields.io/badge/PPTX-Evaluaci%C3%B3n%20Econom%C3%ADa%20Homog%C3%A9nea%20%282%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269398/Evaluacion.Economia.Homogenea.2.pptx)
+[![DOCX](https://img.shields.io/badge/DOCX-2022%20--%20TRABAJO%20PR%C3%81CTICO%20BLOQUE%20N%C2%B004%20DESARROLLO%2C%20EVALUACI%C3%93N%20Y%20SELECCI%C3%93N%20DE%20PROYECTOS%20DE%20INVERSI%C3%93N--2%20%282%29-2B579A?style=for-the-badge&logo=microsoftword&logoColor=white)](https://github.com/user-attachments/files/30269410/2022.-.TRABAJO.PRACTICO.BLOQUE.N.04.DESARROLLO.EVALUACION.Y.SELECCION.DE.PROYECTOS.DE.INVERSION-2.2.docx)
+![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+## Bloque 5
+[![PPTX](https://img.shields.io/badge/PPTX-2021%20--%20BLOQUE%20N%C2%B003_1%20MONEDA%20--CR%C3%89DITOS--%20BANCOS%20--%2041%20%281%29-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269430/2021.-.BLOQUE.N.03_1.MONEDA.-CREDITOS-.BANCOS.-.41.1.pptx)
+[![PPTX](https://img.shields.io/badge/PPTX-2021%20--%20BLOQUE%20N%C2%B003_2%20--%20RENTA%20NACIONAL%20--%2029-B7472A?style=for-the-badge&logo=microsoftpowerpoint&logoColor=white)](https://github.com/user-attachments/files/30269438/2021.-.BLOQUE.N.03_2.-.RENTA.NACIONAL.-.29.pptx)
 
-## TRABAJO PRACTICO + parciales
-
-### EJERCICIOS PARA PRACTICAR
-[210622 - BLOQUE N°06 SISTEMA CONTABLE TABLERO DE COMANDO RESUELTO.docx](https://github.com/user-attachments/files/30269556/210622.-.BLOQUE.N.06.SISTEMA.CONTABLE.TABLERO.DE.COMANDO.RESUELTO.docx)
-[230306 - EH EXAMEN FINAL RESUELTO.xlsx](https://github.com/user-attachments/files/30269553/230306.-.EH.EXAMEN.FINAL.RESUELTO.xlsx)
-[230306 - EH  Exámen Final.doc](https://github.com/user-attachments/files/30269550/230306.-.EH.Examen.Final.doc)
-[EVALUACION DE PROYECTOS (3).xlsx](https://github.com/user-attachments/files/30269549/EVALUACION.DE.PROYECTOS.3.xlsx)
-[210622 - BLOQUE N°06 SISTEMA CONTABLE TABLERO DE COMANDO.docx](https://github.com/user-attachments/files/30269548/210622.-.BLOQUE.N.06.SISTEMA.CONTABLE.TABLERO.DE.COMANDO.docx)
-[210622 - BLOQUE N°05 COSTOS Y SISTEMAS DE  COSTEO.docx](https://github.com/user-attachments/files/30269546/210622.-.BLOQUE.N.05.COSTOS.Y.SISTEMAS.DE.COSTEO.docx)
-[210622 - BLOQUE N°07 PROYECTOS DE INVERSIÓN.docx](https://github.com/user-attachments/files/30269545/210622.-.BLOQUE.N.07.PROYECTOS.DE.INVERSION.docx)
-[210622 - BLOQUE N°05 COSTOS Y SISTEMAS DE  COSTEO RESUELTO.docx](https://github.com/user-attachments/files/30269544/210622.-.BLOQUE.N.05.COSTOS.Y.SISTEMAS.DE.COSTEO.RESUELTO.docx)
-
-### PARCIAL
-[PUNTO DE EQUILIBRIO.docx](https://github.com/user-attachments/files/30269600/PUNTO.DE.EQUILIBRIO.docx)
-[Examen E.H.24-07-12 T1.docx](https://github.com/user-attachments/files/30269599/Examen.E.H.24-07-12.T1.docx)
-[2P E.H. 19-07-12 (1).docx](https://github.com/user-attachments/files/30269598/2P.E.H.19-07-12.1.docx)
-[1P E.H.19-09-27 T1 (4).docx](https://github.com/user-attachments/files/30269596/1P.E.H.19-09-27.T1.4.docx)
-[Exámen Final 22-05-27.doc](https://github.com/user-attachments/files/30269595/Examen.Final.22-05-27.doc)
-
-### FINALES
-[Copia de 240228 - Exámen Final.doc](https://github.com/user-attachments/files/30269664/Copia.de.240228.-.Examen.Final.doc)
-[230927 - RESUELTO EXAMEN FINAL.xlsx](https://github.com/user-attachments/files/30269663/230927.-.RESUELTO.EXAMEN.FINAL.xlsx)
-[240510 -RESUELTO EXAMEN FINAL.xlsx](https://github.com/user-attachments/files/30269657/240510.-RESUELTO.EXAMEN.FINAL.xlsx)
-[Copia de 240214 - RESUELTO EXAMEN FINAL.xlsx](https://github.com/user-attachments/files/30269655/Copia.de.240214.-.RESUELTO.EXAMEN.FINAL.xlsx)
-[Copia de 240228 -RESUELTO EXAMEN FINAL.xlsx](https://github.com/user-attachments/files/30269654/Copia.de.240228.-RESUELTO.EXAMEN.FINAL.xlsx)
-[230927 - Exámen Final.doc](https://github.com/user-attachments/files/30269653/230927.-.Examen.Final.doc)
-[240510 - Exámen Final.doc](https://github.com/user-attachments/files/30269651/240510.-.Examen.Final.doc)
-[240214 - Exámen Final.doc](https://github.com/user-attachments/files/30269650/240214.-.Examen.Final.doc)
-
-### FINALES DRIVE
-https://drive.google.com/drive/u/1/folders/1hq6GSFb7zP7Pwtaw6ufJ_fC6mgYjqmmb
-
-
-
-## BLOQUE 1 
-[2021 - BLOQUE N°02%2F2 - FACTORES DE LA  PRODUCCIÓN - 25.pptx](https://github.com/user-attachments/files/30269249/2021.-.BLOQUE.N.02.2F2.-.FACTORES.DE.LA.PRODUCCION.-.25.pptx)
-[2021 - BLOQUE N°01_1 - EL PROBLEMA ECONOMICO - 21.pptx](https://github.com/user-attachments/files/30269241/2021.-.BLOQUE.N.01_1.-.EL.PROBLEMA.ECONOMICO.-.21.pptx)
-[2020 - TRABAJO PRÁCTICO BLOQUE N°02 - MICROECONOMÍA (6).docx](https://github.com/user-attachments/files/30269238/2020.-.TRABAJO.PRACTICO.BLOQUE.N.02.-.MICROECONOMIA.6.docx)
-[2021 - BLOQUE N°02%2F3 TEORÍA DE LA PRODUCCIÓN - OFERTA - 40  (1) (4).pptx](https://github.com/user-attachments/files/30269236/2021.-.BLOQUE.N.02.2F3.TEORIA.DE.LA.PRODUCCION.-.OFERTA.-.40.1.4.pptx)
-[2021 - BLOQUE N°02%2F1 - TEORÍA DEL CONSUMO - DEMANDA - 14 (3).pptx](https://github.com/user-attachments/files/30269233/2021.-.BLOQUE.N.02.2F1.-.TEORIA.DEL.CONSUMO.-.DEMANDA.-.14.3.pptx)
-[2021 - BLOQUE N°02%2F4 -  MERCADOS - 25 (4).pptx](https://github.com/user-attachments/files/30269231/2021.-.BLOQUE.N.02.2F4.-.MERCADOS.-.25.4.pptx)
-[2021 - BLOQUE N°01_2 - MODELO MICRO ECONÓMICO BÁSICO - 23  (3).pptx](https://github.com/user-attachments/files/30269227/2021.-.BLOQUE.N.01_2.-.MODELO.MICRO.ECONOMICO.BASICO.-.23.3.pptx)
-
-## BLOQUE 2
-[2020 - BLOQUE N°06_1 - ESTADOS CONTABLES - 34 (2).pptx](https://github.com/user-attachments/files/30269306/2020.-.BLOQUE.N.06_1.-.ESTADOS.CONTABLES.-.34.2.pptx)
-[2020 - BLOQUE N°06_2 - TABLERO DE COMANDO - 31 (2).pptx](https://github.com/user-attachments/files/30269302/2020.-.BLOQUE.N.06_2.-.TABLERO.DE.COMANDO.-.31.2.pptx)
-[2020 TRABAJO PRACTICO BLOQUE N°04 TASA DE COSTO DE CAPITAL Y AMORTIZACIONES (5).docx](https://github.com/user-attachments/files/30269301/2020.TRABAJO.PRACTICO.BLOQUE.N.04.TASA.DE.COSTO.DE.CAPITAL.Y.AMORTIZACIONES.5.docx)
-[2021 - BLOQUE N°04_1 - DEPRECIACIÓN AMORTIZACIÓN - 32 (2).pptx](https://github.com/user-attachments/files/30269299/2021.-.BLOQUE.N.04_1.-.DEPRECIACION.AMORTIZACION.-.32.2.pptx)
-
-## BLOQUE 3
-[2020 BLOQUE N°05 COSTOS Y SISTEMAS DE COSTEO (2).docx](https://github.com/user-attachments/files/30269369/2020.BLOQUE.N.05.COSTOS.Y.SISTEMAS.DE.COSTEO.2.docx)
-[TP Costo de Capital  (4).doc](https://github.com/user-attachments/files/30269368/TP.Costo.de.Capital.4.doc)
-[2021 - BLOQUE N°05_3 - SISTEMAS DE COSTEO - 24-2 (4).pptx](https://github.com/user-attachments/files/30269365/2021.-.BLOQUE.N.05_3.-.SISTEMAS.DE.COSTEO.-.24-2.4.pptx)
-[2021 - BLOQUE N°04_2 - TASA DE COSTO DE CAPITAL - 18 (4).pptx](https://github.com/user-attachments/files/30269364/2021.-.BLOQUE.N.04_2.-.TASA.DE.COSTO.DE.CAPITAL.-.18.4.pptx)
-[2021 - BLOQUE N°05_1 - COSTOS - 31 (4).pptx](https://github.com/user-attachments/files/30269362/2021.-.BLOQUE.N.05_1.-.COSTOS.-.31.4.pptx)
-
-## BLOQUE 4
-[EVALUACION DE PROYECTOS (2).xlsx](https://github.com/user-attachments/files/30269411/EVALUACION.DE.PROYECTOS.2.xlsx)
-[2022 - TRABAJO PRÁCTICO BLOQUE N°04 DESARROLLO, EVALUACIÓN Y SELECCIÓN DE PROYECTOS DE INVERSIÓN-2 (2).docx](https://github.com/user-attachments/files/30269410/2022.-.TRABAJO.PRACTICO.BLOQUE.N.04.DESARROLLO.EVALUACION.Y.SELECCION.DE.PROYECTOS.DE.INVERSION-2.2.docx)
-[2020 - TRABAJO PRÁCTICO BLOQUE N°07 DESARROLLO, EVALUACIÓN Y SELECCIÓN DE PROYECTOS DE INVERSIÓN (2).docx](https://github.com/user-attachments/files/30269409/2020.-.TRABAJO.PRACTICO.BLOQUE.N.07.DESARROLLO.EVALUACION.Y.SELECCION.DE.PROYECTOS.DE.INVERSION.2.docx)
-[2020 - BLOQUE N°07 - PROYECTOS DE INVERSIÓN - 40 (1).pptx](https://github.com/user-attachments/files/30269406/2020.-.BLOQUE.N.07.-.PROYECTOS.DE.INVERSION.-.40.1.pptx)
-[Evaluación Economía Homogénea (2).pptx](https://github.com/user-attachments/files/30269398/Evaluacion.Economia.Homogenea.2.pptx)
-
-## BLOQUE 5
-[2021 - BLOQUE N°03_2 - RENTA NACIONAL - 29.pptx](https://github.com/user-attachments/files/30269438/2021.-.BLOQUE.N.03_2.-.RENTA.NACIONAL.-.29.pptx)
-[2021 - BLOQUE N°03_1 MONEDA -CRÉDITOS- BANCOS - 41 (1).pptx](https://github.com/user-attachments/files/30269430/2021.-.BLOQUE.N.03_1.MONEDA.-CREDITOS-.BANCOS.-.41.1.pptx)
-
-
-
-
-
-
+<img width="536" height="1116" alt="image" src="https://github.com/user-attachments/assets/585d1bf7-b171-4492-bbf9-af04d62fa620" />
+<img width="532" height="1107" alt="image" src="https://github.com/user-attachments/assets/0c4e3630-3d52-4667-96ae-8d8ef3f91508" />

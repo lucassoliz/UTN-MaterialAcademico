@@ -1,5 +1,39 @@
 # Economia
 
+## TRABAJO PRACTICO + parciales
+
+### EJERCICIOS PARA PRACTICAR
+[210622 - BLOQUE N°06 SISTEMA CONTABLE TABLERO DE COMANDO RESUELTO.docx](https://github.com/user-attachments/files/30269556/210622.-.BLOQUE.N.06.SISTEMA.CONTABLE.TABLERO.DE.COMANDO.RESUELTO.docx)
+[230306 - EH EXAMEN FINAL RESUELTO.xlsx](https://github.com/user-attachments/files/30269553/230306.-.EH.EXAMEN.FINAL.RESUELTO.xlsx)
+[230306 - EH  Exámen Final.doc](https://github.com/user-attachments/files/30269550/230306.-.EH.Examen.Final.doc)
+[EVALUACION DE PROYECTOS (3).xlsx](https://github.com/user-attachments/files/30269549/EVALUACION.DE.PROYECTOS.3.xlsx)
+[210622 - BLOQUE N°06 SISTEMA CONTABLE TABLERO DE COMANDO.docx](https://github.com/user-attachments/files/30269548/210622.-.BLOQUE.N.06.SISTEMA.CONTABLE.TABLERO.DE.COMANDO.docx)
+[210622 - BLOQUE N°05 COSTOS Y SISTEMAS DE  COSTEO.docx](https://github.com/user-attachments/files/30269546/210622.-.BLOQUE.N.05.COSTOS.Y.SISTEMAS.DE.COSTEO.docx)
+[210622 - BLOQUE N°07 PROYECTOS DE INVERSIÓN.docx](https://github.com/user-attachments/files/30269545/210622.-.BLOQUE.N.07.PROYECTOS.DE.INVERSION.docx)
+[210622 - BLOQUE N°05 COSTOS Y SISTEMAS DE  COSTEO RESUELTO.docx](https://github.com/user-attachments/files/30269544/210622.-.BLOQUE.N.05.COSTOS.Y.SISTEMAS.DE.COSTEO.RESUELTO.docx)
+
+### PARCIAL
+[PUNTO DE EQUILIBRIO.docx](https://github.com/user-attachments/files/30269600/PUNTO.DE.EQUILIBRIO.docx)
+[Examen E.H.24-07-12 T1.docx](https://github.com/user-attachments/files/30269599/Examen.E.H.24-07-12.T1.docx)
+[2P E.H. 19-07-12 (1).docx](https://github.com/user-attachments/files/30269598/2P.E.H.19-07-12.1.docx)
+[1P E.H.19-09-27 T1 (4).docx](https://github.com/user-attachments/files/30269596/1P.E.H.19-09-27.T1.4.docx)
+[Exámen Final 22-05-27.doc](https://github.com/user-attachments/files/30269595/Examen.Final.22-05-27.doc)
+
+### FINALES
+[Copia de 240228 - Exámen Final.doc](https://github.com/user-attachments/files/30269664/Copia.de.240228.-.Examen.Final.doc)
+[230927 - RESUELTO EXAMEN FINAL.xlsx](https://github.com/user-attachments/files/30269663/230927.-.RESUELTO.EXAMEN.FINAL.xlsx)
+[240510 -RESUELTO EXAMEN FINAL.xlsx](https://github.com/user-attachments/files/30269657/240510.-RESUELTO.EXAMEN.FINAL.xlsx)
+[Copia de 240214 - RESUELTO EXAMEN FINAL.xlsx](https://github.com/user-attachments/files/30269655/Copia.de.240214.-.RESUELTO.EXAMEN.FINAL.xlsx)
+[Copia de 240228 -RESUELTO EXAMEN FINAL.xlsx](https://github.com/user-attachments/files/30269654/Copia.de.240228.-RESUELTO.EXAMEN.FINAL.xlsx)
+[230927 - Exámen Final.doc](https://github.com/user-attachments/files/30269653/230927.-.Examen.Final.doc)
+[240510 - Exámen Final.doc](https://github.com/user-attachments/files/30269651/240510.-.Examen.Final.doc)
+[240214 - Exámen Final.doc](https://github.com/user-attachments/files/30269650/240214.-.Examen.Final.doc)
+
+### FINALES DRIVE
+https://drive.google.com/drive/u/1/folders/1hq6GSFb7zP7Pwtaw6ufJ_fC6mgYjqmmb
+
+
+
 ## BLOQUE 1 
 [2021 - BLOQUE N°02%2F2 - FACTORES DE LA  PRODUCCIÓN - 25.pptx](https://github.com/user-attachments/files/30269249/2021.-.BLOQUE.N.02.2F2.-.FACTORES.DE.LA.PRODUCCION.-.25.pptx)
 [2021 - BLOQUE N°01_1 - EL PROBLEMA ECONOMICO - 21.pptx](https://github.com/user-attachments/files/30269241/2021.-.BLOQUE.N.01_1.-.EL.PROBLEMA.ECONOMICO.-.21.pptx)

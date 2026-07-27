@@ -14,6 +14,20 @@
 ### PLAYLIST DE LAS CLASES 
 Contiene la mayoria de las clases, falta algunas clases adicionales por el Profe por ejemplo sobre las IoT, Criptovirologia y Cleptografia 
 
+### PPT TP  + Material sobre TRIVIUM (Criptografia ligera)
+Presentación sobre el algoritmo trivium  
+- [Presentanción. TRIVIUM.pptx](https://github.com/user-attachments/files/30435830/Presentancion.TRIVIUM.pptx)
+
+- habla sobre los intentos de ataque para mejorar el algoritmo, y de paso también te explica: https://www.mdpi.com/1424-8220/20/23/6909
+- Video en ingles muy buena explicación https://youtu.be/YCnUKCki_rg?si=_Q3ANXDvZVwA40ns
+- Documento técnico original de los creadores(es breve y contiene especificaciones): https://cr.yp.to/streamciphers/trivium/desc.pdf
+- articulo original de la conferencia que detalla los principios de diseño inspirados en los cifradores de bloques: https://cosicdatabase.esat.kuleuven.be/backend/publications/files/conferencepaper/850
+- Contexto histórico: https://cosicdatabase.esat.kuleuven.be/backend/publications/files/conferencepaper/850
+- Implenetacion del algoritmo en Python: https://github.com/uisyudha/Trivium
+- También en Python con interfaz: https://github.com/mortasoft/Trivium?tab=readme-ov-file
+- En C, con variantes de 32/64 bits: https://github.com/cbouilla/trivium
+- repositorio con contenido sobre el algoritmo TRIVIUM  https://github.com/nahuelDeveloper/unlam-triviumapp
+
 [![Ver en YouTube](https://img.shields.io/badge/VER%20EN-YOUTUBE-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=EynbdA3_KM8&list=PLUqzRyIMbztAYV1XY6N27n1Yyy_JInzLD)
 
 # Material Del AULA

@@ -13,6 +13,7 @@
 
 ### PLAYLIST DE LAS CLASES 
 Contiene la mayoria de las clases, falta algunas clases adicionales por el Profe por ejemplo sobre las IoT, Criptovirologia y Cleptografia 
+- https://www.youtube.com/watch?v=EynbdA3_KM8&list=PLUqzRyIMbztAYV1XY6N27n1Yyy_JInzLD
 
 ### PPT TP  + Material sobre TRIVIUM (Criptografia ligera)
 Presentación sobre el algoritmo trivium  

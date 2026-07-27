@@ -9,7 +9,14 @@
 
 ![divider](https://raw.githubusercontent.com/BrunoSobrino/BrunoSobrino/main/img/line.gif)
 
-# Material
+# Material Propio (Lucas)
+
+### PLAYLIST DE LAS CLASES 
+Contiene la mayoria de las clases, falta algunas clases adicionales por el Profe por ejemplo sobre las IoT, Criptovirologia y Cleptografia 
+
+[![Ver en YouTube](https://img.shields.io/badge/VER%20EN-YOUTUBE-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=EynbdA3_KM8&list=PLUqzRyIMbztAYV1XY6N27n1Yyy_JInzLD)
+
+# Material Del AULA
 
 ## Criptografia Clásica y Steganografía
 

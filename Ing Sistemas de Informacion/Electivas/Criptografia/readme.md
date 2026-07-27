@@ -30,6 +30,17 @@ Presentación sobre el algoritmo trivium
 
 [![Ver en YouTube](https://img.shields.io/badge/VER%20EN-YOUTUBE-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=EynbdA3_KM8&list=PLUqzRyIMbztAYV1XY6N27n1Yyy_JInzLD)
 
+### Parciales / Cuestionarios  
+
+- [Parcial Criptografia (2).pdf](https://github.com/user-attachments/files/30435959/Parcial.Criptografia.2.pdf)
+- [UTN - FRBA - CRIPTOGRAFÍA - 2022 - 2C - RESPUESTAS (1).pdf](https://github.com/user-attachments/files/30435958/UTN.-.FRBA.-.CRIPTOGRAFIA.-.2022.-.2C.-.RESPUESTAS.1.pdf)
+- [Parcial Integrador Individual_ Revisión del intento _ Facultad Regional Buenos Aires (2).pdf](https://github.com/user-attachments/files/30435957/Parcial.Integrador.Individual_.Revision.del.intento._.Facultad.Regional.Buenos.Aires.2.pdf)
+- [Parcial Integrador Individual_ Revisión del intento _ Facultad Regional Buenos Aires (3).pdf](https://github.com/user-attachments/files/30435956/Parcial.Integrador.Individual_.Revision.del.intento._.Facultad.Regional.Buenos.Aires.3.pdf)
+- [UTN - FRBA - 1° Cuatrim. 2026 - CRIPTOGRAFÍA..pdf](https://github.com/user-attachments/files/30435955/UTN.-.FRBA.-.1.Cuatrim.2026.-.CRIPTOGRAFIA.pdf)
+- [2024 - PARCIAL Criptografía - K4051 (2).pdf](https://github.com/user-attachments/files/30435954/2024.-.PARCIAL.Criptografia.-.K4051.2.pdf)
+- Parcial de 2026 1C + 5 parciales aun no lo tengo en formato PDF, si no, en imagenes, si lo queres me podes enviar un email/whatsapp y te lo paso ( lsilessoliz@frba.utn.edu.ar )
+
+
 # Material Del AULA
 
 ## Criptografia Clásica y Steganografía

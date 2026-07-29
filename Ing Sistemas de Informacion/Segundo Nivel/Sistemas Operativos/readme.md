@@ -33,4 +33,29 @@ Recien despues de ese OK confirmando, empiezan a intercambiar mensajes entre si
 Se recomienda leer la pagina de la catedra (https://docs.utnso.com.ar/guias/linux/sockets), y  realizar el TP0 (https://github.com/lucassoliz/tp0), de ahi podes 
 reutilizar codigo
 
- <img width="1434" height="575" alt="Lucas siles Reutilización codigo TP0" src="https://github.com/user-attachments/assets/feb5b5f8-d133-484c-8e20-a9df3a278aa3" />
+ <img width="1434" height="575" alt="Lucas siles Reutilización codigo TP0" src="https://github.com/user-attachments/assets/feb5b5f8-d133-484c-8e20-a9df3a278aa3" />  
+ 
+### Sobre las commons de la catedra    
+
+yyy mira, es una biblioteca que te provee la catedra donde te puede brindar estructuras de datos como listas, diccionarios, colas, etc...  
+Por ejemplo en mi caso como KS, use la t_list para todas las colas de estados, o el diccionario (t_dictionary) que use para saber por ejemplo  
+que proceso ejecuta en cada CPU ponele, o tambien te brinda utilidades como el logger (t_list) para los logs obligatorios, el manejo de  
+archivos de configuracion (t_config), funciones para strings (como string_itoa, que ojo hace internamente malloc y si no la liberas con free,  
+tendras memory leak, lo digo por experiencia jaja)  
+Pero eso, ayudan bastante porque te evita tenerlo que programar desde cero ponele una lista enlazada o un parser de configuracion  
+usas una implementacion ya testeada y la concentras en el TP
+
+No tiene sentido no usar las commons de la catedra y programes la logica vos, ahi te das cuenta facilmente quienes estan usando IA 
+
+<img width="925" height="752" alt="image" src="https://github.com/user-attachments/assets/bdd43d3d-e3d3-4425-b573-a3f245427d89" />
+
+### Sobre la organizacion del trabajo  
+
+<img width="1165" height="742" alt="image" src="https://github.com/user-attachments/assets/d11eec35-62e8-4a3e-8dd6-922dcf4b22d0" />
+Basicamente eso, hablamos entre el equipo de modularizar el codigo y dividirlo por responsabilidad, para que el trabajo sea escalable  
+y llegar sin dificultad al checkpoint 3 (la ultima entrega)  
+
+<img width="242" height="485" alt="image" src="https://github.com/user-attachments/assets/0b90aec3-e26d-413a-98fb-e28eff9d1b04" />   
+
+### CHECKPOINT 1 FINALIZADO  
+- [tp-2026-1c-418-im-a-teapot-48726846c14e319a419e35f2ccfb3e6798bcc09b.zip](https://github.com/user-attachments/files/30524582/tp-2026-1c-418-im-a-teapot-48726846c14e319a419e35f2ccfb3e6798bcc09b.zip)

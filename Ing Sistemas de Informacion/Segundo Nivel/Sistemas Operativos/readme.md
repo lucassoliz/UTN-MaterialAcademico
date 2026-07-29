@@ -1,7 +1,11 @@
 # Sistemas Operativos -- Plug & Pray  
-### Enunciado 
-- [Plug & Pray Ultima version.pdf](https://github.com/user-attachments/files/30522500/Plug.Pray.Ultima.version.pdf)
+### Enunciado + TP + Pruebas
+- [Plug & Pray Ultima version.pdf](https://github.com/user-attachments/files/30522500/Plug.Pray.Ultima.version.pdf)  (publicado dos semana despues de la primera clase)
+- TP APROBADO: [tp-2026-1c-418-im-a-teapot-abace6173f924ee2c7ec192b14cbfe05e7665ab9.zip](https://github.com/user-attachments/files/30525293/tp-2026-1c-418-im-a-teapot-abace6173f924ee2c7ec192b14cbfe05e7665ab9.zip) 
+- [1c2026 - Plug & Pray - Pruebas (.pdf](https://github.com/user-attachments/files/30525382/1c2026.-.Plug.Pray.-.Pruebas.pdf) (publicado una semana antes de la primera fecha de entrega)
 
+
+<img width="2197" height="1240" alt="image" src="https://github.com/user-attachments/assets/28499e8c-4107-4473-a20e-88ee5342a2fb" />
 
 # Desarrollo TP subido por ETAPAS  
 Tener en cuenta que el TP fue escalando y claramente no voy a subir todas las etapas, solo las mas relevantes, ademas esta enfocado 
@@ -59,3 +63,35 @@ y llegar sin dificultad al checkpoint 3 (la ultima entrega)
 
 ### CHECKPOINT 1 FINALIZADO  
 - [tp-2026-1c-418-im-a-teapot-48726846c14e319a419e35f2ccfb3e6798bcc09b.zip](https://github.com/user-attachments/files/30524582/tp-2026-1c-418-im-a-teapot-48726846c14e319a419e35f2ccfb3e6798bcc09b.zip)
+
+## Desarrollo Checkpoint 2  
+**ETAPA DE PLANEACIÓN:** Bueno, con el checkpoint 1 los modulos ya se conectan, todo bien, pero ahora toca definicir el protocolo  
+de comunicación de que mensajes se manda cada módulo y en que orden  
+
+Para eso tendras que leer una y otra e otra (varias veces) resaltando cada punto donde un modulo **le pide algo a otro o le responde**,  
+y a cada uno de esos mensajes asignarle un codigo de operacion que lo identifique  
+Ponele, cuando la CPU necesita ejecutar, le pide el contexto a memoria con SOLICITAR_CONTEXTP y memoria le responde con ENVIAR_CONTEXTO, asi de facil
+
+<img width="392" height="936" alt="image" src="https://github.com/user-attachments/assets/0e7aeebd-e955-4159-8472-c0aaf164486d" />  
+
+ Con todos esos codigos definidos, el siguiente paso fue modelar el recorrido completo de un proceso (ahi dejo mi diagrama de secuencia  
+ medio raro jaja), mas que nada para saber como se encadenan los mensajes entre los demas modulos a lo largo de la vida del proceso, de paso 
+ te ayuda a ver si te falto algun codigo de operacion o hay alguno que sobra 
+<img width="1672" height="1133" alt="image" src="https://github.com/user-attachments/assets/322b12c9-3bda-46fc-b1c8-809001c2409e" />  
+Definir bien los protocolos y que el equipo tambien entienda lo que estas agregando, porque puede pasar que agreguen protocolos de mas  
+que signifiquen lo mismo pero lo unico que cambia es el nombre (para evitar el retrabajo)
+<img width="2176" height="782" alt="image" src="https://github.com/user-attachments/assets/88623648-4119-49b3-8f85-7cddb7abdd47" />
+
+ ### CHECKPOINT 2 FINALIZADO  
+- [tp-2026-1c-418-im-a-teapot-9512aa5c4b01edc036605723193327b2b05f70af.zip](https://github.com/user-attachments/files/30525267/tp-2026-1c-418-im-a-teapot-9512aa5c4b01edc036605723193327b2b05f70af.zip)
+
+## Desarrollo Checkpoint 3  
+- [tp-2026-1c-418-im-a-teapot-abace6173f924ee2c7ec192b14cbfe05e7665ab9.zip](https://github.com/user-attachments/files/30525293/tp-2026-1c-418-im-a-teapot-abace6173f924ee2c7ec192b14cbfe05e7665ab9.zip)
+
+
+# Aporte  
+<img width="1617" height="907" alt="image" src="https://github.com/user-attachments/assets/07917ca1-87e3-4c41-b87a-fa91addf0e32" />  
+<img width="1606" height="1198" alt="image" src="https://github.com/user-attachments/assets/fdd81146-674b-45b8-8c23-9b72a60c8a5c" />  
+<img width="1607" height="1213" alt="image" src="https://github.com/user-attachments/assets/93ad97c8-7d1f-47cc-a9af-cbe7370b61c2" />  
+<img width="1602" height="1215" alt="image" src="https://github.com/user-attachments/assets/c041723c-35f4-41ce-a2c9-a8336a1e11c0" />  
+<img width="1613" height="475" alt="image" src="https://github.com/user-attachments/assets/2b81e000-975a-4715-9c1f-b5b4874a736f" />  

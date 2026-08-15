@@ -8,11 +8,6 @@
 
 [![Google Docs](https://img.shields.io/badge/RECOPILACI%C3%93N%20FINAL-Documento%20completo-4285F4?style=for-the-badge&logo=googledocs&logoColor=white)](https://docs.google.com/document/d/11wxR1ZEij07O0NHZ5a5mbnkEHLe0S_HRA1-IExbb-qM/edit?usp=sharing)
 
-> [!note]
-> Este documento contiene una gran recopilacion de exámenes finales.
-> Esta diseñado para que puedas:
->  - **Practicar:**  Ideal para imprimir y resolver a mano, simulando el entorno real del examen
->  - **Medir tu nivel:** Úsalo para realizar simulacros cronometrados y evaluar tu preparacion antes del Dia del final
 
 SOLUCION FINAL *(Puede contener errores leves)*:
 
@@ -27,6 +22,16 @@ CANAL YOUTUBE RESOLVIENDO FINALES:
 > Si tenes más material para aportar (aunque sea de cualquier materia), me pueden contactar y lo agrego sin problema (o los agrego como colaborador del repositorio incluso)
 
 ![Line](https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2)
+
+**Aporte:**  
+[8/12, 11:44]: Hola chicos!!
+Estoy armando el drive con los finales y con las respuestas del profe Eduardo 
+Entre hoy o mañana lo tengo.  
+[8/12, ]: Al final lo acabo de terminar
+Subí todo de 2025 a 2026 el resto lo subiré cuando el profe vuelva y me mande las fotos de los años anteriores.
+Me confirman si lo pueden abrir el link.  
+[8/12, 12:48]: https://drive.google.com/drive/folders/1WRjU7dJsf0Qv8LwvRsu00ZmFZZVOsgO6?usp=sharing
+
 
 ## Material de estudio
 

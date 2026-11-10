@@ -10,6 +10,7 @@ Video cursada completa: https://www.youtube.com/watch?v=eciPXCqGyhk&list=PLM7ZBJ
 RESUMEN TEORIA:  
 - [PyE - Resumen-2.pdf](https://github.com/user-attachments/files/24726066/PyE.-.Resumen-2.pdf)
 - [Apunte proba 2023 (1).pdf](https://github.com/user-attachments/files/24726082/Apunte.proba.2023.1.pdf)
+- [Apunte materia](https://docs.google.com/document/d/1ubtFqb9YB2fp-N3teWlsadZwQBon1H_s/edit?usp=sharing&ouid=105468394464613688224&rtpof=true&sd=true)
 
 
 UNIDAD:  
